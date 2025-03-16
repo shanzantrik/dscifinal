@@ -574,7 +574,7 @@
   .text-overlay {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 50%;
     top: 0;
     left: 0;
     display: flex;
@@ -591,7 +591,7 @@
     -webkit-text-fill-color: transparent;
     font-weight: 500;
     margin-top: 15%;
-    transform: translateY(30px);
+    transform: translateY(-20px);
     opacity: 0;
     animation: fadeInDate 1s ease-out forwards;
   }
@@ -765,8 +765,8 @@
     padding: 20px 0 60px;
     overflow: hidden;
     width: 100%;
-    max-width: 1035px;
-    /* Accommodates 2 cards with gap (495px * 2 + 45px) */
+    max-width: 870px;
+    /* Accommodates main card (495px) + gap (45px) + part of smaller card (330px) */
     margin: 0 auto;
     position: relative;
   }
@@ -777,6 +777,7 @@
     transition: transform 0.5s ease-in-out;
     gap: 45px;
     will-change: transform;
+    padding: 20px 0;
   }
 
   .focus-card {
@@ -788,8 +789,9 @@
     background: #ffffff;
     backdrop-filter: blur(2px);
     transition: all 0.5s ease-in-out;
-    transform: scale(0.95);
-    opacity: 0.7;
+    transform: scale(0.67);
+    /* Scale for inactive smaller cards (330/495 = ~0.67) */
+    opacity: 0.5;
   }
 
   .focus-card.active {
@@ -801,15 +803,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .carousel-nav {
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+    text-align: center;
   }
 
   .carousel-prev,
@@ -829,6 +825,7 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    opacity: 0.7;
   }
 
   .carousel-prev {
@@ -841,7 +838,7 @@
 
   .carousel-prev:disabled,
   .carousel-next:disabled {
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: not-allowed;
   }
 
@@ -849,6 +846,7 @@
   .carousel-next:not(:disabled):hover {
     background: #A56CFF;
     transform: translateY(-50%) scale(1.1);
+    opacity: 1;
   }
 
   .carousel-dots {
@@ -876,32 +874,6 @@
 
   .carousel-dot:hover {
     background: rgba(165, 108, 255, 0.5);
-  }
-
-  @media (max-width: 1680px) {
-    .focus-carousel-container {
-      max-width: 845px;
-      /* Accommodates 2 cards with gap (400px * 2 + 45px) */
-    }
-
-    .focus-card {
-      flex: 0 0 400px;
-      height: 242px;
-      padding: 35px 60px;
-    }
-  }
-
-  @media (max-width: 1366px) {
-    .focus-carousel-container {
-      max-width: 685px;
-      /* Accommodates 2 cards with gap (320px * 2 + 45px) */
-    }
-
-    .focus-card {
-      flex: 0 0 320px;
-      height: 193px;
-      padding: 25px 45px;
-    }
   }
 
   .focus-icon {
@@ -914,7 +886,7 @@
     background: #A56CFF;
     border-radius: 14px;
     padding: 15px;
-    margin-top: 5px;
+    margin-bottom: 20px;
   }
 
   .focus-icon img {
@@ -924,174 +896,44 @@
   }
 
   .focus-content {
-    flex: 1;
+    width: 100%;
+    text-align: center;
   }
 
-  .focus-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #A56CFF;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-
-  .focus-description {
-    color: #A56CFF;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  /* Carousel Navigation */
-  .carousel-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-  }
-
-  .carousel-dots {
-    display: flex;
-    gap: 8px;
-  }
-
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .carousel-dot.active {
-    background: #A56CFF;
-    transform: scale(1.2);
-  }
-
-  .carousel-prev,
-  .carousel-next {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-
-  .carousel-prev {
-    left: -60px;
-  }
-
-  .carousel-next {
-    right: -60px;
-  }
-
-  .carousel-prev:disabled,
-  .carousel-next:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .carousel-prev:not(:disabled):hover,
-  .carousel-next:not(:disabled):hover {
-    background: #A56CFF;
-    transform: translateY(-50%) scale(1.1);
-  }
-
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 30px;
-  }
-
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-
-  .carousel-dot.active {
-    background: #ffffff;
-    transform: scale(1.2);
-  }
-
-  .carousel-dot:hover {
-    background: rgba(165, 108, 255, 0.5);
-  }
-
+  /* Responsive adjustments */
   @media (max-width: 991px) {
-    .focus-section {
-      padding: 80px 0;
+    .focus-carousel-container {
+      max-width: 650px;
     }
 
-    .section-title {
-      font-size: 36px;
-    }
-
-    .focus-card-inner {
-      min-height: 200px;
-      padding: 25px;
-      gap: 20px;
-    }
-
-    .focus-title {
-      font-size: 24px;
-    }
-
-    .focus-icon {
-      width: 60px;
-      min-width: 60px;
-      height: 60px;
+    .focus-card {
+      flex: 0 0 400px;
+      height: 242px;
+      padding: 35px 60px;
     }
   }
 
   @media (max-width: 767px) {
-    .focus-section {
-      padding: 60px 0;
+    .focus-carousel-container {
+      max-width: 480px;
     }
 
-    .section-title {
-      font-size: 32px;
+    .focus-card {
+      flex: 0 0 350px;
+      height: 212px;
+      padding: 30px 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .focus-carousel-container {
+      max-width: 340px;
     }
 
-    .focus-card-inner {
-      flex-direction: column;
-      min-height: auto;
-      padding: 25px;
-      gap: 15px;
-    }
-
-    .focus-icon {
-      width: 60px;
-      min-width: 60px;
-      height: 60px;
-      margin: 0 0 10px 0;
-    }
-
-    .focus-title {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .focus-description {
-      font-size: 14px;
+    .focus-card {
+      flex: 0 0 300px;
+      height: 182px;
+      padding: 25px 40px;
     }
   }
 
@@ -1541,6 +1383,160 @@
   .text-tickets {
     color: #A56CFF;
   }
+
+  /* FAQ Section Styles */
+  .faq-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+  }
+
+  .section-small-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #A56CFF;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #05102D;
+    margin-bottom: 50px;
+  }
+
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .faq-button {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+
+    .faq-body {
+      padding: 15px 20px;
+    }
+  }
+
+  .focus-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #A56CFF;
+    text-align: center;
+  }
+
+  .focus-description {
+    display: none;
+  }
+
+  /* Updated responsive adjustments */
+  @media (max-width: 991px) {
+    .focus-carousel-container {
+      max-width: 650px;
+    }
+
+    .focus-card {
+      flex: 0 0 400px;
+      height: 242px;
+      padding: 35px 60px;
+    }
+
+    .focus-title {
+      font-size: 32px;
+    }
+
+    .carousel-prev {
+      left: -40px;
+    }
+
+    .carousel-next {
+      right: -40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .focus-carousel-container {
+      max-width: 480px;
+    }
+
+    .focus-card {
+      flex: 0 0 350px;
+      height: 212px;
+      padding: 30px 50px;
+    }
+
+    .focus-title {
+      font-size: 30px;
+    }
+
+    .carousel-prev {
+      left: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-next {
+      right: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .bf-title {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .focus-carousel-container {
+      max-width: 300px;
+      /* Show just the main card on mobile */
+    }
+
+    .focus-card {
+      flex: 0 0 280px;
+      height: 170px;
+      padding: 20px 30px;
+    }
+
+    .focus-title {
+      font-size: 24px;
+    }
+
+    .focus-icon {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .carousel-prev {
+      left: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .carousel-next {
+      right: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .bf-title {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
 </style>
 
 <!-- Navbar -->
@@ -1848,17 +1844,18 @@
     <div class="container">
       <h1 class="bf-title">Broad Focus Areas</h1>
       <div class="focus-carousel-container">
+        <button class="carousel-prev" aria-label="Previous slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
         <div class="focus-carousel">
           <!-- First card active by default -->
           <div class="focus-card active">
             <div class="focus-card-inner">
               <div class="focus-icon">
-                <img src="{{ asset('images/broad-focus/Asset 1.svg') }}" alt="Transaction Security Icon">
+                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
               </div>
               <div class="focus-content">
                 <h3 class="focus-title">Transaction Security</h3>
-                <p class="focus-description">Enhancing the security of financial transactions through advanced
-                  encryption, multi-factor authentication, and real-time monitoring systems.</p>
               </div>
             </div>
           </div>
@@ -1866,62 +1863,48 @@
           <div class="focus-card">
             <div class="focus-card-inner">
               <div class="focus-icon">
-                <img src="{{ asset('images/broad-focus/Asset 1.svg') }}" alt="Payment Innovations Icon">
+                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
               </div>
               <div class="focus-content">
                 <h3 class="focus-title">Payment Innovations</h3>
-                <p class="focus-description">Exploring cutting-edge payment technologies, digital currencies, and secure
-                  transaction methods that transform the financial landscape.</p>
               </div>
             </div>
           </div>
           <div class="focus-card">
             <div class="focus-card-inner">
               <div class="focus-icon">
-                <img src="{{ asset('images/broad-focus/Asset 1.svg') }}" alt="Payment Innovations Icon">
+                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
               </div>
               <div class="focus-content">
-                <h3 class="focus-title">Payment Innovations</h3>
-                <p class="focus-description">Exploring cutting-edge payment technologies, digital currencies, and secure
-                  transaction methods that transform the financial landscape.</p>
+                <h3 class="focus-title">Fraud Prevention</h3>
               </div>
             </div>
           </div>
           <div class="focus-card">
             <div class="focus-card-inner">
               <div class="focus-icon">
-                <img src="{{ asset('images/broad-focus/Asset 1.svg') }}" alt="Payment Innovations Icon">
+                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
               </div>
               <div class="focus-content">
-                <h3 class="focus-title">Payment Innovations</h3>
-                <p class="focus-description">Exploring cutting-edge payment technologies, digital currencies, and secure
-                  transaction methods that transform the financial landscape.</p>
+                <h3 class="focus-title">Digital Identity</h3>
               </div>
             </div>
           </div>
           <div class="focus-card">
             <div class="focus-card-inner">
               <div class="focus-icon">
-                <img src="{{ asset('images/broad-focus/Asset 1.svg') }}" alt="Payment Innovations Icon">
+                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
               </div>
               <div class="focus-content">
-                <h3 class="focus-title">Payment Innovations</h3>
-                <p class="focus-description">Exploring cutting-edge payment technologies, digital currencies, and secure
-                  transaction methods that transform the financial landscape.</p>
+                <h3 class="focus-title">Regulatory Technology</h3>
               </div>
             </div>
           </div>
-
         </div>
-        <div class="carousel-nav">
-          <button class="carousel-prev" aria-label="Previous slide">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="carousel-dots"></div>
-          <button class="carousel-next" aria-label="Next slide">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
+        <button class="carousel-next" aria-label="Next slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel-dots"></div>
       </div>
     </div>
   </section>
@@ -2077,156 +2060,263 @@
     </div>
   </section>
 
-  <!-- Speakers Section -->
-  <section class="content-section bg-white" id="speakers">
-    <div class="container" style="margin-top:50px;">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-12 col-lg-6">
-          <div class="section-title">
-            <h2 class="text-dark">Event Speakers</h2>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <form class="filter">
-            <input type="text" id="slidename" placeholder="Search by name" class="search-input" />
-          </form>
-        </div>
-      </div>
-      <div class="speakers-slider">
-        @foreach($speakers as $speaker)
-        <div class="speaker-item">
-          <div class="speaker-image">
-            <img src="{{ $speaker->image_url }}" alt="{{ $speaker->name }}" class="speaker-img">
-          </div>
-          <div class="speaker-info">
-            <h4 class="text-dark">{{ $speaker->name }}</h4>
-            <p class="designation">{{ $speaker->designation }}</p>
-            @if($speaker->company)
-            <p class="company text-secondary">{{ $speaker->company }}</p>
-            @endif
-          </div>
-        </div>
-        @endforeach
-      </div>
-      <div class="text-center mt-4">
-        <a href="#" class="btn btn-primary btn-lg rounded-pill">
-          View All Speakers
-          <i class="fas fa-arrow-right ms-2"></i>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Event Schedule Section -->
-  <section class="content-section" id="eventSchedule">
-    <div class="container position-relative">
-      <div class="row align-items-start">
-        <div class="col-12 mb-4">
-          <div class="text-center text-white">
-            <h3>EVENT SCHEDULE</h3>
-            <h2><span>Sessions that are Planned</span></h2>
-          </div>
-        </div>
-        <!-- Schedule tabs and content -->
-        <div class="tabMainArea">
-          @foreach($eventDays as $day)
-          <div class="tablink {{ $loop->first ? 'active' : '' }}"
-            onclick="openPage('day{{ $day->id }}', this, '{{ $day->color_code }}')">
-            @if($day->subtitle)
-            <p>{{ $day->subtitle }}</p>
-            @endif
-            <h1>{{ $day->title }}</h1>
-            <p>{{ $day->date->format('l - d F') }}</p>
-            <i class="fa fa-angle-down"></i>
-          </div>
-          @endforeach
-        </div>
-
-        <!-- Tab content -->
-        @foreach($eventDays as $day)
-        <div id="day{{ $day->id }}" class="tabcontent {{ $loop->first ? 'show' : '' }}">
-          <div class="schedule-timeline">
-            @foreach($day->agendas as $agenda)
-            <div class="timeline-item">
-              <div class="timeline-time">
-                {{ $agenda->start_time->format('h:i A') }} - {{ $agenda->end_time->format('h:i A') }}
-              </div>
-              <div class="timeline-content">
-                <h3>{{ $agenda->title }}</h3>
-                @if($agenda->description)
-                <p>{!! $agenda->description !!}</p>
-                @endif
-                @if($agenda->venue || $agenda->track)
-                <div class="event-meta">
-                  @if($agenda->venue)
-                  <span class="venue">
-                    <i class="fas fa-map-marker-alt"></i> {{ $agenda->venue }}
-                  </span>
-                  @endif
-                  @if($agenda->track)
-                  <span class="track">
-                    <i class="fas fa-stream"></i> {{ $agenda->track }}
-                  </span>
-                  @endif
-                </div>
-                @endif
-                @if($agenda->speakers->count() > 0)
-                <div class="speakers-list">
-                  @foreach($agenda->speakers as $speaker)
-                  <div class="speaker-item">
-                    <img src="{{ $speaker->image_url }}" alt="{{ $speaker->name }}" class="speaker-avatar">
-                    <div class="speaker-info">
-                      <h4>{{ $speaker->name }}</h4>
-                      @if($speaker->pivot->role)
-                      <span class="role">{{ $speaker->pivot->role }}</span>
-                      @endif
-                      {{-- <p>{{ $speaker->designation }}</p> --}}
-                    </div>
-                  </div>
-                  @endforeach
-                </div>
-                @endif
-              </div>
-            </div>
-            @endforeach
-          </div>
-        </div>
-        @endforeach
-      </div>
-    </div>
-  </section>
-
-  <!-- Registration Section -->
-  <section id="registration" class="content-section">
+  <!-- FAQ Section -->
+  <section class="faq-section py-5">
     <div class="container">
+      <div class="section-header text-center mb-5">
+        <h5 class="section-small-title">FAQs</h5>
+        <h2 class="section-title">All Your Doubts Answered</h2>
+      </div>
+
       <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="text-center">
-            <h2>Register Now</h2>
-            <p class="lead">Secure your spot at AISS 2025</p>
+        <div class="col-lg-10">
+          <div class="faq-accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingOne">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  When and where will FINSEC CONCLAVE 2025 take place?
+                  <span class="faq-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  FINSEC CONCLAVE 2025 will take place on 4th - 5th June 2025 in Mumbai. The venue details will be
+                  announced closer to the event date.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingTwo">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How can I register for the event?
+                  <span class="faq-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  Registration will open soon. You can sign up for updates on our website to be notified when tickets
+                  are available. Early bird discounts will be offered for early registrations.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingThree">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What topics will be covered at the conclave?
+                  <span class="faq-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  FINSEC CONCLAVE 2025 will focus on the intersection of finance and security, including cybersecurity
+                  in financial institutions, regulatory compliance, emerging threats, blockchain security, AI in
+                  financial security, and more.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingFour">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  How can I become a speaker at the event?
+                  <span class="faq-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  You can apply to be a speaker through our "Call for Speakers" form. We welcome industry experts,
+                  thought leaders, and professionals with insights on financial security topics. All speaker
+                  applications will be reviewed by our committee.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingFive">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Are there sponsorship opportunities available?
+                  <span class="faq-icon">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  Yes, we offer various sponsorship packages that provide opportunities to showcase your brand to
+                  industry leaders and decision-makers. Please contact our sponsorship team at
+                  sponsorship@finsecconclave.com for more information.
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- Registration form will go here -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sponsors Section -->
-  <section class="content-section" id="sponsors">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-12">
-          <div data-scroll data-scroll-speed="0.5">
-            <div class="section-title text-center">
-              <h6 style="text-transform: uppercase;">THOSE WHO MAKE AISS 2025 POSSIBLE</h6>
-              <h2>Sponsors, Partners & Exhibitors</h2>
-            </div>
-          </div>
-        </div>
-        <!-- Sponsors content will go here -->
-      </div>
-    </div>
-  </section>
+  <style>
+    /* FAQ Section Styles */
+    .faq-section {
+      padding: 100px 0;
+      background-color: #ffffff;
+    }
+
+    .section-small-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A56CFF;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-size: 64px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 50px;
+    }
+
+    .faq-item {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-header {
+      width: 100%;
+    }
+
+    .faq-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px 30px;
+      background-color: #A56CFF;
+      border: 2px solid #F0F0F0;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .faq-button:hover,
+    .faq-button:focus {
+      background-color: #F8F4FF;
+      border-color: #A56CFF;
+      outline: none;
+    }
+
+    .faq-button:not(.collapsed) {
+      background-color: #F8F4FF;
+      border-color: #A56CFF;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #A56CFF;
+    }
+
+    .faq-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      margin-left: 15px;
+      border-radius: 50%;
+      color: #ffffff;
+    }
+
+    .faq-icon .fa-minus {
+      display: none;
+    }
+
+    .faq-button:not(.collapsed) .fa-plus {
+      display: none;
+    }
+
+    .faq-button:not(.collapsed) .fa-minus {
+      display: inline-block;
+    }
+
+    .faq-body {
+      padding: 20px 30px;
+      background-color: #ffffff;
+      border: 2px solid #A56CFF;
+      border-top: none;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      color: #555555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .faq-section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      .faq-button {
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      .faq-body {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+
+  <script>
+    // This script ensures the accordions are closed initially
+    document.addEventListener("DOMContentLoaded", function() {
+      const accordionButtons = document.querySelectorAll('.faq-button');
+
+      accordionButtons.forEach(button => {
+        button.classList.add('collapsed');
+        const target = document.querySelector(button.getAttribute('data-bs-target'));
+        if (target) {
+          target.classList.remove('show');
+        }
+      });
+    });
+  </script>
 
   <!-- Footer -->
   @include('partials.footer')
@@ -2977,7 +3067,7 @@
     position: absolute;
     top: 50%;
     left: 10%;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     z-index: 1;
     opacity: 0;
     animation: fadeInText 1s ease-out forwards;
@@ -2990,18 +3080,18 @@
     margin-bottom: 1rem;
     transform: translateY(30px);
     opacity: 0;
-    animation: slideUp 0.8s ease-out infinite;
+    animation: slideUp 2s ease-out infinite;
   }
 
   .city-name {
-    font-size: clamp(4rem, 8vw, 12rem);
+    font-size: clamp(6rem, 12vw, 16rem);
     color: rgba(255, 255, 255, 0.15);
     font-weight: 800;
     text-transform: none;
     letter-spacing: -2px;
-    transform: translateY(30px);
+    transform: translateY(50px);
     opacity: 0;
-    animation: slideUp 1s ease-out infinite;
+    animation: slideUp 2s ease-out infinite;
   }
 
   .city-image-container {
@@ -3034,12 +3124,12 @@
 
   @keyframes slideUp {
     0% {
-      transform: translateY(30px);
+      transform: translateY(80px);
       opacity: 0;
     }
 
     50% {
-      transform: translateY(0);
+      transform: translateY(50px);
       opacity: 1;
     }
 
@@ -3175,8 +3265,8 @@
     padding: 20px 0 60px;
     overflow: hidden;
     width: 100%;
-    max-width: 1035px;
-    /* Accommodates 2 cards with gap (495px * 2 + 45px) */
+    max-width: 870px;
+    /* Accommodates main card (495px) + gap (45px) + part of smaller card (330px) */
     margin: 0 auto;
     position: relative;
   }
@@ -3187,6 +3277,7 @@
     transition: transform 0.5s ease-in-out;
     gap: 45px;
     will-change: transform;
+    padding: 20px 0;
   }
 
   .focus-card {
@@ -3198,8 +3289,9 @@
     background: #ffffff;
     backdrop-filter: blur(2px);
     transition: all 0.5s ease-in-out;
-    transform: scale(0.95);
-    opacity: 0.7;
+    transform: scale(0.67);
+    /* Scale for inactive smaller cards (330/495 = ~0.67) */
+    opacity: 0.5;
   }
 
   .focus-card.active {
@@ -3211,15 +3303,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .carousel-nav {
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+    text-align: center;
   }
 
   .carousel-prev,
@@ -3239,6 +3325,7 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    opacity: 0.7;
   }
 
   .carousel-prev {
@@ -3251,7 +3338,7 @@
 
   .carousel-prev:disabled,
   .carousel-next:disabled {
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: not-allowed;
   }
 
@@ -3259,6 +3346,7 @@
   .carousel-next:not(:disabled):hover {
     background: #A56CFF;
     transform: translateY(-50%) scale(1.1);
+    opacity: 1;
   }
 
   .carousel-dots {
@@ -3286,32 +3374,6 @@
 
   .carousel-dot:hover {
     background: rgba(165, 108, 255, 0.5);
-  }
-
-  @media (max-width: 1680px) {
-    .focus-carousel-container {
-      max-width: 845px;
-      /* Accommodates 2 cards with gap (400px * 2 + 45px) */
-    }
-
-    .focus-card {
-      flex: 0 0 400px;
-      height: 242px;
-      padding: 35px 60px;
-    }
-  }
-
-  @media (max-width: 1366px) {
-    .focus-carousel-container {
-      max-width: 685px;
-      /* Accommodates 2 cards with gap (320px * 2 + 45px) */
-    }
-
-    .focus-card {
-      flex: 0 0 320px;
-      height: 193px;
-      padding: 25px 45px;
-    }
   }
 
   .focus-icon {
@@ -3324,7 +3386,7 @@
     background: #A56CFF;
     border-radius: 14px;
     padding: 15px;
-    margin-top: 5px;
+    margin-bottom: 20px;
   }
 
   .focus-icon img {
@@ -3334,174 +3396,44 @@
   }
 
   .focus-content {
-    flex: 1;
+    width: 100%;
+    text-align: center;
   }
 
-  .focus-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #A56CFF;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-
-  .focus-description {
-    color: #A56CFF;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  /* Carousel Navigation */
-  .carousel-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-  }
-
-  .carousel-dots {
-    display: flex;
-    gap: 8px;
-  }
-
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .carousel-dot.active {
-    background: #A56CFF;
-    transform: scale(1.2);
-  }
-
-  .carousel-prev,
-  .carousel-next {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-
-  .carousel-prev {
-    left: -60px;
-  }
-
-  .carousel-next {
-    right: -60px;
-  }
-
-  .carousel-prev:disabled,
-  .carousel-next:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .carousel-prev:not(:disabled):hover,
-  .carousel-next:not(:disabled):hover {
-    background: #A56CFF;
-    transform: translateY(-50%) scale(1.1);
-  }
-
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 30px;
-  }
-
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-
-  .carousel-dot.active {
-    background: #ffffff;
-    transform: scale(1.2);
-  }
-
-  .carousel-dot:hover {
-    background: rgba(165, 108, 255, 0.5);
-  }
-
+  /* Responsive adjustments */
   @media (max-width: 991px) {
-    .focus-section {
-      padding: 80px 0;
+    .focus-carousel-container {
+      max-width: 650px;
     }
 
-    .section-title {
-      font-size: 36px;
-    }
-
-    .focus-card-inner {
-      min-height: 200px;
-      padding: 25px;
-      gap: 20px;
-    }
-
-    .focus-title {
-      font-size: 24px;
-    }
-
-    .focus-icon {
-      width: 60px;
-      min-width: 60px;
-      height: 60px;
+    .focus-card {
+      flex: 0 0 400px;
+      height: 242px;
+      padding: 35px 60px;
     }
   }
 
   @media (max-width: 767px) {
-    .focus-section {
-      padding: 60px 0;
+    .focus-carousel-container {
+      max-width: 480px;
     }
 
-    .section-title {
-      font-size: 32px;
+    .focus-card {
+      flex: 0 0 350px;
+      height: 212px;
+      padding: 30px 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .focus-carousel-container {
+      max-width: 340px;
     }
 
-    .focus-card-inner {
-      flex-direction: column;
-      min-height: auto;
-      padding: 25px;
-      gap: 15px;
-    }
-
-    .focus-icon {
-      width: 60px;
-      min-width: 60px;
-      height: 60px;
-      margin: 0 0 10px 0;
-    }
-
-    .focus-title {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .focus-description {
-      font-size: 14px;
+    .focus-card {
+      flex: 0 0 300px;
+      height: 182px;
+      padding: 25px 40px;
     }
   }
 
@@ -3885,7 +3817,7 @@
     element.style.backgroundColor = color;
   }
 
-  // Focus Area Carousel Functionality
+
   function initFocusCarousel() {
     const carousel = document.querySelector('.focus-carousel');
     const cards = Array.from(document.querySelectorAll('.focus-card'));
@@ -3896,14 +3828,13 @@
     if (!carousel || cards.length === 0) return;
 
     let currentIndex = 0;
-    const visibleCards = 2; // Changed to show 2 cards
-    const totalSlides = Math.max(0, cards.length - visibleCards + 1);
+    const totalSlides = cards.length;
 
     // Clear existing dots
     if (dotsContainer) {
         dotsContainer.innerHTML = '';
 
-        // Create dots based on number of possible positions
+        // Create dots based on number of cards
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
             dot.classList.add('carousel-dot');
@@ -3922,14 +3853,21 @@
 
         // Update active states for cards
         cards.forEach((card, i) => {
-            if (i >= currentIndex && i < currentIndex + visibleCards) {
+            if (i === currentIndex) {
+                // Main active card
                 card.classList.add('active');
                 card.style.opacity = '1';
                 card.style.transform = 'scale(1)';
-            } else {
+            } else if (i === currentIndex + 1) {
+                // Next smaller card (visible on the right)
                 card.classList.remove('active');
                 card.style.opacity = '0.7';
-                card.style.transform = 'scale(0.95)';
+                card.style.transform = 'scale(0.67)'; // Scaled down to 330px width (330/495 = ~0.67)
+            } else {
+                // Other cards
+                card.classList.remove('active');
+                card.style.opacity = '0.5';
+                card.style.transform = 'scale(0.67)';
             }
         });
 
@@ -4008,12 +3946,36 @@
             goToSlide(currentIndex + 1);
         }
     });
+
+    // Add swipe functionality for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum swipe distance
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - go to next
+            if (currentIndex < totalSlides - 1) {
+                goToSlide(currentIndex + 1);
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - go to previous
+            if (currentIndex > 0) {
+                goToSlide(currentIndex - 1);
+            }
+        }
+    }
 }
 
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initFocusCarousel();
-});
 
   document.addEventListener('DOMContentLoaded', function() {
     // Initialize Focus Area Carousel
@@ -4126,29 +4088,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 
-<!-- Three.js Library - Local Version -->
-<script src="{{ asset('js/lib/three.min.js') }}"></script>
-<!-- Globe animation script -->
-<script src="{{ asset('js/globe.js') }}"></script>
-
-<style>
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.05);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .pulse {
-    animation: pulse 0.5s ease-in-out;
-  }
-</style>
-@endsection
 @endsection
