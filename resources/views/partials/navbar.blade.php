@@ -1,3 +1,7 @@
+<!-- Font Preload -->
+<link rel="preload" href="{{ asset('fonts/SpaceGrotesk-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ asset('fonts/SpaceGrotesk-Medium.woff2') }}" as="font" type="font/woff2" crossorigin>
+
 <nav class="navbar brand-navbar" id="navbar">
   <div class="container-fluid px-3">
     <div class="logo">
@@ -22,7 +26,7 @@
       </div>
 
       <div class="navbar-button">
-        <a href="#registration" class="book-seat-btn">Book Your Seat</a>
+        <a href="#registration" class="book-seat-btn">Register Now</a>
       </div>
 
       <div class="hamburger-menu">
@@ -51,10 +55,20 @@
 </nav>
 
 <style>
+  /* Global Font Settings */
+  :root {
+    --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * {
+    font-family: var(--font-primary);
+  }
+
   @font-face {
     font-family: 'Space Grotesk';
-    src: url('{{ asset("fonts/SpaceGrotesk-Regular.woff2") }}') format('woff2'),
-    url('{{ asset("fonts/SpaceGrotesk-Regular.woff") }}') format('woff');
+    src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+      url('/fonts/SpaceGrotesk-Regular.woff') format('woff'),
+      url('/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -62,9 +76,10 @@
 
   @font-face {
     font-family: 'Space Grotesk';
-    src: url('{{ asset("fonts/SpaceGrotesk-Medium.woff2") }}') format('woff2'),
-    url('{{ asset("fonts/SpaceGrotesk-Medium.woff") }}') format('woff');
-    font-weight: 500;
+    src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+      url('/fonts/SpaceGrotesk-Medium.woff') format('woff'),
+      url('/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
@@ -142,8 +157,8 @@
   }
 
   .site-menu ul li a {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
+    font-family: var(--font-primary);
+    font-size: 18px !important;
     font-weight: 400;
     line-height: 100%;
     letter-spacing: 0;
@@ -159,7 +174,7 @@
 
   /* Button Styles */
   .book-seat-btn {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
@@ -211,7 +226,7 @@
   }
 
   .mobile-menu ul li a {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
@@ -223,7 +238,7 @@
   }
 
   .mobile-book-btn {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 400;
     line-height: 100%;
