@@ -560,110 +560,102 @@
   .city-skyline-section {
     position: relative;
     width: 100%;
-    height: 80vh;
-    background-color: #ffffff;
+    height: 100vh;
     overflow: hidden;
+    background: #ffffff;
   }
 
   .city-content {
     position: relative;
     width: 100%;
     height: 100%;
+  }
+
+  .text-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+    z-index: 1;
   }
 
   .event-date-top {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    font-size: 24px;
-    font-weight: 600;
-    color: #A56CFF;
-    z-index: 3;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    background: linear-gradient(45deg, #472E56, #9B65BC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    margin-top: 15%;
+    transform: translateY(30px);
     opacity: 0;
     animation: fadeInDate 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
-
-  .city-text-wrapper {
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    bottom: 45%;
-    /* Position for the text to appear over the image but above the main buildings */
   }
 
   .city-name {
-    font-size: 250px;
-    font-weight: 800;
+    font-size: clamp(8rem, 15vw, 20rem);
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    -webkit-text-stroke: 3px #A56CFF;
+    -webkit-text-stroke: 2px #A56CFF;
+    text-stroke: 2px #A56CFF;
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: -2px;
     opacity: 0;
-    transform: translateY(100%);
-    animation: sunriseText 7s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(165, 108, 255, 0.3);
-    line-height: 0.8;
+    transform: translateY(30%);
+    animation: sunriseText 4s ease-out forwards;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 90%;
+    text-align: center;
   }
 
   .city-image-container {
     position: absolute;
-    top: 0;
+    top: 135px;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    padding-top: 15%;
-    /* Create space at the top for the text to appear over */
+    z-index: 2;
   }
 
   .city-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: bottom center;
+    object-fit: contain;
+    animation: fadeInImage 2s ease-out forwards;
   }
 
   @keyframes sunriseText {
     0% {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(100%);
-    }
-
-    15% {
-      opacity: 0.5;
-      transform: translateY(50%);
     }
 
     30% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(80%);
     }
 
-    70% {
+    60% {
       opacity: 1;
-      transform: translateY(0);
-    }
-
-    85% {
-      opacity: 0.5;
-      transform: translateY(50%);
+      transform: translateY(60%);
     }
 
     100% {
-      opacity: 0;
-      transform: translateY(100%);
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
   @keyframes fadeInDate {
     0% {
-      opacity: 0;
-      transform: translateY(-20px);
+      opacity: 1;
+      transform: translateY(-10px);
     }
 
     100% {
@@ -672,67 +664,45 @@
     }
   }
 
-  @media (max-width: 1200px) {
-    .city-name {
-      font-size: 200px;
-      -webkit-text-stroke: 2.5px #A56CFF;
+  @keyframes fadeInImage {
+    0% {
+      opacity: 0;
     }
 
-    .event-date-top {
-      font-size: 20px;
-    }
-
-    .city-image-container {
-      padding-top: 20%;
+    100% {
+      opacity: 1;
     }
   }
 
-  @media (max-width: 991px) {
+  /* Responsive Styles */
+  @media (max-width: 768px) {
     .city-skyline-section {
-      height: 60vh;
-    }
-
-    .city-name {
-      font-size: 140px;
-      -webkit-text-stroke: 2px #A56CFF;
+      height: 70vh;
     }
 
     .event-date-top {
-      font-size: 18px;
-      top: 20%;
+      margin-top: 20%;
     }
 
-    .city-text-wrapper {
-      bottom: 40%;
-    }
-
-    .city-image-container {
-      padding-top: 25%;
+    .city-name {
+      font-size: clamp(4rem, 10vw, 15rem);
+      bottom: 35%;
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 480px) {
     .city-skyline-section {
       height: 50vh;
     }
 
-    .city-name {
-      font-size: 90px;
-      -webkit-text-stroke: 1.5px #A56CFF;
-      letter-spacing: 4px;
-    }
-
     .event-date-top {
-      font-size: 16px;
-      left: 5%;
+      font-size: 1.25rem;
+      margin-top: 25%;
     }
 
-    .city-text-wrapper {
-      bottom: 35%;
-    }
-
-    .city-image-container {
-      padding-top: 30%;
+    .city-name {
+      font-size: clamp(3rem, 8vw, 10rem);
+      bottom: 20%;
     }
   }
 
@@ -1567,6 +1537,10 @@
       margin: 20px auto;
     }
   }
+
+  .text-tickets {
+    color: #A56CFF;
+  }
 </style>
 
 <!-- Navbar -->
@@ -1856,8 +1830,8 @@
   <!-- City Skyline Section -->
   <section class="city-skyline-section">
     <div class="city-content">
-      <div class="event-date-top">4th - 5th June 2025</div>
-      <div class="city-text-wrapper">
+      <div class="text-overlay">
+        <div class="event-date-top">4th - 5th June 2025</div>
         <h2 class="city-name">Mumbai</h2>
       </div>
       <div class="city-image-container">
@@ -1872,10 +1846,7 @@
       <div class="dot-container"></div>
     </div>
     <div class="container">
-      <div class="text-center text-white mb-5">
-        <h6 class="section-subtitle">WHAT WE COVER</h6>
-        <h1 class="section-title">Broad Focus Areas</h1>
-      </div>
+      <h1 class="bf-title">Broad Focus Areas</h1>
       <div class="focus-carousel-container">
         <div class="focus-carousel">
           <!-- First card active by default -->
@@ -1892,7 +1863,6 @@
             </div>
           </div>
 
-          <!-- Rest of the cards -->
           <div class="focus-card">
             <div class="focus-card-inner">
               <div class="focus-icon">
@@ -1961,7 +1931,7 @@
     <div class="container">
       <div class="section-headers mb-5">
         <h6 class="section-subtitle">TICKETS</h6>
-        <h2 class="section-title">Secure your Access to FINSEC</h2>
+        <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
       </div>
       <div class="tickets-grid">
         <!-- First Row -->
@@ -2992,54 +2962,46 @@
   .city-skyline-section {
     position: relative;
     width: 100%;
-    height: 80vh;
-    background-color: #ffffff;
+    height: 100vh;
     overflow: hidden;
+    background: #ffffff;
   }
 
   .city-content {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
   }
 
   .event-date-top {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    font-size: 24px;
-    font-weight: 600;
-    color: #A56CFF;
-    z-index: 3;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transform: translateY(30px);
     opacity: 0;
-    animation: fadeInDate 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
-
-  .city-text-wrapper {
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    bottom: 45%;
-    /* Position for the text to appear over the image but above the main buildings */
+    animation: slideUp 0.8s ease-out infinite;
   }
 
   .city-name {
-    font-size: 250px;
+    font-size: clamp(4rem, 8vw, 12rem);
+    color: rgba(255, 255, 255, 0.15);
     font-weight: 800;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    -webkit-text-stroke: 3px #A56CFF;
+    text-transform: none;
+    letter-spacing: -2px;
+    transform: translateY(30px);
     opacity: 0;
-    transform: translateY(100%);
-    animation: sunriseText 7s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(165, 108, 255, 0.3);
-    line-height: 0.8;
+    animation: slideUp 1s ease-out infinite;
   }
 
   .city-image-container {
@@ -3048,133 +3010,109 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    padding-top: 15%;
-    /* Create space at the top for the text to appear over */
+    z-index: 2;
   }
 
   .city-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom center;
+    opacity: 0;
+    animation: fadeInImage 2s ease-out forwards;
+    transform-origin: bottom;
   }
 
-  @keyframes sunriseText {
-    0% {
+  @keyframes fadeInText {
+    from {
       opacity: 0;
-      transform: translateY(100%);
     }
 
-    15% {
-      opacity: 0.5;
-      transform: translateY(50%);
-    }
-
-    30% {
+    to {
       opacity: 1;
-      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
     }
 
-    70% {
+    50% {
+      transform: translateY(0);
       opacity: 1;
-      transform: translateY(0);
-    }
-
-    85% {
-      opacity: 0.5;
-      transform: translateY(50%);
     }
 
     100% {
+      transform: translateY(30px);
       opacity: 0;
-      transform: translateY(100%);
     }
   }
 
-  @keyframes fadeInDate {
+  @keyframes fadeInImage {
     0% {
       opacity: 0;
-      transform: translateY(-20px);
+      transform: scale(1.1);
     }
 
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1);
     }
   }
 
-  @media (max-width: 1200px) {
-    .city-name {
-      font-size: 200px;
-      -webkit-text-stroke: 2.5px #A56CFF;
+  /* Floating animation for the city image */
+  .city-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    animation: shimmer 3s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
     }
 
-    .event-date-top {
-      font-size: 20px;
-    }
-
-    .city-image-container {
-      padding-top: 20%;
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
     }
   }
 
-  @media (max-width: 991px) {
+  /* Responsive Styles */
+  @media (max-width: 768px) {
     .city-skyline-section {
-      height: 60vh;
+      height: 70vh;
+    }
+
+    .text-overlay {
+      left: 5%;
+      width: 90%;
     }
 
     .city-name {
-      font-size: 140px;
-      -webkit-text-stroke: 2px #A56CFF;
-    }
-
-    .event-date-top {
-      font-size: 18px;
-      top: 20%;
-    }
-
-    .city-text-wrapper {
-      bottom: 40%;
-    }
-
-    .city-image-container {
-      padding-top: 25%;
+      font-size: clamp(3rem, 6vw, 8rem);
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 480px) {
     .city-skyline-section {
       height: 50vh;
     }
 
-    .city-name {
-      font-size: 90px;
-      -webkit-text-stroke: 1.5px #A56CFF;
-      letter-spacing: 4px;
-    }
-
     .event-date-top {
-      font-size: 16px;
-      left: 5%;
+      font-size: 1.25rem;
     }
 
-    .city-text-wrapper {
-      bottom: 35%;
-    }
-
-    .city-image-container {
-      padding-top: 30%;
+    .city-name {
+      font-size: clamp(2.5rem, 5vw, 6rem);
     }
   }
 
-  /* Focus Section Styles */
-  .focus-section {
-    padding: 100px 0;
-    position: relative;
-    background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
-    overflow: hidden;
-  }
 
   .section-subtitle {
     color: #A56CFF;
@@ -3190,6 +3128,16 @@
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 50px;
+  }
+
+  .bf-title {
+    font-size: 90px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 100px;
+    letter-spacing: -3%;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
   }
 
   /* Dotted Background Animation */
