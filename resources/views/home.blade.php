@@ -416,211 +416,86 @@
 
   /* Updated Callout Section Styles */
   .callout-section {
-    padding: 60px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .callout-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #a56cff 50%, #cff300 50%);
-  }
-
-  .callout-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .left-content {
-    background: #fff;
-    border-radius: 20px 0 0 20px;
-    padding: 20px 20px 0 40px;
-    box-shadow: -10px 10px 30px rgba(24, 24, 24, 67%);
-  }
-
-  .right-content {
-    background: #cff300;
-    border-radius: 0 20px 20px 0;
-    padding: 40px;
-    height: 100%;
+    padding: 0;
+    /* Removed padding to allow full-width */
+    background: #ffffff;
+    min-height: 100vh;
+    /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     overflow: hidden;
+    /* Prevent any potential overflow */
   }
 
-  /* Circuit overlay for right content */
-  .right-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+  .callout-section .container {
+    padding: 0;
+    /* Remove container padding */
+    max-width: 100%;
+    /* Allow container to be full width */
+    width: 100%;
+  }
+
+  .callout-image-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+  }
+
+  .callout-image-wrapper a {
+    display: block;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80h-80z' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3Cpath d='M30 30h40v40h-40z' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3Cpath d='M10 50h30M60 50h30M50 10v30M50 60v30' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3C/svg%3E");
-    opacity: 0.2;
+    transition: transform 0.3s ease;
   }
 
-  .callout-header {
-    margin-bottom: 30px;
+  .callout-image-wrapper:hover a {
+    transform: scale(1.02);
+    /* Subtle zoom effect on hover */
   }
 
-  .dsci-logo {
-    height: 15vh;
-    margin-bottom: 10px;
+  .callout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio while covering full area */
+    border-radius: 0;
+    /* Remove border radius for full-screen effect */
+    box-shadow: none;
+    /* Remove shadow for full-screen effect */
   }
 
-  .nasscom-text {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-  }
-
-  .callout-main {
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  .callout-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #05102D;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-
-  .event-branding {
-    margin-bottom: 30px;
-  }
-
-  .event-name {
-    font-size: 48px;
-    font-weight: 800;
-    color: #A56CFF;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .event-separator {
-    display: inline-block;
-    width: 30px;
-    height: 4px;
-    background-color: #A56CFF;
-    margin: 0 10px;
-  }
-
-  .callout-message {
-    margin-bottom: 0;
-  }
-
-  .callout-message p {
-    font-size: 24px;
-    color: #05102D;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .nominate-btn {
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .nominate-btn:hover {
-    background-color: #A56CFF;
-    color: #fff;
-    transform: translateY(-2px);
-  }
-
-  .event-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: right;
-  }
-
-  .detail-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 15px;
-  }
-
-  .detail-item i {
-    color: #05102D;
-    font-size: 24px;
-  }
-
-  .detail-item span {
-    font-size: 20px;
-    color: #05102D;
-    font-weight: 600;
-  }
-
-  @media (max-width: 991px) {
-    .callout-section::before {
-      background: #f8f9fa;
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .callout-section {
+      min-height: auto;
     }
 
-    .left-content,
-    .right-content {
+    .callout-image-wrapper {
+      height: auto;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .callout-image {
       border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .right-content {
-      background: #cff300;
-    }
-
-    .callout-title {
-      font-size: 36px;
-    }
-
-    .event-name {
-      font-size: 40px;
-    }
-
-    .callout-message p {
-      font-size: 20px;
-    }
-
-    .event-details {
-      text-align: center;
-    }
-
-    .detail-item {
-      justify-content: center;
+      /* Restore border radius for smaller screens */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      /* Restore shadow for smaller screens */
     }
   }
 
   @media (max-width: 768px) {
-    .callout-section {
-      padding: 40px 0;
+    .callout-image-wrapper {
+      max-width: 95%;
+      margin: 30px auto;
     }
+  }
 
-    .left-content,
-    .right-content {
-      padding: 30px;
-    }
-
-    .event-name {
-      font-size: 32px;
-    }
-
-    .detail-item span {
-      font-size: 18px;
+  @media (max-width: 480px) {
+    .callout-image-wrapper {
+      margin: 20px auto;
     }
   }
 
@@ -1610,54 +1485,86 @@
 
   /* Callout Section Styles */
   .callout-section {
-    padding: 60px 0;
+    padding: 0;
+    /* Removed padding to allow full-width */
     background: #ffffff;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Prevent any potential overflow */
+  }
+
+  .callout-section .container {
+    padding: 0;
+    /* Remove container padding */
+    max-width: 100%;
+    /* Allow container to be full width */
+    width: 100%;
   }
 
   .callout-image-wrapper {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    transition: all 0.3s ease;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
   }
 
   .callout-image-wrapper a {
     display: block;
     width: 100%;
+    height: 100%;
     transition: transform 0.3s ease;
   }
 
   .callout-image-wrapper:hover a {
-    transform: translateY(-5px);
+    transform: scale(1.02);
+    /* Subtle zoom effect on hover */
   }
 
   .callout-image {
     width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio while covering full area */
+    border-radius: 0;
+    /* Remove border radius for full-screen effect */
+    box-shadow: none;
+    /* Remove shadow for full-screen effect */
   }
 
   /* Responsive Styles */
   @media (max-width: 1200px) {
+    .callout-section {
+      min-height: auto;
+    }
+
     .callout-image-wrapper {
+      height: auto;
       max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .callout-image {
+      border-radius: 20px;
+      /* Restore border radius for smaller screens */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      /* Restore shadow for smaller screens */
     }
   }
 
   @media (max-width: 768px) {
-    .callout-section {
-      padding: 40px 0;
-    }
-
     .callout-image-wrapper {
       max-width: 95%;
+      margin: 30px auto;
     }
   }
 
   @media (max-width: 480px) {
-    .callout-section {
-      padding: 30px 0;
+    .callout-image-wrapper {
+      margin: 20px auto;
     }
   }
 </style>
@@ -1862,54 +1769,86 @@
   <style>
     /* Callout Section Styles */
     .callout-section {
-      padding: 60px 0;
+      padding: 0;
+      /* Removed padding to allow full-width */
       background: #ffffff;
+      min-height: 100vh;
+      /* Full viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      /* Prevent any potential overflow */
+    }
+
+    .callout-section .container {
+      padding: 0;
+      /* Remove container padding */
+      max-width: 100%;
+      /* Allow container to be full width */
+      width: 100%;
     }
 
     .callout-image-wrapper {
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      transition: all 0.3s ease;
+      height: 100vh;
+      /* Full viewport height */
+      position: relative;
     }
 
     .callout-image-wrapper a {
       display: block;
       width: 100%;
+      height: 100%;
       transition: transform 0.3s ease;
     }
 
     .callout-image-wrapper:hover a {
-      transform: translateY(-5px);
+      transform: scale(1.02);
+      /* Subtle zoom effect on hover */
     }
 
     .callout-image {
       width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      object-fit: cover;
+      /* Maintain aspect ratio while covering full area */
+      border-radius: 0;
+      /* Remove border radius for full-screen effect */
+      box-shadow: none;
+      /* Remove shadow for full-screen effect */
     }
 
     /* Responsive Styles */
     @media (max-width: 1200px) {
+      .callout-section {
+        min-height: auto;
+      }
+
       .callout-image-wrapper {
+        height: auto;
         max-width: 90%;
+        margin: 40px auto;
+      }
+
+      .callout-image {
+        border-radius: 20px;
+        /* Restore border radius for smaller screens */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /* Restore shadow for smaller screens */
       }
     }
 
     @media (max-width: 768px) {
-      .callout-section {
-        padding: 40px 0;
-      }
-
       .callout-image-wrapper {
         max-width: 95%;
+        margin: 30px auto;
       }
     }
 
     @media (max-width: 480px) {
-      .callout-section {
-        padding: 30px 0;
+      .callout-image-wrapper {
+        margin: 20px auto;
       }
     }
   </style>
@@ -2562,6 +2501,7 @@
     body {
       margin-bottom: 130px;
     }
+
   }
 
   /* Add bottom margin to body for fixed panel */
@@ -2906,213 +2846,88 @@
     }
   }
 
-  /* Updated Callout Section Styles */
+  /* Callout Section Styles */
   .callout-section {
-    padding: 60px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .callout-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #a56cff 50%, #cff300 50%);
-  }
-
-  .callout-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .left-content {
-    background: #fff;
-    border-radius: 20px 0 0 20px;
-    padding: 20px 20px 0 40px;
-    box-shadow: -10px 10px 30px rgba(24, 24, 24, 67%);
-  }
-
-  .right-content {
-    background: #cff300;
-    border-radius: 0 20px 20px 0;
-    padding: 40px;
-    height: 100%;
+    padding: 0;
+    /* Removed padding to allow full-width */
+    background: #ffffff;
+    min-height: 100vh;
+    /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     overflow: hidden;
+    /* Prevent any potential overflow */
   }
 
-  /* Circuit overlay for right content */
-  .right-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+  .callout-section .container {
+    padding: 0;
+    /* Remove container padding */
+    max-width: 100%;
+    /* Allow container to be full width */
+    width: 100%;
+  }
+
+  .callout-image-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+  }
+
+  .callout-image-wrapper a {
+    display: block;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80h-80z' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3Cpath d='M30 30h40v40h-40z' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3Cpath d='M10 50h30M60 50h30M50 10v30M50 60v30' stroke='rgba(0,0,0,0.1)' stroke-width='1'/%3E%3C/svg%3E");
-    opacity: 0.2;
+    transition: transform 0.3s ease;
   }
 
-  .callout-header {
-    margin-bottom: 30px;
+  .callout-image-wrapper:hover a {
+    transform: scale(1.02);
+    /* Subtle zoom effect on hover */
   }
 
-  .dsci-logo {
-    height: 15vh;
-    margin-bottom: 10px;
+  .callout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio while covering full area */
+    border-radius: 0;
+    /* Remove border radius for full-screen effect */
+    box-shadow: none;
+    /* Remove shadow for full-screen effect */
   }
 
-  .nasscom-text {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-  }
-
-  .callout-main {
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  .callout-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #05102D;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-
-  .event-branding {
-    margin-bottom: 30px;
-  }
-
-  .event-name {
-    font-size: 48px;
-    font-weight: 800;
-    color: #A56CFF;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .event-separator {
-    display: inline-block;
-    width: 30px;
-    height: 4px;
-    background-color: #A56CFF;
-    margin: 0 10px;
-  }
-
-  .callout-message {
-    margin-bottom: 0;
-  }
-
-  .callout-message p {
-    font-size: 24px;
-    color: #05102D;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .nominate-btn {
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .nominate-btn:hover {
-    background-color: #A56CFF;
-    color: #fff;
-    transform: translateY(-2px);
-  }
-
-  .event-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: right;
-  }
-
-  .detail-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 15px;
-  }
-
-  .detail-item i {
-    color: #05102D;
-    font-size: 24px;
-  }
-
-  .detail-item span {
-    font-size: 20px;
-    color: #05102D;
-    font-weight: 600;
-  }
-
-  @media (max-width: 991px) {
-    .callout-section::before {
-      background: #f8f9fa;
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .callout-section {
+      min-height: auto;
     }
 
-    .left-content,
-    .right-content {
+    .callout-image-wrapper {
+      height: auto;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .callout-image {
       border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .right-content {
-      background: #cff300;
-    }
-
-    .callout-title {
-      font-size: 36px;
-    }
-
-    .event-name {
-      font-size: 40px;
-    }
-
-    .callout-message p {
-      font-size: 20px;
-    }
-
-    .event-details {
-      text-align: center;
-    }
-
-    .detail-item {
-      justify-content: center;
+      /* Restore border radius for smaller screens */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      /* Restore shadow for smaller screens */
     }
   }
 
   @media (max-width: 768px) {
-    .callout-section {
-      padding: 40px 0;
+    .callout-image-wrapper {
+      max-width: 95%;
+      margin: 30px auto;
     }
+  }
 
-    .left-content,
-    .right-content {
-      padding: 30px;
-    }
-
-    .event-name {
-      font-size: 32px;
-    }
-
-    .detail-item span {
-      font-size: 18px;
+  @media (max-width: 480px) {
+    .callout-image-wrapper {
+      margin: 20px auto;
     }
   }
 
