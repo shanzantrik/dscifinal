@@ -37,29 +37,85 @@
   /* Hero Section Styles */
   .hero-section {
     position: relative;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background: transparent;
+    background-color: #05102D;
+    /* Fallback color */
   }
 
+  /* Ensure video covers the entire section */
   .video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    overflow: hidden;
+    z-index: 0;
   }
 
   .video-background video {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: cover;
-    position: relative;
-    z-index: 2;
+  }
+
+  /* Add fallback styles in case video fails to load */
+  .hero-section.video-fallback {
+    background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 991px) {
+    .hero-section {
+      height: 80vh;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-section {
+      height: 70vh;
+    }
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    .video-background video {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .video-background video {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      height: 60vh;
+    }
+  }
+
+  /* iOS specific fix for video sizing */
+  @supports (-webkit-touch-callout: none) {
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
   }
 
   /* Remove any background colors */
@@ -937,33 +993,6 @@
     }
   }
 
-  /* Add fallback styles in case video fails to load */
-  .hero-section.video-fallback {
-    background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
-  }
-
-  /* Ensure video covers the entire section */
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover;
-  }
-
   /* Updated Tickets Section Styles */
   .tickets-section {
     padding: 100px 0;
@@ -1537,6 +1566,46 @@
       line-height: 50px;
     }
   }
+
+  .bf-title {
+    font-size: clamp(2.5rem, 5vw + 1.5rem, 5.625rem);
+    /* Fluid sizing from 40px to 90px */
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 1200px) {
+    .bf-title {
+      font-size: clamp(2.25rem, 4.5vw + 1rem, 4.5rem);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .bf-title {
+      font-size: clamp(2rem, 4vw + 1rem, 3.75rem);
+      line-height: 1.2;
+      padding: 0 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bf-title {
+      font-size: clamp(1.75rem, 3.5vw + 1rem, 2.625rem);
+      line-height: 1.3;
+      padding: 0 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
 </style>
 
 <!-- Navbar -->
@@ -1556,20 +1625,67 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.getElementById('hero-video');
+      const heroSection = document.querySelector('.hero-section');
+
+      // Function to handle video sizing
+      function resizeVideo() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const windowAspect = windowWidth / windowHeight;
+
+        // Get video's native aspect ratio once metadata is loaded
+        if (video.videoWidth && video.videoHeight) {
+          const videoAspect = video.videoWidth / video.videoHeight;
+
+          if (windowAspect > videoAspect) {
+            // Window is wider than video
+            video.style.width = '100%';
+            video.style.height = 'auto';
+          } else {
+            // Window is taller than video
+            video.style.width = 'auto';
+            video.style.height = '100%';
+          }
+        }
+      }
+
+      // Call on page load and whenever video metadata loads
+      video.addEventListener('loadedmetadata', resizeVideo);
+      window.addEventListener('resize', resizeVideo);
 
       // Error handling for video
       video.addEventListener('error', function(e) {
           console.error('Error loading video:', e);
           // Add a CSS class to maintain the section's appearance even if video fails to load
-          document.querySelector('.hero-section').classList.add('video-fallback');
+          heroSection.classList.add('video-fallback');
       });
-  });
+
+      // For mobile devices, consider pausing video when not in viewport to save battery
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (video.paused) video.play();
+            } else {
+              if (!video.paused) video.pause();
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(video);
+      }
+    });
   </script>
 
   <style>
-    /* Add fallback styles in case video fails to load */
-    .hero-section.video-fallback {
-      background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #05102D;
+      /* Fallback color */
     }
 
     /* Ensure video covers the entire section */
@@ -1580,18 +1696,70 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
+      z-index: 0;
     }
 
     .video-background video {
       position: absolute;
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%);
       min-width: 100%;
       min-height: 100%;
       width: auto;
       height: auto;
-      transform: translateX(-50%) translateY(-50%);
       object-fit: cover;
+    }
+
+    /* Add fallback styles in case video fails to load */
+    .hero-section.video-fallback {
+      background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .hero-section {
+        height: 80vh;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-section {
+        height: 70vh;
+      }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .video-background video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-aspect-ratio: 9/16) {
+      .video-background video {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        height: 60vh;
+      }
+    }
+
+    /* iOS specific fix for video sizing */
+    @supports (-webkit-touch-callout: none) {
+      .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
     }
   </style>
 
@@ -1622,7 +1790,7 @@
                 of financial security.</p>
             </div>
             <div class="about-buttons">
-              <a href="#" class="btn btn-read-more">Read More</a>
+              <a href="#" class="btn btn-report">Read More</a>
               <a href="#" class="btn btn-report">FINSEC 25 Report</a>
             </div>
           </div>
@@ -1914,7 +2082,7 @@
     <div class="container">
       <div class="section-headers mb-5">
         <h6 class="section-subtitle">TICKETS</h6>
-        <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
+        <h2 class="section-title">Secure your <span class="text-tickets">access</span> to FINSEC</h2>
       </div>
       <div class="tickets-grid">
         <!-- First Row -->
@@ -2319,7 +2487,9 @@
   </script>
 
   <!-- Footer -->
-  @include('partials.footer')
+  <div id="contact">
+    @include('partials.footer')
+  </div>
 </div>
 
 @section('custom-css')
@@ -3089,7 +3259,7 @@
     font-weight: 800;
     text-transform: none;
     letter-spacing: -2px;
-    transform: translateY(50px);
+    transform: translateY(-30px);
     opacity: 0;
     animation: slideUp 2s ease-out infinite;
   }
@@ -3221,13 +3391,43 @@
   }
 
   .bf-title {
-    font-size: 90px;
+    font-size: clamp(2.5rem, 5vw + 1.5rem, 5.625rem);
+    /* Fluid sizing from 40px to 90px */
     font-weight: 700;
     color: #ffffff;
-    line-height: 100px;
-    letter-spacing: -3%;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     font-family: 'Space Grotesk', sans-serif;
     text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 1200px) {
+    .bf-title {
+      font-size: clamp(2.25rem, 4.5vw + 1rem, 4.5rem);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .bf-title {
+      font-size: clamp(2rem, 4vw + 1rem, 3.75rem);
+      line-height: 1.2;
+      padding: 0 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bf-title {
+      font-size: clamp(1.75rem, 3.5vw + 1rem, 2.625rem);
+      line-height: 1.3;
+      padding: 0 0.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   /* Dotted Background Animation */

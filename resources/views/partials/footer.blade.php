@@ -37,12 +37,12 @@
               <a href="#" class="btn btn-primary w-100">Room Reservation</a>
             </div>
           </div>
-          <div class="map-container">
+          {{-- <div class="map-container">
             <!-- Google Map will be embedded here -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3267243922964!2d72.90550731543552!3d19.133727287059277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7f189efc039%3A0x9ebbdeaea9ec24ae!2sThe%20Westin%20Mumbai%20Powai%20Lake!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
               width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+          </div> --}}
         </div>
       </div>
 
@@ -53,7 +53,8 @@
               <h3>For Sponsorship</h3>
               <div class="contact-person d-flex align-items-center">
                 <div class="contact-img">
-                  <img src="{{ asset('images/team/vibhor.jpg') }}" alt="Vibhor Wahi" class="rounded-circle" width="80">
+                  <img src="{{ asset('images/vibhor-wahi-1.webp') }}" alt="Vibhor Wahi" class="rounded-circle"
+                    width="80">
                 </div>
                 <div class="contact-info ms-3">
                   <h5>Komal Wahi</h5>
@@ -70,7 +71,7 @@
               <h3>For Registration and other queries</h3>
               <div class="contact-person d-flex align-items-center">
                 <div class="contact-img">
-                  <img src="{{ asset('images/team/saurabh.jpg') }}" alt="Saurabh Lal" class="rounded-circle" width="80">
+                  <img src="{{ asset('images/saurabh-lal.webp') }}" alt="Saurabh Lal" class="rounded-circle" width="80">
                 </div>
                 <div class="contact-info ms-3">
                   <h5>Saurabh Lal</h5>
@@ -106,7 +107,7 @@
                 <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> for more information.
               </label>
             </div>
-            <button type="submit" class="btn btn-warning text-white w-100">SEND MESSAGE</button>
+            <button type="submit" class="button-footer w-100">SEND MESSAGE</button>
           </form>
         </div>
       </div>
@@ -255,6 +256,13 @@
     .bottom-bar .address,
     .bottom-bar .site-by {
       margin-top: 10px;
+    }
+
+    .button-footer {
+      background-color: #d0f300;
+      border-color: #d0f300;
+      font-weight: 600;
+      color: #6f1cf4;
     }
   }
 </style>

@@ -13,7 +13,7 @@
     <div class="nav-right">
       <div class="site-menu">
         <ul>
-          <li><a href="{{ route('about') }}">About</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#broadFocus">Broad Focus</a></li>
           {{-- <li><a href="{{ route('speakers') }}">Speakers</a></li>
           <li><a href="#eventSchedule">Schedule</a></li>
@@ -46,7 +46,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu">
     <ul>
-      <li><a href="{{ route('about') }}">About</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#broadFocus">Broad Focus</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#registration" class="mobile-book-btn">Book Your Seat</a></li>
