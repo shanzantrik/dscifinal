@@ -23,7 +23,7 @@
         <li><a href="https://www.dsci.in/content/dsci-excellence-awards-2025" target="_blank">Excellence Awards</a>
         </li>
         --}}
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#footer">Contact</a></li>
       </ul>
     </div>
 
