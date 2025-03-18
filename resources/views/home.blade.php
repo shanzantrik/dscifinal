@@ -893,7 +893,7 @@
 
   .section-subtitle {
     color: #A56CFF;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -1126,7 +1126,7 @@
 
   .section-subtitle {
     color: #A56CFF;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -1541,7 +1541,7 @@
   }
 
   .section-small-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: #A56CFF;
     margin-bottom: 10px;
@@ -3196,7 +3196,7 @@
   }
 
   .section-small-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: #A56CFF;
     margin-bottom: 10px;
