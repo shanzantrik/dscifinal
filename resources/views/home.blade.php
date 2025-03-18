@@ -2589,7 +2589,10 @@
   </script>
 
   <!-- Footer -->
-  @include('partials.footer')
+  <div id="footer">
+    @include('partials.footer')
+  </div>
+
 </div>
 
 @section('custom-css')
