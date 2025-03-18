@@ -1315,7 +1315,7 @@
   }
 
   .stat-item {
-    text-align: center;
+    text-align: left;
   }
 
   @media (max-width: 767px) {
@@ -1566,46 +1566,6 @@
       line-height: 50px;
     }
   }
-
-  .bf-title {
-    font-size: clamp(2.5rem, 5vw + 1.5rem, 5.625rem);
-    /* Fluid sizing from 40px to 90px */
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    font-family: 'Space Grotesk', sans-serif;
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-    width: 100%;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (max-width: 1200px) {
-    .bf-title {
-      font-size: clamp(2.25rem, 4.5vw + 1rem, 4.5rem);
-    }
-  }
-
-  @media (max-width: 767px) {
-    .bf-title {
-      font-size: clamp(2rem, 4vw + 1rem, 3.75rem);
-      line-height: 1.2;
-      padding: 0 0.75rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .bf-title {
-      font-size: clamp(1.75rem, 3.5vw + 1rem, 2.625rem);
-      line-height: 1.3;
-      padding: 0 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-  }
 </style>
 
 <!-- Navbar -->
@@ -1790,7 +1750,6 @@
                 of financial security.</p>
             </div>
             <div class="about-buttons">
-              <a href="#" class="btn btn-report">Read More</a>
               <a href="#" class="btn btn-report">FINSEC 25 Report</a>
             </div>
           </div>
@@ -1837,8 +1796,8 @@
                 <p class="stat-label">SPEAKERS</p>
               </div>
               <div class="stat-item">
-                <h3 class="stat-number">2700<span class="plus">+</span></h3>
-                <p class="stat-label">DELEGATES</p>
+                <h3 class="stat-number" style="margin: 0 0px 0px 105px;">2700<span class="plus">+</span></h3>
+                <p class="stat-label" style="margin: 0 0px 0px 125px;">DELEGATES</p>
               </div>
             </div>
           </div>
@@ -1883,7 +1842,7 @@
     }
 
     .stat-item {
-      text-align: center;
+      text-align: left;
     }
 
     @media (max-width: 767px) {
@@ -2082,7 +2041,7 @@
     <div class="container">
       <div class="section-headers mb-5">
         <h6 class="section-subtitle">TICKETS</h6>
-        <h2 class="section-title">Secure your <span class="text-tickets">access</span> to FINSEC</h2>
+        <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
       </div>
       <div class="tickets-grid">
         <!-- First Row -->
@@ -2487,9 +2446,7 @@
   </script>
 
   <!-- Footer -->
-  <div id="contact">
-    @include('partials.footer')
-  </div>
+  @include('partials.footer')
 </div>
 
 @section('custom-css')
@@ -3259,7 +3216,7 @@
     font-weight: 800;
     text-transform: none;
     letter-spacing: -2px;
-    transform: translateY(-30px);
+    transform: translateY(50px);
     opacity: 0;
     animation: slideUp 2s ease-out infinite;
   }
@@ -3391,43 +3348,13 @@
   }
 
   .bf-title {
-    font-size: clamp(2.5rem, 5vw + 1.5rem, 5.625rem);
-    /* Fluid sizing from 40px to 90px */
+    font-size: 90px;
     font-weight: 700;
     color: #ffffff;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    line-height: 100px;
+    letter-spacing: -3%;
     font-family: 'Space Grotesk', sans-serif;
     text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-    width: 100%;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (max-width: 1200px) {
-    .bf-title {
-      font-size: clamp(2.25rem, 4.5vw + 1rem, 4.5rem);
-    }
-  }
-
-  @media (max-width: 767px) {
-    .bf-title {
-      font-size: clamp(2rem, 4vw + 1rem, 3.75rem);
-      line-height: 1.2;
-      padding: 0 0.75rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .bf-title {
-      font-size: clamp(1.75rem, 3.5vw + 1rem, 2.625rem);
-      line-height: 1.3;
-      padding: 0 0.5rem;
-      margin-bottom: 1.5rem;
-    }
   }
 
   /* Dotted Background Animation */
@@ -3986,7 +3913,7 @@
   }
 
   .stat-item {
-    text-align: center;
+    text-align: left;
   }
 
   @media (max-width: 767px) {

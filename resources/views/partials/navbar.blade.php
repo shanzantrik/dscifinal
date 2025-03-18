@@ -14,7 +14,7 @@
       <div class="site-menu">
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#broadFocus">Broad Focus</a></li>
+          <li><a href="#broadFocus">Broad Focus Areas</a></li>
           {{-- <li><a href="{{ route('speakers') }}">Speakers</a></li>
           <li><a href="#eventSchedule">Schedule</a></li>
           <li><a href="#sponsors">Sponsors</a></li>
