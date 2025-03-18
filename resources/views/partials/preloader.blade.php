@@ -71,8 +71,8 @@
     align-items: center;
     position: fixed;
     z-index: 99999;
-    background: #05102d;
-    background: linear-gradient(135deg, #05102d 0%, #0a1f4d 100%);
+    background: #A56CFF;
+    background: linear-gradient(135deg, #A56CFF 0%, #5c4e60 100%);
     transition: all 0.5s ease;
   }
 
@@ -121,12 +121,12 @@
   }
 
   .front {
-    background: linear-gradient(45deg, #01B380 0%, #00d4a3 100%);
+    background: linear-gradient(45deg, #cff300 0%, #d0eb35 100%);
     transform: rotateY(0deg);
   }
 
   .back {
-    background: linear-gradient(45deg, #01B380 0%, #00d4a3 100%);
+    background: linear-gradient(45deg, #cff300 0%, #d0eb35 100%);
     transform: rotateY(180deg);
   }
 
@@ -150,7 +150,7 @@
   .edge-bit {
     width: 100%;
     height: 6.25%;
-    background: #01B380;
+    background: #d0eb35;
     position: absolute;
   }
 

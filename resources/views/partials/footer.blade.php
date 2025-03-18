@@ -101,6 +101,11 @@
     background-color: #a56cff;
     color: #fff;
     padding: 60px 0 0;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .footer * {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   .bg-dark-purple {
@@ -108,18 +113,21 @@
   }
 
   .footer h2 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 20px;
   }
 
   .footer h3 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 25px;
   }
 
   .footer p {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
     line-height: 1.6;
   }

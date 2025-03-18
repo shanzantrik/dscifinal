@@ -5,19 +5,35 @@
 @section('content')
 <!-- Add Space Grotesk font -->
 <link rel="stylesheet" href="{{ asset('css/lib/space-grotesk.css') }}">
+<!-- Add Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-  /* Global font styles */
-  body {
-    font-family: 'Space Grotesk', sans-serif;
+  /* Global font styles - Consolidated */
+  :root {
+    --font-family-base: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
+  /* Apply Space Grotesk globally with high specificity */
+  html,
+  body {
+    font-family: var(--font-family-base) !important;
+  }
+
+  /* Apply to all text elements with high specificity */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6,
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  select,
   .navbar,
   .site-menu,
   .mobile-menu,
@@ -30,8 +46,106 @@
   .about-content,
   .speaker-info,
   .timeline-content,
-  .view-all-btn {
-    font-family: 'Space Grotesk', sans-serif;
+  .view-all-btn,
+  .stat-number,
+  .stat-label,
+  .highlight-subtitle,
+  .section-title,
+  .section-subtitle,
+  .card-title,
+  .card-text,
+  .nav-link,
+  .dropdown-item,
+  .form-label,
+  .form-control,
+  .focus-title,
+  .ticket-type,
+  .faq-button {
+    font-family: var(--font-family-base) !important;
+  }
+
+  /* Ensure font weights are correctly applied */
+  .font-light {
+    font-weight: 300 !important;
+  }
+
+  .font-regular {
+    font-weight: 400 !important;
+  }
+
+  .font-medium {
+    font-weight: 500 !important;
+  }
+
+  .font-bold {
+    font-weight: 700 !important;
+  }
+
+  /* Font smoothing for better rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Exclude Font Awesome and other icon fonts */
+  i[class^="fa-"],
+  i[class*=" fa-"],
+  .fa,
+  .fab,
+  .fas,
+  .far {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  }
+
+  body {
+    font-family: var(--font-family-base);
+  }
+
+  /* Apply Space Grotesk to all text elements */
+  *:not(i):not(.fa):not(.fab):not(.fas):not(.far) {
+    font-family: var(--font-family-base);
+  }
+
+  /* Specific element styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  .navbar,
+  .site-menu,
+  .mobile-menu,
+  .event-bottom-panel,
+  .btn,
+  .dropbtn,
+  .info-label,
+  .info-value,
+  .hashtag,
+  .about-content,
+  .speaker-info,
+  .timeline-content,
+  .view-all-btn,
+  .stat-number,
+  .stat-label,
+  .highlight-subtitle,
+  .section-title,
+  .section-subtitle,
+  .card-title,
+  .card-text,
+  .nav-link,
+  .dropdown-item,
+  .form-label,
+  .form-control {
+    font-family: var(--font-family-base);
   }
 
   /* Hero Section Styles */
@@ -41,7 +155,6 @@
     height: 100vh;
     overflow: hidden;
     background-color: #05102D;
-    /* Fallback color */
   }
 
   /* Ensure video covers the entire section */
@@ -155,7 +268,7 @@
   }
 
   .stat-number {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-family-base);
     font-size: 3.5rem;
     font-weight: 700;
     color: #A56CFF;
@@ -346,6 +459,7 @@
   }
 
   .timeline-time {
+    font-family: var(--font-family-base);
     padding: 20px;
     background: rgba(1, 179, 128, 0.1);
     color: #01B380;
@@ -363,12 +477,14 @@
   }
 
   .timeline-content h3 {
+    font-family: var(--font-family-base);
     color: #ffffff;
     margin-bottom: 10px;
     font-size: 20px;
   }
 
   .timeline-content p {
+    font-family: var(--font-family-base);
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 15px;
   }
@@ -380,6 +496,7 @@
   }
 
   .event-meta span {
+    font-family: var(--font-family-base);
     color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
   }
@@ -412,24 +529,28 @@
   }
 
   .speaker-info h4 {
+    font-family: var(--font-family-base);
     color: #ffffff;
     font-size: 16px;
     margin: 0;
   }
 
   .speaker-info .role {
+    font-family: var(--font-family-base);
     color: #01B380;
     font-size: 12px;
     display: block;
   }
 
   .speaker-info p {
+    font-family: var(--font-family-base);
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     margin: 0;
   }
 
   .tablink {
+    font-family: var(--font-family-base);
     cursor: pointer;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -1566,6 +1687,29 @@
       line-height: 50px;
     }
   }
+
+  /* Ensure consistent font weights across the site */
+  .text-light {
+    font-weight: 300;
+  }
+
+  .text-regular {
+    font-weight: 400;
+  }
+
+  .text-medium {
+    font-weight: 500;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  /* Add font smoothing for better rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
 
 <!-- Navbar -->
@@ -1756,9 +1900,8 @@
         </div>
         <div class="col-lg-6">
           <div class="about-image-grid">
-            <div class="image-wrapper main-image">
-              <img src="{{ asset('images/Rectangle-42016.png') }}" alt="Financial Security Conference"
-                class="img-fluid">
+            <div>
+              <img src="{{ asset('images/finsec-coin.gif') }}" alt="Financial Security Conference" class="img-fluid">
             </div>
           </div>
         </div>
@@ -1768,8 +1911,8 @@
     <div class="container diagonal-images-container">
       <div class="row">
         <div class="col-lg-8">
-          <div class="diagonal-image-wrapper ">
-            <img src="{{ asset('images/Rectangle-42015.png') }}" alt="Financial Security Conference" class="img-fluid">
+          <div>
+            <img src="{{ asset('images/finsec-cube.gif') }}" alt="Financial Security Conference" class="img-fluid">
           </div>
         </div>
         <div class="col-lg-4">
@@ -1972,7 +2115,7 @@
       <h1 class="bf-title">Broad Focus Areas</h1>
       <div class="focus-carousel-container">
         <button class="carousel-prev" aria-label="Previous slide">
-          <i class="fas fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="focus-carousel">
           <!-- First card active by default -->
@@ -2029,7 +2172,7 @@
           </div>
         </div>
         <button class="carousel-next" aria-label="Next slide">
-          <i class="fas fa-chevron-right"></i>
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
         <div class="carousel-dots"></div>
       </div>
@@ -2057,11 +2200,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> Access to all sessions</li>
-                <li><i class="fas fa-check"></i> Conference materials</li>
-                <li><i class="fas fa-check"></i> Lunch and refreshments</li>
-                <li><i class="fas fa-check"></i> Networking opportunities</li>
-                <li><i class="fas fa-check"></i> Certificate of participation</li>
+                <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
+                <li><i class="fa-solid fa-check"></i> Conference materials</li>
+                <li><i class="fa-solid fa-check"></i> Lunch and refreshments</li>
+                <li><i class="fa-solid fa-check"></i> Networking opportunities</li>
+                <li><i class="fa-solid fa-check"></i> Certificate of participation</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2080,11 +2223,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> All Early Bird features</li>
-                <li><i class="fas fa-check"></i> Priority seating</li>
-                <li><i class="fas fa-check"></i> Workshop access</li>
-                <li><i class="fas fa-check"></i> Event recordings</li>
-                <li><i class="fas fa-check"></i> Exclusive Q&A sessions</li>
+                <li><i class="fa-solid fa-check"></i> All Early Bird features</li>
+                <li><i class="fa-solid fa-check"></i> Priority seating</li>
+                <li><i class="fa-solid fa-check"></i> Workshop access</li>
+                <li><i class="fa-solid fa-check"></i> Event recordings</li>
+                <li><i class="fa-solid fa-check"></i> Exclusive Q&A sessions</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2103,11 +2246,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> All Standard features</li>
-                <li><i class="fas fa-check"></i> VIP networking dinner</li>
-                <li><i class="fas fa-check"></i> One-on-one mentoring</li>
-                <li><i class="fas fa-check"></i> Premium swag bag</li>
-                <li><i class="fas fa-check"></i> Lifetime community access</li>
+                <li><i class="fa-solid fa-check"></i> All Standard features</li>
+                <li><i class="fa-solid fa-check"></i> VIP networking dinner</li>
+                <li><i class="fa-solid fa-check"></i> One-on-one mentoring</li>
+                <li><i class="fa-solid fa-check"></i> Premium swag bag</li>
+                <li><i class="fa-solid fa-check"></i> Lifetime community access</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2127,11 +2270,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> Access for 3 people</li>
-                <li><i class="fas fa-check"></i> All Standard features</li>
-                <li><i class="fas fa-check"></i> Group seating</li>
-                <li><i class="fas fa-check"></i> Special group rates</li>
-                <li><i class="fas fa-check"></i> Group networking session</li>
+                <li><i class="fa-solid fa-check"></i> Access for 3 people</li>
+                <li><i class="fa-solid fa-check"></i> All Standard features</li>
+                <li><i class="fa-solid fa-check"></i> Group seating</li>
+                <li><i class="fa-solid fa-check"></i> Special group rates</li>
+                <li><i class="fa-solid fa-check"></i> Group networking session</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2150,11 +2293,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> Online access to sessions</li>
-                <li><i class="fas fa-check"></i> Digital materials</li>
-                <li><i class="fas fa-check"></i> Virtual networking</li>
-                <li><i class="fas fa-check"></i> Session recordings</li>
-                <li><i class="fas fa-check"></i> Online Q&A access</li>
+                <li><i class="fa-solid fa-check"></i> Online access to sessions</li>
+                <li><i class="fa-solid fa-check"></i> Digital materials</li>
+                <li><i class="fa-solid fa-check"></i> Virtual networking</li>
+                <li><i class="fa-solid fa-check"></i> Session recordings</li>
+                <li><i class="fa-solid fa-check"></i> Online Q&A access</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2173,11 +2316,11 @@
             </div>
             <div class="ticket-body">
               <ul class="ticket-features">
-                <li><i class="fas fa-check"></i> Valid student ID required</li>
-                <li><i class="fas fa-check"></i> Access to all sessions</li>
-                <li><i class="fas fa-check"></i> Digital materials</li>
-                <li><i class="fas fa-check"></i> Student networking</li>
-                <li><i class="fas fa-check"></i> Career guidance session</li>
+                <li><i class="fa-solid fa-check"></i> Valid student ID required</li>
+                <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
+                <li><i class="fa-solid fa-check"></i> Digital materials</li>
+                <li><i class="fa-solid fa-check"></i> Student networking</li>
+                <li><i class="fa-solid fa-check"></i> Career guidance session</li>
               </ul>
             </div>
             <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2206,8 +2349,8 @@
                   data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   When and where will FINSEC CONCLAVE 2025 take place?
                   <span class="faq-icon">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
                   </span>
                 </button>
               </div>
@@ -2226,8 +2369,8 @@
                   data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   How can I register for the event?
                   <span class="faq-icon">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
                   </span>
                 </button>
               </div>
@@ -2246,8 +2389,8 @@
                   data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   What topics will be covered at the conclave?
                   <span class="faq-icon">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
                   </span>
                 </button>
               </div>
@@ -2267,8 +2410,8 @@
                   data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   How can I become a speaker at the event?
                   <span class="faq-icon">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
                   </span>
                 </button>
               </div>
@@ -2288,8 +2431,8 @@
                   data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   Are there sponsorship opportunities available?
                   <span class="faq-icon">
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-minus"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
                   </span>
                 </button>
               </div>
@@ -2847,971 +2990,6 @@
     opacity: 1;
   }
 
-  .slick-slide {
-    padding: 0 15px;
-  }
-
-  .slick-dots {
-    bottom: -30px;
-  }
-
-  .slick-dots li button:before {
-    font-size: 12px;
-    color: #01B380;
-    opacity: 0.3;
-  }
-
-  .slick-dots li.slick-active button:before {
-    opacity: 1;
-    color: #01B380;
-  }
-
-  .slick-prev,
-  .slick-next {
-    width: 40px;
-    height: 40px;
-    background: #01B380;
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 20px;
-  }
-
-  .slick-prev:hover,
-  .slick-next:hover {
-    background: #05102d;
-  }
-
-  @media (max-width: 991px) {
-    .slick-prev {
-      left: -20px;
-    }
-
-    .slick-next {
-      right: -20px;
-    }
-  }
-
-  /* Event Schedule Styles */
-  .schedule-timeline {
-    padding: 30px 0;
-  }
-
-  .timeline-item {
-    display: flex;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .timeline-time {
-    padding: 20px;
-    background: rgba(1, 179, 128, 0.1);
-    color: #01B380;
-    font-weight: 600;
-    min-width: 200px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .timeline-content {
-    padding: 20px;
-    flex-grow: 1;
-  }
-
-  .timeline-content h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-
-  .timeline-content p {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 15px;
-  }
-
-  .event-meta {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
-  }
-
-  .event-meta span {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-  }
-
-  .event-meta i {
-    color: #01B380;
-    margin-right: 5px;
-  }
-
-  .speakers-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .speaker-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .speaker-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .speaker-info h4 {
-    color: #ffffff;
-    font-size: 16px;
-    margin: 0;
-  }
-
-  .speaker-info .role {
-    color: #01B380;
-    font-size: 12px;
-    display: block;
-  }
-
-  .speaker-info p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    margin: 0;
-  }
-
-  .tablink {
-    cursor: pointer;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-  }
-
-  .tablink.active {
-    background: #01B380;
-  }
-
-  .tabcontent {
-    display: none;
-    padding: 30px 0;
-  }
-
-  .tabcontent.show {
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    .timeline-item {
-      flex-direction: column;
-    }
-
-    .timeline-time {
-      width: 100%;
-      min-width: auto;
-    }
-
-    .speakers-list {
-      gap: 10px;
-    }
-
-    .speaker-item {
-      width: 100%;
-    }
-  }
-
-  /* Callout Section Styles */
-  .callout-section {
-    padding: 0;
-    /* Removed padding to allow full-width */
-    background: #ffffff;
-    min-height: 100vh;
-    /* Full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    /* Prevent any potential overflow */
-  }
-
-  .callout-section .container {
-    padding: 0;
-    /* Remove container padding */
-    max-width: 100%;
-    /* Allow container to be full width */
-    width: 100%;
-  }
-
-  .callout-image-wrapper {
-    width: 100%;
-    height: 100vh;
-    /* Full viewport height */
-    position: relative;
-  }
-
-  .callout-image-wrapper a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
-  }
-
-  .callout-image-wrapper:hover a {
-    transform: scale(1.02);
-    /* Subtle zoom effect on hover */
-  }
-
-  .callout-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Maintain aspect ratio while covering full area */
-    border-radius: 0;
-    /* Remove border radius for full-screen effect */
-    box-shadow: none;
-    /* Remove shadow for full-screen effect */
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 1200px) {
-    .callout-section {
-      min-height: auto;
-    }
-
-    .callout-image-wrapper {
-      height: auto;
-      max-width: 90%;
-      margin: 40px auto;
-    }
-
-    .callout-image {
-      border-radius: 20px;
-      /* Restore border radius for smaller screens */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      /* Restore shadow for smaller screens */
-    }
-  }
-
-  @media (max-width: 768px) {
-    .callout-image-wrapper {
-      max-width: 95%;
-      margin: 30px auto;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .callout-image-wrapper {
-      margin: 20px auto;
-    }
-  }
-
-  /* Add these styles in the CSS section */
-  .message-with-image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-  }
-
-  .message-content {
-    flex: 1;
-  }
-
-  .floating-image {
-    position: relative;
-    animation: float 3s ease-in-out infinite;
-    flex-shrink: 0;
-    margin-right: -20px;
-  }
-
-  .floating-speaker-img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(-15px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  @media (max-width: 991px) {
-    .message-with-image {
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .floating-image {
-      margin-right: 0;
-      margin-top: 20px;
-    }
-
-    .floating-speaker-img {
-      max-width: 280px;
-      margin: 0 auto;
-    }
-  }
-
-  /* City Skyline Section Styles */
-  .city-skyline-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: #ffffff;
-  }
-
-  .city-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-100%);
-    z-index: 1;
-    opacity: 0;
-    animation: fadeInText 1s ease-out forwards;
-  }
-
-  .event-date-top {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    transform: translateY(30px);
-    opacity: 0;
-    animation: slideUp 2s ease-out infinite;
-  }
-
-  .city-name {
-    font-size: clamp(6rem, 12vw, 16rem);
-    color: rgba(255, 255, 255, 0.15);
-    font-weight: 800;
-    text-transform: none;
-    letter-spacing: -2px;
-    transform: translateY(50px);
-    opacity: 0;
-    animation: slideUp 2s ease-out infinite;
-  }
-
-  .city-image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-
-  .city-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    animation: fadeInImage 2s ease-out forwards;
-    transform-origin: bottom;
-  }
-
-  @keyframes fadeInText {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    0% {
-      transform: translateY(80px);
-      opacity: 0;
-    }
-
-    50% {
-      transform: translateY(50px);
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(30px);
-      opacity: 0;
-    }
-  }
-
-  @keyframes fadeInImage {
-    0% {
-      opacity: 0;
-      transform: scale(1.1);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  /* Floating animation for the city image */
-  .city-image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-    animation: shimmer 3s infinite linear;
-  }
-
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    }
-
-    100% {
-      transform: translateX(100%) translateY(100%) rotate(45deg);
-    }
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .city-skyline-section {
-      height: 70vh;
-    }
-
-    .text-overlay {
-      left: 5%;
-      width: 90%;
-    }
-
-    .city-name {
-      font-size: clamp(3rem, 6vw, 8rem);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .city-skyline-section {
-      height: 50vh;
-    }
-
-    .event-date-top {
-      font-size: 1.25rem;
-    }
-
-    .city-name {
-      font-size: clamp(2.5rem, 5vw, 6rem);
-    }
-  }
-
-
-  .section-subtitle {
-    color: #A56CFF;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-
-  .section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 50px;
-  }
-
-  .bf-title {
-    font-size: 90px;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 100px;
-    letter-spacing: -3%;
-    font-family: 'Space Grotesk', sans-serif;
-    text-align: center;
-  }
-
-  /* Dotted Background Animation */
-  .dotted-bg-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.15;
-  }
-
-  .dot-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, #A56CFF 1px, transparent 1px);
-    background-size: 30px 30px;
-    animation: moveBackground 20s linear infinite;
-  }
-
-  @keyframes moveBackground {
-    0% {
-      background-position: 0 0;
-    }
-
-    100% {
-      background-position: 100px 100px;
-    }
-  }
-
-  /* Focus Cards Carousel */
-  .focus-carousel-container {
-    padding: 20px 0 60px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 870px;
-    /* Accommodates main card (495px) + gap (45px) + part of smaller card (330px) */
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .focus-carousel {
-    display: flex;
-    position: relative;
-    transition: transform 0.5s ease-in-out;
-    gap: 45px;
-    will-change: transform;
-    padding: 20px 0;
-  }
-
-  .focus-card {
-    flex: 0 0 495px;
-    height: 298.5px;
-    border-radius: 30px;
-    padding: 45px 75px;
-    border: 2px solid #76FF03;
-    background: #ffffff;
-    backdrop-filter: blur(2px);
-    transition: all 0.5s ease-in-out;
-    transform: scale(0.67);
-    /* Scale for inactive smaller cards (330/495 = ~0.67) */
-    opacity: 0.5;
-  }
-
-  .focus-card.active {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  .focus-card-inner {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .carousel-prev,
-  .carousel-next {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    opacity: 0.7;
-  }
-
-  .carousel-prev {
-    left: -60px;
-  }
-
-  .carousel-next {
-    right: -60px;
-  }
-
-  .carousel-prev:disabled,
-  .carousel-next:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
-  .carousel-prev:not(:disabled):hover,
-  .carousel-next:not(:disabled):hover {
-    background: #A56CFF;
-    transform: translateY(-50%) scale(1.1);
-    opacity: 1;
-  }
-
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 30px;
-  }
-
-  .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-  }
-
-  .carousel-dot.active {
-    background: #ffffff;
-    transform: scale(1.2);
-  }
-
-  .carousel-dot:hover {
-    background: rgba(165, 108, 255, 0.5);
-  }
-
-  .focus-icon {
-    width: 70px;
-    min-width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #A56CFF;
-    border-radius: 14px;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .focus-icon img {
-    width: 100%;
-    height: auto;
-    filter: brightness(0) invert(1);
-  }
-
-  .focus-content {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 991px) {
-    .focus-carousel-container {
-      max-width: 650px;
-    }
-
-    .focus-card {
-      flex: 0 0 400px;
-      height: 242px;
-      padding: 35px 60px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .focus-carousel-container {
-      max-width: 480px;
-    }
-
-    .focus-card {
-      flex: 0 0 350px;
-      height: 212px;
-      padding: 30px 50px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .focus-carousel-container {
-      max-width: 340px;
-    }
-
-    .focus-card {
-      flex: 0 0 300px;
-      height: 182px;
-      padding: 25px 40px;
-    }
-  }
-
-  /* Add fallback styles in case video fails to load */
-  .hero-section.video-fallback {
-    background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
-  }
-
-  /* Ensure video covers the entire section */
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover;
-  }
-
-  /* Updated Tickets Section Styles */
-  .tickets-section {
-    padding: 100px 0;
-    background: #ffffff;
-  }
-
-  .section-headers {
-    text-align: left;
-  }
-
-  .section-subtitle {
-    color: #A56CFF;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-
-  .section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #05102D;
-    margin-bottom: 50px;
-  }
-
-  .tickets-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-  }
-
-  .ticket-card {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    /* Fixed height for the container */
-    padding: 0;
-    margin-bottom: 40px;
-  }
-
-  .ticket-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("{!! asset('images/ticket_bg.png') !!}") no-repeat center center;
-    background-size: cover;
-    z-index: 1;
-    border-radius: 25px;
-  }
-
-  .ticket-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 30px;
-    z-index: 2;
-    border: 2px solid #e0e0e0;
-    transition: all 0.3s ease;
-  }
-
-  .ticket-card.featured .ticket-content {
-    border-color: #A56CFF;
-  }
-
-  .ticket-card:hover .ticket-content {
-    transform: translate(-50%, -52%);
-  }
-
-  .ticket-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .ticket-type {
-    font-size: 20px;
-    font-weight: 700;
-    color: #05102D;
-    margin-bottom: 10px;
-  }
-
-  .ticket-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  .currency {
-    font-size: 20px;
-    font-weight: 600;
-    color: #A56CFF;
-  }
-
-  .amount {
-    font-size: 36px;
-    font-weight: 800;
-    color: #A56CFF;
-    line-height: 1;
-  }
-
-  .duration {
-    font-size: 14px;
-    color: #666;
-  }
-
-  .ticket-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-
-  .ticket-features li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    color: #05102D;
-    font-size: 14px;
-  }
-
-  .ticket-features li i {
-    color: #A56CFF;
-    font-size: 12px;
-  }
-
-  .btn-get-pass {
-    display: inline-block;
-    background: #A56CFF;
-    color: #ffffff;
-    padding: 10px 30px;
-    border-radius: 25px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    z-index: 3;
-  }
-
-  .btn-get-pass:hover {
-    background: #8A4FFF;
-    color: #ffffff;
-    transform: translateX(-50%) translateY(-2px);
-  }
-
-  @media (max-width: 1200px) {
-    .tickets-grid {
-      gap: 20px;
-    }
-
-    .ticket-card {
-      height: 400px;
-    }
-
-    .ticket-content {
-      width: 85%;
-      padding: 25px;
-    }
-  }
-
-  @media (max-width: 991px) {
-    .tickets-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .ticket-card {
-      height: 380px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .tickets-section {
-      padding: 60px 0;
-    }
-
-    .tickets-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ticket-card {
-      height: 350px;
-    }
-
-    .ticket-content {
-      width: 90%;
-      padding: 20px;
-    }
-
-    .amount {
-      font-size: 32px;
-    }
-
-    .section-title {
-      font-size: 32px;
-    }
-  }
-
-  /* Speakers Section Styles */
-  .speakers-slider {
-    padding: 20px 0;
-    margin: 0 -15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .speakers-slider.slick-initialized {
-    opacity: 1;
-  }
-
   .speaker-item {
     padding: 0 11.5px;
     /* Half of the gap (23px) */
@@ -3920,6 +3098,272 @@
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  /* Callout Section Styles */
+  .callout-section {
+    padding: 0;
+    /* Removed padding to allow full-width */
+    background: #ffffff;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Prevent any potential overflow */
+  }
+
+  .callout-section .container {
+    padding: 0;
+    /* Remove container padding */
+    max-width: 100%;
+    /* Allow container to be full width */
+    width: 100%;
+  }
+
+  .callout-image-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+  }
+
+  .callout-image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .callout-image-wrapper:hover a {
+    transform: scale(1.02);
+    /* Subtle zoom effect on hover */
+  }
+
+  .callout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio while covering full area */
+    border-radius: 0;
+    /* Remove border radius for full-screen effect */
+    box-shadow: none;
+    /* Remove shadow for full-screen effect */
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .callout-section {
+      min-height: auto;
+    }
+
+    .callout-image-wrapper {
+      height: auto;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .callout-image {
+      border-radius: 20px;
+      /* Restore border radius for smaller screens */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      /* Restore shadow for smaller screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .callout-image-wrapper {
+      max-width: 95%;
+      margin: 30px auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .callout-image-wrapper {
+      margin: 20px auto;
+    }
+  }
+
+  .text-tickets {
+    color: #A56CFF;
+  }
+
+  /* FAQ Section Styles */
+  .faq-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+  }
+
+  .section-small-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #A56CFF;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #05102D;
+    margin-bottom: 50px;
+  }
+
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .faq-button {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+
+    .faq-body {
+      padding: 15px 20px;
+    }
+  }
+
+  .focus-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #A56CFF;
+    text-align: center;
+  }
+
+  .focus-description {
+    display: none;
+  }
+
+  /* Updated responsive adjustments */
+  @media (max-width: 991px) {
+    .focus-carousel-container {
+      max-width: 650px;
+    }
+
+    .focus-card {
+      flex: 0 0 400px;
+      height: 242px;
+      padding: 35px 60px;
+    }
+
+    .focus-title {
+      font-size: 32px;
+    }
+
+    .carousel-prev {
+      left: -40px;
+    }
+
+    .carousel-next {
+      right: -40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .focus-carousel-container {
+      max-width: 480px;
+    }
+
+    .focus-card {
+      flex: 0 0 350px;
+      height: 212px;
+      padding: 30px 50px;
+    }
+
+    .focus-title {
+      font-size: 30px;
+    }
+
+    .carousel-prev {
+      left: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-next {
+      right: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .bf-title {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .focus-carousel-container {
+      max-width: 300px;
+      /* Show just the main card on mobile */
+    }
+
+    .focus-card {
+      flex: 0 0 280px;
+      height: 170px;
+      padding: 20px 30px;
+    }
+
+    .focus-title {
+      font-size: 24px;
+    }
+
+    .focus-icon {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .carousel-prev {
+      left: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .carousel-next {
+      right: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .bf-title {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  /* Ensure consistent font weights across the site */
+  .text-light {
+    font-weight: 300;
+  }
+
+  .text-regular {
+    font-weight: 400;
+  }
+
+  .text-medium {
+    font-weight: 500;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  /* Add font smoothing for better rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 </style>
 @endsection
