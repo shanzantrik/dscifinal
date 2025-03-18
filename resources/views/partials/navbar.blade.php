@@ -3,44 +3,46 @@
 <link rel="preload" href="{{ asset('fonts/SpaceGrotesk-Medium.woff2') }}" as="font" type="font/woff2" crossorigin>
 
 <nav class="navbar brand-navbar" id="navbar">
-  <div class="container-fluid px-3">
+  <div class="container">
+    <!-- Logo - Left aligned -->
     <div class="logo">
       <a href="{{ route('home') }}">
         <img src="{{ asset('images/dsci-logo-white.webp') }}" alt="DSCI" loading="lazy">
       </a>
     </div>
 
-    <div class="nav-right">
-      <div class="site-menu">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#keyHighlights">Key Highlights</a></li>
-          <li><a href="#broadFocus">Broad Focus Areas</a></li>
-          {{-- <li><a href="{{ route('speakers') }}">Speakers</a></li>
-          <li><a href="#eventSchedule">Schedule</a></li>
-          <li><a href="#sponsors">Sponsors</a></li>
-          <li><a href="https://www.dsci.in/content/dsci-excellence-awards-2025" target="_blank">Excellence Awards</a>
-          </li>
-          --}}
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <!-- Menu - Center aligned -->
+    <div class="site-menu d-none d-lg-flex">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#keyHighlights">Key Highlights</a></li>
+        <li><a href="#broadFocus">Broad Focus Areas</a></li>
+        {{-- <li><a href="{{ route('speakers') }}">Speakers</a></li>
+        <li><a href="#eventSchedule">Schedule</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="https://www.dsci.in/content/dsci-excellence-awards-2025" target="_blank">Excellence Awards</a>
+        </li>
+        --}}
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
 
-      <div class="navbar-button">
-        <a href="#registration" class="book-seat-btn">Register Now</a>
-      </div>
+    <!-- Button - Right aligned -->
+    <div class="navbar-button d-none d-lg-flex">
+      <a href="#registration" class="book-seat-btn">Register Now</a>
+    </div>
 
-      <div class="hamburger-menu">
-        <button class="menu" aria-label="Toggle Menu">
-          <svg width="45" height="45" viewBox="0 0 100 100">
-            <path class="line line1"
-              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-            <path class="line line2" d="M 20,50 H 80" />
-            <path class="line line3"
-              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-          </svg>
-        </button>
-      </div>
+    <!-- Mobile menu button -->
+    <div class="hamburger-menu d-lg-none">
+      <button class="menu" aria-label="Toggle Menu">
+        <svg width="45" height="45" viewBox="0 0 100 100">
+          <path class="line line1"
+            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+          <path class="line line2" d="M 20,50 H 80" />
+          <path class="line line3"
+            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -98,12 +100,10 @@
     /* Fixed height */
   }
 
-  .navbar .container-fluid {
+  .navbar .container {
     max-width: 1440px;
-    /* Fixed width */
     margin: 0 auto;
     padding: 10px 50px;
-    /* Specified padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,9 +122,7 @@
 
   /* Logo Styles */
   .logo {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
+    flex: 0 0 auto;
   }
 
   .logo img {
@@ -139,22 +137,20 @@
     }
   }
 
-  /* Nav Right Section */
-  .nav-right {
+  /* Menu Styles */
+  .site-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-menu ul {
     display: flex;
     align-items: center;
     gap: 40px;
-    /* Increased gap for better spacing */
-  }
-
-  /* Menu Item Styles */
-  .site-menu ul {
-    display: flex;
-    list-style: none;
     margin: 0;
     padding: 0;
-    gap: 40px;
-    /* Increased gap between menu items */
+    list-style: none;
   }
 
   .site-menu ul li a {
@@ -174,6 +170,11 @@
   }
 
   /* Button Styles */
+  .navbar-button {
+    flex: 0 0 auto;
+    margin-left: 40px;
+  }
+
   .book-seat-btn {
     font-family: var(--font-primary);
     font-size: 18px;
@@ -306,31 +307,17 @@
   }
 
   @media (max-width: 991px) {
-    .navbar .container-fluid {
+    .navbar .container {
       padding: 10px 20px;
-      /* Adjusted padding for mobile */
-    }
-
-    .site-menu,
-    .navbar-button {
-      display: none;
     }
 
     .hamburger-menu {
-      display: block;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .mobile-menu {
-      padding: 20px;
+      margin-left: auto;
     }
   }
 
   @media (min-width: 1441px) {
-    .navbar .container-fluid {
+    .navbar .container {
       margin: 0 auto;
     }
   }

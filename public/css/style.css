@@ -212,41 +212,74 @@ body.page-loaded .preloader {
   background-color: #A56CFF !important;
 }
 
-.navbar.pinned {
-  background-color: rgba(165, 108, 255, 0.11) !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.navbar>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles - Left aligned */
+.navbar .logo {
+  flex: 0 0 auto;
 }
 
 .navbar .logo img {
   max-height: 58px;
 }
 
-/* Update logo size to match reference site dimensions */
 .navbar .logo a img {
   width: 129px;
   height: auto;
 }
 
+/* Menu styles - Center aligned */
+.navbar .site-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar .site-menu ul {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navbar .site-menu ul li {
   margin: 0 15px;
 }
 
-.navbar .site-menu ul li a {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: var(--transition);
+/* Button styles - Right aligned */
+.navbar-button {
+  flex: 0 0 auto;
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto;
 }
 
-.navbar .site-menu ul li a:hover {
-  color: var(--primary-color);
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar>.container {
+    justify-content: space-between;
+  }
+
+  .navbar .site-menu {
+    display: none;
+  }
+
+  .navbar-button {
+    display: none !important;
+  }
+
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: block;
+    margin-left: auto;
+  }
 }
 
 /* Dropdown styles */
@@ -586,71 +619,6 @@ body.page-loaded .preloader {
   margin-left: 8px;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 991px) {
-  .site-menu.d-none.d-lg-block {
-    display: none !important;
-  }
-
-  .register-btn.d-none.d-lg-flex {
-    display: none !important;
-  }
-
-  .hamburger-menu {
-    display: block;
-  }
-
-  .tablink {
-    width: 50%;
-  }
-
-  .navbar .site-menu {
-    display: none;
-  }
-
-  .navbar-button {
-    display: none !important;
-  }
-
-  /* Maintain logo size on mobile */
-  .navbar .logo a img {
-    width: 129px;
-    height: auto;
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .content-section {
-    padding: 50px 0;
-  }
-
-  .preloader .inner figure img {
-    max-height: 150px;
-  }
-
-  .tablink {
-    width: 100%;
-  }
-}
-
-/* Additional navbar styles */
-.navbar {
-  background-color: #A56CFF !important;
-}
-
-.navbar.pinned {
-  background-color: #A56CFF !important;
-}
-
-.dropdown-content {
-  background-color: #A56CFF !important;
-}
-
-.mobile-menu {
-  background-color: #A56CFF !important;
-}
-
 /* Font size consistency */
 .site-menu ul li a,
 .dropbtn,
@@ -660,30 +628,6 @@ body.page-loaded .preloader {
 .dropbtnmob,
 .dropdownmob-content a,
 .button {
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-weight: 700 !important;
-}
-
-/* Button alignment */
-.navbar-button {
-  display: flex !important;
-  align-items: center !important;
-}
-
-.dropdown {
-  margin-right: 15px !important;
-}
-
-.book-seat-btn {
-  background-color: #cff300 !important;
-  color: #A56CFF !important;
-  padding: 10px 20px !important;
-  border-radius: 30px !important;
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
-}
-
-.book-seat-btn:hover {
-  background-color: #ffffff !important;
-  color: #A56CFF !important;
 }

@@ -942,7 +942,7 @@
     padding: 20px 0 60px;
     overflow: hidden;
     width: 100%;
-    max-width: 870px;
+    max-width: 960px;
     /* Accommodates main card (495px) + gap (45px) + part of smaller card (330px) */
     margin: 0 auto;
     position: relative;
