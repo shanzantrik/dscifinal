@@ -766,8 +766,8 @@
     background: linear-gradient(45deg, #472E56, #9B65BC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 500;
-    margin-top: 15%;
+    font-weight: 700;
+    margin-top: 3%;
     transform: translateY(-20px);
     opacity: 0;
     animation: fadeInDate 1s ease-out forwards;
@@ -782,8 +782,8 @@
     text-transform: none;
     letter-spacing: -2px;
     opacity: 0;
-    transform: translateY(30%);
-    animation: sunriseText 4s ease-out forwards;
+    transform: translateY(20%);
+    animation: sunriseText 5s ease-out forwards;
     position: absolute;
     bottom: 10%;
     left: 5%;
