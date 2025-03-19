@@ -2347,7 +2347,7 @@
               <div class="faq-header" id="headingOne">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  When and where will FINSEC CONCLAVE 2025 take place?
+                  How can I register for the FINSEC Conclave 2025?
                   <span class="faq-icon">
                     <i class="fa-solid fa-plus"></i>
                     <i class="fa-solid fa-minus"></i>
@@ -2356,8 +2356,11 @@
               </div>
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
-                  FINSEC CONCLAVE 2025 will take place on 4th - 5th June 2025 in Mumbai. The venue details will be
-                  announced closer to the event date.
+                  Please follow these steps to register for FINSEC Conclave 2025:
+                  <p>Step 1: Click on the type of pass to register with.</p>
+                  <p>Step 2: Choose the number of delegate(s).</p>
+                  <p>Step 3: Fill in all details of the delegate(s).</p>
+                  <p>Step 4: Submit the payment to confirm participation.</p>
                 </div>
               </div>
             </div>
@@ -2367,7 +2370,7 @@
               <div class="faq-header" id="headingTwo">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  How can I register for the event?
+                  What are the payment options available for the registration?
                   <span class="faq-icon">
                     <i class="fa-solid fa-plus"></i>
                     <i class="fa-solid fa-minus"></i>
@@ -2376,8 +2379,23 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
-                  Registration will open soon. You can sign up for updates on our website to be notified when tickets
-                  are available. Early bird discounts will be offered for early registrations.
+                  <p>After filling the details, once you reach at the last step for submitting the payment, you will
+                    have
+                    the following 2 options:</p>
+                  <p><strong>Online mode</strong> - In this mode, you can submit the payment via debit/credit/net
+                    banking/UPI. Using the
+                    online option, once you make the payment, you will get a confirmation mail on your email id for the
+                    event.</p>
+                  <p><strong>Offline mode</strong> - In this mode, you will have the option to submit the payment routed
+                    via bank transfer.</p>
+                  <p>Once you choose this option and submit the details, you will be registered as not paid delegate.
+                    Once
+                    you do the bank transfer, you will need to share the UTR number with us. Once received, you will get
+                    a
+                    confirmation email of the registration.</p>
+                  <p><strong>*Note: Registration under offline mode will not be considered as confirmed until the
+                      payment is
+                      received by DSCI.</strong></p>
                 </div>
               </div>
             </div>
@@ -2387,7 +2405,7 @@
               <div class="faq-header" id="headingThree">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  What topics will be covered at the conclave?
+                  How can I get the invoice for the registration?
                   <span class="faq-icon">
                     <i class="fa-solid fa-plus"></i>
                     <i class="fa-solid fa-minus"></i>
@@ -2396,9 +2414,10 @@
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
-                  FINSEC CONCLAVE 2025 will focus on the intersection of finance and security, including cybersecurity
-                  in financial institutions, regulatory compliance, emerging threats, blockchain security, AI in
-                  financial security, and more.
+                  <p>If you need an invoice for registration, make sure you add - (company name, address and GSTIN) on
+                    STEP 2 in the Buyer section. The billing details need to be furnished to get the invoice.</p>
+                  <p>In case you choose to skip providing the invoicing details, the same would be considered under
+                    unregistered and sharing of the tax invoice would not be possible post that.</p>
                 </div>
               </div>
             </div>
@@ -2408,7 +2427,7 @@
               <div class="faq-header" id="headingFour">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  How can I become a speaker at the event?
+                  What is included in my registration pass?
                   <span class="faq-icon">
                     <i class="fa-solid fa-plus"></i>
                     <i class="fa-solid fa-minus"></i>
@@ -2417,9 +2436,11 @@
               </div>
               <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
-                  You can apply to be a speaker through our "Call for Speakers" form. We welcome industry experts,
-                  thought leaders, and professionals with insights on financial security topics. All speaker
-                  applications will be reviewed by our committee.
+                  <p>Your registration pass gives you access to all sessions and workshops for the event and meals
+                    during
+                    the event.</p>
+                  <p><strong>*Note: The access of the pass is excluded from any exclusive or special session defined as
+                      Invite Only.</strong></p>
                 </div>
               </div>
             </div>
@@ -2429,7 +2450,7 @@
               <div class="faq-header" id="headingFive">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Are there sponsorship opportunities available?
+                  How can I get my pass on the event day?
                   <span class="faq-icon">
                     <i class="fa-solid fa-plus"></i>
                     <i class="fa-solid fa-minus"></i>
@@ -2438,9 +2459,49 @@
               </div>
               <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
-                  Yes, we offer various sponsorship packages that provide opportunities to showcase your brand to
-                  industry leaders and decision-makers. Please contact our sponsorship team at
-                  sponsorship@finsecconclave.com for more information.
+                  <p>To obtain your pass on the event day, you would need to visit the registration counter and mention
+                    your registration number and identity card to get your delegate badge at the venue.</p>
+                </div>
+              </div>
+            </div>
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingSix">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFive">
+                  Is accommodation part of my registration pass?
+                  <span class="faq-icon">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  <p>Unfortunately no, the accommodation and travel will have to be taken care by the delegates on their
+                    own. DSCI will not be responsible for the same. However, if you wish to stay at the event venue, you
+                    can book your accommodation at the special DSCI-negotiated rates crafted for the delegates only. You
+                    may have a look at it by going to the venue section of the event website.</p>
+                </div>
+              </div>
+            </div>
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+              <div class="faq-header" id="headingSeven">
+                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Will there be any pick/drop facility available for the venue?
+                  <span class="faq-icon">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-minus"></i>
+                  </span>
+                </button>
+              </div>
+              <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                <div class="faq-body">
+                  <p>Unfortunately, no pick/drop facility is available for the event. It is advisable that delegates
+                    should plan their commute on their behalf only.
+                  </p>
                 </div>
               </div>
             </div>
@@ -2503,13 +2564,14 @@
 
     .faq-button:hover,
     .faq-button:focus {
-      background-color: #F8F4FF;
+      background-color: #cff300;
       border-color: #A56CFF;
+      color: #A56CFF;
       outline: none;
     }
 
     .faq-button:not(.collapsed) {
-      background-color: #F8F4FF;
+      background-color: #cff300;
       border-color: #A56CFF;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -2533,6 +2595,7 @@
 
     .faq-button:not(.collapsed) .fa-plus {
       display: none;
+      color: #A56CFF;
     }
 
     .faq-button:not(.collapsed) .fa-minus {

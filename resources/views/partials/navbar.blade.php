@@ -103,7 +103,7 @@
   .navbar .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 10px 50px;
+    padding: 0px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -308,7 +308,7 @@
 
   @media (max-width: 991px) {
     .navbar .container {
-      padding: 10px 20px;
+      padding: 0px 20px;
     }
 
     .hamburger-menu {
