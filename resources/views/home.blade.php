@@ -628,14 +628,14 @@
   }
 
   .callout-image-wrapper:hover a {
-    transform: scale(1.02);
+    /* transform: scale(1.02); */
     /* Subtle zoom effect on hover */
   }
 
   .callout-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     /* Maintain aspect ratio while covering full area */
     border-radius: 0;
     /* Remove border radius for full-screen effect */
@@ -1489,7 +1489,7 @@
   .callout-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     /* Maintain aspect ratio while covering full area */
     border-radius: 0;
     /* Remove border radius for full-screen effect */
@@ -2044,14 +2044,14 @@
     }
 
     .callout-image-wrapper:hover a {
-      transform: scale(1.02);
+      // transform: scale(1.02);
       /* Subtle zoom effect on hover */
     }
 
     .callout-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       /* Maintain aspect ratio while covering full area */
       border-radius: 0;
       /* Remove border radius for full-screen effect */
@@ -3203,14 +3203,14 @@
   }
 
   .callout-image-wrapper:hover a {
-    transform: scale(1.02);
+    // transform: scale(1.02);
     /* Subtle zoom effect on hover */
   }
 
   .callout-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     /* Maintain aspect ratio while covering full area */
     border-radius: 0;
     /* Remove border radius for full-screen effect */
