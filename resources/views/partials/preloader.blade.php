@@ -1,57 +1,91 @@
 <!-- Preloader -->
 <div class="preloader">
   <div class="inner">
-    <div class="coin-loader">
-      <div class="coin coin-1">
-        <div class="side front">
-          <div class="shine"></div>
+    <div class="rubiks-cube-loader">
+      <div class="cube">
+        <!-- Front face -->
+        <div class="face front">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
-        <div class="side back">
-          <div class="shine"></div>
+        <!-- Back face -->
+        <div class="face back">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
-        <div class="edge">
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
+        <!-- Right face -->
+        <div class="face right">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
-      </div>
-      <div class="coin coin-2">
-        <div class="side front">
-          <div class="shine"></div>
+        <!-- Left face -->
+        <div class="face left">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
-        <div class="side back">
-          <div class="shine"></div>
+        <!-- Top face -->
+        <div class="face top">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
-        <div class="edge">
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
-          <div class="edge-bit"></div>
+        <!-- Bottom face -->
+        <div class="face bottom">
+          <div class="grid">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -83,108 +117,80 @@
     justify-content: center;
   }
 
-  /* Coin Loader */
-  .coin-loader {
+  /* Rubik's Cube Loader */
+  .rubiks-cube-loader {
     width: 150px;
-    height: 200px;
-    perspective: 600px;
+    height: 150px;
+    perspective: 400px;
     margin-bottom: 20px;
-    position: relative;
   }
 
-  .coin {
-    width: 100%;
-    height: 75%;
-    position: absolute;
-    transform-style: preserve-3d;
-  }
-
-  .coin-1 {
-    top: 0;
-    animation: dropAndRotate 2s linear infinite;
-    z-index: 2;
-  }
-
-  .coin-2 {
-    bottom: 0;
-    transform: rotateX(70deg);
-    z-index: 1;
-  }
-
-  .side {
+  .cube {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    overflow: hidden;
-    backface-visibility: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 6s linear infinite;
   }
 
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
+    width: 90%;
+    height: 90%;
+  }
+
+  .square {
+    background: #d0f300;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Face Transformations */
   .front {
-    background: linear-gradient(45deg, #cff300 0%, #d0eb35 100%);
-    transform: rotateY(0deg);
+    transform: translateZ(75px);
   }
 
   .back {
-    background: linear-gradient(45deg, #cff300 0%, #d0eb35 100%);
-    transform: rotateY(180deg);
+    transform: translateZ(-75px) rotateY(180deg);
   }
 
-  .shine {
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    transform: translateX(-50%);
-    animation: shine 3s ease-in-out infinite;
+  .right {
+    transform: translateX(75px) rotateY(90deg);
   }
 
-  .edge {
-    width: 5px;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotateY(90deg);
+  .left {
+    transform: translateX(-75px) rotateY(-90deg);
   }
 
-  .edge-bit {
-    width: 100%;
-    height: 6.25%;
-    background: #d0eb35;
-    position: absolute;
+  .top {
+    transform: translateY(-75px) rotateX(90deg);
   }
 
-  @keyframes dropAndRotate {
+  .bottom {
+    transform: translateY(75px) rotateX(-90deg);
+  }
+
+  @keyframes rotate {
     0% {
-      transform: translateY(-50px) rotateY(0deg);
-    }
-
-    25% {
-      transform: translateY(50px) rotateY(90deg);
-    }
-
-    50% {
-      transform: translateY(-50px) rotateY(180deg);
-    }
-
-    75% {
-      transform: translateY(50px) rotateY(270deg);
+      transform: rotateX(0) rotateY(0) rotateZ(0);
     }
 
     100% {
-      transform: translateY(-50px) rotateY(360deg);
-    }
-  }
-
-  @keyframes shine {
-
-    0%,
-    100% {
-      transform: translateX(-100%);
-    }
-
-    50% {
-      transform: translateX(100%);
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }
   }
 
@@ -243,89 +249,64 @@
     position: relative;
   }
 
-  .loader-progress::after {
+  .loader-progress::before {
     content: '';
     position: absolute;
-    left: -50%;
-    width: 50%;
+    left: 0;
+    top: 0;
     height: 100%;
-    background: linear-gradient(90deg, transparent, #01B380, transparent);
-    animation: progress 1s ease-in-out infinite;
+    width: 100%;
+    background: linear-gradient(to left, transparent, #d0f300, transparent);
+    animation: moveRight 1.5s ease-in-out infinite;
   }
 
-  @keyframes progress {
+  @keyframes moveRight {
     0% {
-      left: -50%;
+      transform: translateX(100%);
     }
 
     100% {
-      left: 150%;
+      transform: translateX(-100%);
     }
   }
 
-  /* Edge bits positioning */
-  .edge-bit:nth-child(1) {
-    top: 0%;
-  }
+  @media (max-width: 767px) {
+    .rubiks-cube-loader {
+      width: 120px;
+      height: 120px;
+    }
 
-  .edge-bit:nth-child(2) {
-    top: 6.25%;
-  }
+    .front {
+      transform: translateZ(60px);
+    }
 
-  .edge-bit:nth-child(3) {
-    top: 12.5%;
-  }
+    .back {
+      transform: translateZ(-60px) rotateY(180deg);
+    }
 
-  .edge-bit:nth-child(4) {
-    top: 18.75%;
-  }
+    .right {
+      transform: translateX(60px) rotateY(90deg);
+    }
 
-  .edge-bit:nth-child(5) {
-    top: 25%;
-  }
+    .left {
+      transform: translateX(-60px) rotateY(-90deg);
+    }
 
-  .edge-bit:nth-child(6) {
-    top: 31.25%;
-  }
+    .top {
+      transform: translateY(-60px) rotateX(90deg);
+    }
 
-  .edge-bit:nth-child(7) {
-    top: 37.5%;
-  }
+    .bottom {
+      transform: translateY(60px) rotateX(-90deg);
+    }
 
-  .edge-bit:nth-child(8) {
-    top: 43.75%;
-  }
+    .percentage {
+      font-size: 36px;
+    }
 
-  .edge-bit:nth-child(9) {
-    top: 50%;
-  }
-
-  .edge-bit:nth-child(10) {
-    top: 56.25%;
-  }
-
-  .edge-bit:nth-child(11) {
-    top: 62.5%;
-  }
-
-  .edge-bit:nth-child(12) {
-    top: 68.75%;
-  }
-
-  .edge-bit:nth-child(13) {
-    top: 75%;
-  }
-
-  .edge-bit:nth-child(14) {
-    top: 81.25%;
-  }
-
-  .edge-bit:nth-child(15) {
-    top: 87.5%;
-  }
-
-  .edge-bit:nth-child(16) {
-    top: 93.75%;
+    .loading-text {
+      font-size: 16px;
+    }
   }
 </style>
 
@@ -343,9 +324,6 @@
     const interval = setInterval(() => {
       count++;
       percentage.textContent = count;
-
-      // Update progress bar width
-      progress.style.width = count + '%';
 
       if (count >= 100) {
         clearInterval(interval);

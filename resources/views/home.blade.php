@@ -264,7 +264,7 @@
   }
 
   .stat-item {
-    text-align: left;
+    text-align: center;
   }
 
   .stat-number {
@@ -1422,6 +1422,7 @@
   @media (max-width: 991px) {
     .stats-content {
       margin-top: 30px;
+      text-align: center;
     }
   }
 
@@ -1436,7 +1437,7 @@
   }
 
   .stat-item {
-    text-align: left;
+    text-align: center;
   }
 
   @media (max-width: 767px) {
@@ -1550,12 +1551,91 @@
   }
 
   .section-title {
-    font-size: 42px;
+    font-size: 64px;
     font-weight: 700;
-    color: #05102D;
+    color: #000000;
     margin-bottom: 50px;
   }
 
+  .faq-item {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .faq-header {
+    width: 100%;
+  }
+
+  .faq-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #A56CFF;
+    border: 2px solid #F0F0F0;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .faq-button:hover,
+  .faq-button:focus {
+    background-color: #cff300;
+    border-color: #A56CFF;
+    color: #A56CFF;
+    outline: none;
+  }
+
+  .faq-button:not(.collapsed) {
+    background-color: #cff300;
+    border-color: #A56CFF;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #A56CFF;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+
+  .faq-icon .fa-minus {
+    display: none;
+  }
+
+  .faq-button:not(.collapsed) .fa-plus {
+    display: none;
+    color: #A56CFF;
+  }
+
+  .faq-button:not(.collapsed) .fa-minus {
+    display: inline-block;
+  }
+
+  .faq-body {
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border: 2px solid #A56CFF;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
 
   /* Responsive Styles */
   @media (max-width: 768px) {
@@ -1709,6 +1789,103 @@
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .coin-container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  .coin {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 2s linear infinite;
+  }
+
+  .coin::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transform: rotate(25deg);
+    animation: glare 4s infinite;
+  }
+
+  @keyframes glare {
+    0% {
+      transform: translate(-100%, -100%) rotate(25deg);
+    }
+
+    20%,
+    100% {
+      transform: translate(100%, 100%) rotate(25deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #7040c0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 5px solid #7040c0;
+    padding: 10px;
+  }
+
+  .front {
+    transform: translateZ(10px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(10px);
+  }
+
+  .edge {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotateX(90deg);
+    border-radius: 50%;
+  }
+
+  .fill-gap {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    transform: translateY(-50%) rotateX(90deg);
   }
 </style>
 
@@ -1871,7 +2048,7 @@
   <section class="content-section bg-white" id="about">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
           <div class="about-content">
             <h6 class="about-subtitle">ABOUT US</h6>
             <h2 class="about-title">
@@ -1879,765 +2056,1107 @@
               Conclave 2025
             </h2>
             <div class="about-text">
-              <p>The seventh edition of the DSCI FINSEC Conclave is all set to be the perfect congregation
-                of policy, finance, and security spheres. This year&#39;s conclave will bring together the
-                expertise, experience, and foresight of leaders, practitioners, policymakers, researchers,
-                developers, and innovators to address the evolving challenges and opportunities in financial
-                security and privacy. As cyber risks continue to evolve, organizations are enhancing their
-                defence strategies with cutting-edge security measures.</p>
+              <div class="initial-content">
+                <p>The seventh edition of the DSCI FINSEC Conclave is all set to be the perfect congregation
+                  of policy, finance, and security spheres. This year&#39;s conclave will bring together the
+                  expertise, experience, and foresight of leaders, practitioners, policymakers, researchers,
+                  developers, and innovators to address the evolving challenges and opportunities in financial
+                  security and privacy. As cyber risks continue to evolve, organizations are enhancing their
+                  defence strategies with cutting-edge security measures.</p>
 
-              <p>Finsec 2025 will delve into pressing themes such as includes Transaction Security, Payment
-                Innovation, LLM Ops, Quantum Blueprint, Resilient Financial Infrastructure, PrivacyOps,
-                Next-Gen Digital Crime, Supervisory Technology and Compliance, ESG Integration, and
-                Multi-Cloud Security Architecture.</p>
-              <p>Join us at Finsec 2025 to engage with industry leaders, share insights, and shape the future
-                of financial security.</p>
+                <p>Finsec 2025 will delve into pressing themes such as includes Transaction Security, Payment
+                  Innovation, LLM Ops, Quantum Blueprint, Resilient Financial Infrastructure, PrivacyOps,
+                  Next-Gen Digital Crime, Supervisory Technology and Compliance, ESG Integration, and
+                  Multi-Cloud Security Architecture.</p>
+              </div>
+
+              <div class="expanded-content" style="display: none;">
+                <p>Through insightful sessions, roundtables, workshops, exhibitions, and much more, Finsec
+                  2025 will be an immersive discovery and dialogue of the future trajectories of financial
+                  services and the overarching digital transformation reshaping global economies.
+                  We are excited to convene banks, neo-banks, insurers, securities firms, banking financial
+                  entities, cooperatives, and fintech companies for immersive dialogues, knowledge-sharing
+                  sessions, and deliberations. With the country making significant strides in comprehensive
+                  data privacy legislation, the focus on preparedness and implementation aspects of privacy
+                  will be a core area for financial services organizations this year. Finsec 2025 will emphasize
+                  the implementation challenges in data governance, data protection, and data management.</p>
+                <p>The summit will provide a comprehensive perspective on the current cybersecurity
+                  landscape of the country&#39;s BFSI sector, highlighting the technological advancements driving
+                  digitization and the associated security and privacy concerns and opportunities.</p>
+                <p>Join us at Finsec 2025 to engage with industry leaders, share insights, and shape the future
+                  of financial security.</p>
+              </div>
             </div>
             <div class="about-buttons">
+              <button class="btn btn-read-more" onclick="toggleContent()">Read More</button>
               <a href="#" class="btn btn-report">FINSEC 25 Report</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="about-image-grid">
-            <div>
-              <img src="{{ asset('images/finsec-coin.gif') }}" alt="Financial Security Conference" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container diagonal-images-container">
-      <div class="row">
-        <div class="col-lg-8">
-          <div>
-            <img src="{{ asset('images/finsec-cube.gif') }}" alt="Financial Security Conference" class="img-fluid">
-          </div>
-        </div>
         <div class="col-lg-4">
-          <div class="about-content stats-content">
-            <h2 class="about-title">Key Highlights</h2>
-            <div class="about-text">
-              <p class="highlight-subtitle">Cumulative Data Of FINSEC Over The Last 5 Years.</p>
-            </div>
-            <div class="stats-grid">
-              <div class="stat-item">
-                <h3 class="stat-number">1500<span class="plus">+</span></h3>
-                <p class="stat-label">PARTICIPANTS FROM<br>BFSI & FINTECH</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number">130<span class="plus">+</span></h3>
-                <p class="stat-label">SPONSORS/PARTNERS</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number">2500<span class="plus">+</span></h3>
-                <p class="stat-label">COMPANIES</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number">750<span class="plus">+</span></h3>
-                <p class="stat-label">SPEAKERS</p>
-              </div>
-              <div class="stat-item">
-                <h3 class="stat-number" style="margin: 0 0px 0px 105px;">2700<span class="plus">+</span></h3>
-                <p class="stat-label" style="margin: 0 0px 0px 125px;">DELEGATES</p>
-              </div>
+          <div class="about-image-grid">
+            <div class="coin-container">
+              <img class="coin" src="{{ asset('images/Coin.png') }}" alt="Coin">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</div>
 
-  <style>
-    /* Diagonal Images Container */
-    .diagonal-images-container {
-      position: relative;
-      margin-top: 60px;
-    }
-
-    .first-diagonal {
-      position: relative;
-      border-bottom-right-radius: 50px;
-    }
-
-    .diagonal-images-wrapper:hover img {
-      transform: scale(1.05);
-    }
-
-
-    /* Responsive Styles */
-    @media (max-width: 991px) {
-
-      .stats-content {
-        margin-top: 30px;
-      }
-    }
-
-
-
-    /* Stats Grid Responsive Styles */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .stat-item {
-      text-align: left;
-    }
-
-    @media (max-width: 767px) {
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
-
-  <!-- Callout Section -->
-  <section class="callout-section">
-    <div class="container">
-      <div class="callout-image-wrapper">
-        <a href="https://forms.gle/eGt7TbMHw7YLX7BF7" target="_blank" rel="noopener noreferrer">
-          <img src="{{ asset('images/call-out-new.png') }}" alt="Call for Speakers" class="callout-image">
-        </a>
+<div class="container diagonal-images-container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="about-content stats-content">
+        <h2 class="about-title">Key Highlights</h2>
+        <div class="about-text">
+          <p class="highlight-subtitle">Cumulative Data Of FINSEC Over The Last 5 Years.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3 class="stat-number">1500<span class="plus">+</span></h3>
+            <p class="stat-label">PARTICIPANTS FROM<br>BFSI & FINTECH</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">130<span class="plus">+</span></h3>
+            <p class="stat-label">SPONSORS/PARTNERS</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">2500<span class="plus">+</span></h3>
+            <p class="stat-label">COMPANIES</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">750<span class="plus">+</span></h3>
+            <p class="stat-label">SPEAKERS</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-number">2700<span class="plus">+</span></h3>
+            <p class="stat-label">DELEGATES</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+</section>
 
-  <style>
-    /* Callout Section Styles */
-    .callout-section {
-      padding: 0;
-      /* Removed padding to allow full-width */
-      background: #ffffff;
-      min-height: 100vh;
-      /* Full viewport height */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      /* Prevent any potential overflow */
+<style>
+  /* Diagonal Images Container */
+  .diagonal-images-container {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  .first-diagonal {
+    position: relative;
+    border-bottom-right-radius: 50px;
+  }
+
+  .diagonal-images-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+
+    .stats-content {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+
+
+  /* Stats Grid Responsive Styles */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .coin-container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  .coin {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 2s linear infinite;
+  }
+
+  .coin::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transform: rotate(25deg);
+    animation: glare 4s infinite;
+  }
+
+  @keyframes glare {
+    0% {
+      transform: translate(-100%, -100%) rotate(25deg);
     }
 
-    .callout-section .container {
-      padding: 0;
-      /* Remove container padding */
-      max-width: 100%;
-      /* Allow container to be full width */
-      width: 100%;
+    20%,
+    100% {
+      transform: translate(100%, 100%) rotate(25deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #7040c0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 5px solid #7040c0;
+    padding: 10px;
+  }
+
+  .front {
+    transform: translateZ(10px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(10px);
+  }
+
+  .edge {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotateX(90deg);
+    border-radius: 50%;
+  }
+
+  .fill-gap {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    transform: translateY(-50%) rotateX(90deg);
+  }
+</style>
+
+<!-- Callout Section -->
+<section class="callout-section">
+  <div class="container">
+    <div class="callout-image-wrapper">
+      <a href="https://forms.gle/eGt7TbMHw7YLX7BF7" target="_blank" rel="noopener noreferrer">
+        <img src="{{ asset('images/call-out-new.png') }}" alt="Call for Speakers" class="callout-image">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Callout Section Styles */
+  .callout-section {
+    padding: 0;
+    /* Removed padding to allow full-width */
+    background: #ffffff;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Prevent any potential overflow */
+  }
+
+  .callout-section .container {
+    padding: 0;
+    /* Remove container padding */
+    max-width: 100%;
+    /* Allow container to be full width */
+    width: 100%;
+  }
+
+  .callout-image-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    position: relative;
+  }
+
+  .callout-image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .callout-image-wrapper:hover a {
+    // transform: scale(1.02);
+    /* Subtle zoom effect on hover */
+  }
+
+  .callout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Maintain aspect ratio while covering full area */
+    border-radius: 0;
+    /* Remove border radius for full-screen effect */
+    box-shadow: none;
+    /* Remove shadow for full-screen effect */
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .callout-section {
+      min-height: auto;
     }
 
     .callout-image-wrapper {
-      width: 100%;
-      height: 100vh;
-      /* Full viewport height */
-      position: relative;
-    }
-
-    .callout-image-wrapper a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.3s ease;
-    }
-
-    .callout-image-wrapper:hover a {
-      // transform: scale(1.02);
-      /* Subtle zoom effect on hover */
+      height: auto;
+      max-width: 90%;
+      margin: 40px auto;
     }
 
     .callout-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      /* Maintain aspect ratio while covering full area */
-      border-radius: 0;
-      /* Remove border radius for full-screen effect */
-      box-shadow: none;
-      /* Remove shadow for full-screen effect */
+      border-radius: 20px;
+      /* Restore border radius for smaller screens */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      /* Restore shadow for smaller screens */
     }
+  }
 
-    /* Responsive Styles */
-    @media (max-width: 1200px) {
-      .callout-section {
-        min-height: auto;
-      }
-
-      .callout-image-wrapper {
-        height: auto;
-        max-width: 90%;
-        margin: 40px auto;
-      }
-
-      .callout-image {
-        border-radius: 20px;
-        /* Restore border radius for smaller screens */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        /* Restore shadow for smaller screens */
-      }
+  @media (max-width: 768px) {
+    .callout-image-wrapper {
+      max-width: 95%;
+      margin: 30px auto;
     }
+  }
 
-    @media (max-width: 768px) {
-      .callout-image-wrapper {
-        max-width: 95%;
-        margin: 30px auto;
-      }
+  @media (max-width: 480px) {
+    .callout-image-wrapper {
+      margin: 20px auto;
     }
+  }
+</style>
 
-    @media (max-width: 480px) {
-      .callout-image-wrapper {
-        margin: 20px auto;
-      }
-    }
-  </style>
-
-  <!-- City Skyline Section -->
-  <section class="city-skyline-section">
-    <div class="city-content">
-      <div class="text-overlay">
-        <div class="event-date-top">4th - 5th June 2025</div>
-        <h2 class="city-name">Mumbai</h2>
-      </div>
-      <div class="city-image-container">
-        <img src="{{ asset('images/city.png') }}" alt="Mumbai Skyline" class="city-image">
-      </div>
+<!-- City Skyline Section -->
+<section class="city-skyline-section">
+  <div class="city-content">
+    <div class="text-overlay">
+      <div class="event-date-top">4th - 5th June 2025</div>
+      <h2 class="city-name">Mumbai</h2>
     </div>
-  </section>
-
-  <!-- Broad Focus Section -->
-  <section class="content-section focus-section" id="broadFocus">
-    <div class="dotted-bg-animation">
-      <div class="dot-container"></div>
+    <div class="city-image-container">
+      <img src="{{ asset('images/city.png') }}" alt="Mumbai Skyline" class="city-image">
     </div>
-    <div class="container">
-      <h1 class="bf-title">Broad Focus Areas</h1>
-      <div class="focus-carousel-container">
-        <button class="carousel-prev" aria-label="Previous slide">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <div class="focus-carousel">
-          <!-- First card active by default -->
-          <div class="focus-card active">
-            <div class="focus-card-inner">
-              <div class="focus-icon">
-                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
-              </div>
-              <div class="focus-content">
-                <h3 class="focus-title">Transaction Security</h3>
-              </div>
-            </div>
-          </div>
+  </div>
+</section>
 
-          <div class="focus-card">
-            <div class="focus-card-inner">
-              <div class="focus-icon">
-                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
-              </div>
-              <div class="focus-content">
-                <h3 class="focus-title">Payment Innovations</h3>
-              </div>
+<!-- Broad Focus Section -->
+<section class="content-section focus-section" id="broadFocus">
+  <div class="dotted-bg-animation">
+    <div class="dot-container"></div>
+  </div>
+  <div class="container">
+    <h1 class="bf-title">Broad Focus Areas</h1>
+    <div class="focus-carousel-container">
+      <button class="carousel-prev" aria-label="Previous slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="focus-carousel">
+        <!-- First card active by default -->
+        <div class="focus-card active">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
             </div>
-          </div>
-          <div class="focus-card">
-            <div class="focus-card-inner">
-              <div class="focus-icon">
-                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
-              </div>
-              <div class="focus-content">
-                <h3 class="focus-title">Fraud Prevention</h3>
-              </div>
-            </div>
-          </div>
-          <div class="focus-card">
-            <div class="focus-card-inner">
-              <div class="focus-icon">
-                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
-              </div>
-              <div class="focus-content">
-                <h3 class="focus-title">Digital Identity</h3>
-              </div>
-            </div>
-          </div>
-          <div class="focus-card">
-            <div class="focus-card-inner">
-              <div class="focus-icon">
-                <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
-              </div>
-              <div class="focus-content">
-                <h3 class="focus-title">Regulatory Technology</h3>
-              </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Transaction Security</h3>
             </div>
           </div>
         </div>
-        <button class="carousel-next" aria-label="Next slide">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="carousel-dots"></div>
+
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Payment Innovations</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Fraud Prevention</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Digital Identity</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Regulatory Technology</h3>
+            </div>
+          </div>
+        </div>
       </div>
+      <button class="carousel-next" aria-label="Next slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <div class="carousel-dots"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Tickets Section -->
-  <section class="tickets-section">
-    <div class="container">
-      <div class="section-headers mb-5">
-        <h6 class="section-subtitle">TICKETS</h6>
-        <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
+<!-- Tickets Section -->
+<section class="tickets-section">
+  <div class="container">
+    <div class="section-headers mb-5">
+      <h6 class="section-subtitle">TICKETS</h6>
+      <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
+    </div>
+    <div class="tickets-grid">
+      <!-- First Row -->
+      <div class="ticket-card">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Early Bird</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">12,000</span>
+              <span class="duration">/person</span>
+            </div>
+          </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
+              <li><i class="fa-solid fa-check"></i> Conference materials</li>
+              <li><i class="fa-solid fa-check"></i> Lunch and refreshments</li>
+              <li><i class="fa-solid fa-check"></i> Networking opportunities</li>
+              <li><i class="fa-solid fa-check"></i> Certificate of participation</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
+        </div>
       </div>
-      <div class="tickets-grid">
-        <!-- First Row -->
-        <div class="ticket-card">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Early Bird</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">12,000</span>
-                <span class="duration">/person</span>
-              </div>
-            </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
-                <li><i class="fa-solid fa-check"></i> Conference materials</li>
-                <li><i class="fa-solid fa-check"></i> Lunch and refreshments</li>
-                <li><i class="fa-solid fa-check"></i> Networking opportunities</li>
-                <li><i class="fa-solid fa-check"></i> Certificate of participation</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
-          </div>
-        </div>
 
-        <div class="ticket-card featured">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Standard</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">15,000</span>
-                <span class="duration">/person</span>
-              </div>
+      <div class="ticket-card featured">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Standard</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">15,000</span>
+              <span class="duration">/person</span>
             </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> All Early Bird features</li>
-                <li><i class="fa-solid fa-check"></i> Priority seating</li>
-                <li><i class="fa-solid fa-check"></i> Workshop access</li>
-                <li><i class="fa-solid fa-check"></i> Event recordings</li>
-                <li><i class="fa-solid fa-check"></i> Exclusive Q&A sessions</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
           </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> All Early Bird features</li>
+              <li><i class="fa-solid fa-check"></i> Priority seating</li>
+              <li><i class="fa-solid fa-check"></i> Workshop access</li>
+              <li><i class="fa-solid fa-check"></i> Event recordings</li>
+              <li><i class="fa-solid fa-check"></i> Exclusive Q&A sessions</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
+      </div>
 
-        <div class="ticket-card">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Premium</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">20,000</span>
-                <span class="duration">/person</span>
-              </div>
+      <div class="ticket-card">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Premium</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">20,000</span>
+              <span class="duration">/person</span>
             </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> All Standard features</li>
-                <li><i class="fa-solid fa-check"></i> VIP networking dinner</li>
-                <li><i class="fa-solid fa-check"></i> One-on-one mentoring</li>
-                <li><i class="fa-solid fa-check"></i> Premium swag bag</li>
-                <li><i class="fa-solid fa-check"></i> Lifetime community access</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
           </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> All Standard features</li>
+              <li><i class="fa-solid fa-check"></i> VIP networking dinner</li>
+              <li><i class="fa-solid fa-check"></i> One-on-one mentoring</li>
+              <li><i class="fa-solid fa-check"></i> Premium swag bag</li>
+              <li><i class="fa-solid fa-check"></i> Lifetime community access</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
+      </div>
 
-        <!-- Second Row -->
-        <div class="ticket-card">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Group Pass</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">40,000</span>
-                <span class="duration">/group</span>
-              </div>
+      <!-- Second Row -->
+      <div class="ticket-card">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Group Pass</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">40,000</span>
+              <span class="duration">/group</span>
             </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> Access for 3 people</li>
-                <li><i class="fa-solid fa-check"></i> All Standard features</li>
-                <li><i class="fa-solid fa-check"></i> Group seating</li>
-                <li><i class="fa-solid fa-check"></i> Special group rates</li>
-                <li><i class="fa-solid fa-check"></i> Group networking session</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
           </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> Access for 3 people</li>
+              <li><i class="fa-solid fa-check"></i> All Standard features</li>
+              <li><i class="fa-solid fa-check"></i> Group seating</li>
+              <li><i class="fa-solid fa-check"></i> Special group rates</li>
+              <li><i class="fa-solid fa-check"></i> Group networking session</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
+      </div>
 
-        <div class="ticket-card">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Virtual Pass</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">8,000</span>
-                <span class="duration">/person</span>
-              </div>
+      <div class="ticket-card">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Virtual Pass</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">8,000</span>
+              <span class="duration">/person</span>
             </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> Online access to sessions</li>
-                <li><i class="fa-solid fa-check"></i> Digital materials</li>
-                <li><i class="fa-solid fa-check"></i> Virtual networking</li>
-                <li><i class="fa-solid fa-check"></i> Session recordings</li>
-                <li><i class="fa-solid fa-check"></i> Online Q&A access</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
           </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> Online access to sessions</li>
+              <li><i class="fa-solid fa-check"></i> Digital materials</li>
+              <li><i class="fa-solid fa-check"></i> Virtual networking</li>
+              <li><i class="fa-solid fa-check"></i> Session recordings</li>
+              <li><i class="fa-solid fa-check"></i> Online Q&A access</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
+      </div>
 
-        <div class="ticket-card">
-          <div class="ticket-content">
-            <div class="ticket-header">
-              <h3 class="ticket-type">Student Pass</h3>
-              <div class="ticket-price">
-                <span class="currency">₹</span>
-                <span class="amount">5,000</span>
-                <span class="duration">/person</span>
-              </div>
+      <div class="ticket-card">
+        <div class="ticket-content">
+          <div class="ticket-header">
+            <h3 class="ticket-type">Student Pass</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">5,000</span>
+              <span class="duration">/person</span>
             </div>
-            <div class="ticket-body">
-              <ul class="ticket-features">
-                <li><i class="fa-solid fa-check"></i> Valid student ID required</li>
-                <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
-                <li><i class="fa-solid fa-check"></i> Digital materials</li>
-                <li><i class="fa-solid fa-check"></i> Student networking</li>
-                <li><i class="fa-solid fa-check"></i> Career guidance session</li>
-              </ul>
-            </div>
-            <a href="#" class="btn-get-pass">Get Pass</a>
           </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i class="fa-solid fa-check"></i> Valid student ID required</li>
+              <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
+              <li><i class="fa-solid fa-check"></i> Digital materials</li>
+              <li><i class="fa-solid fa-check"></i> Student networking</li>
+              <li><i class="fa-solid fa-check"></i> Career guidance session</li>
+            </ul>
+          </div>
+          <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <!-- FAQ Section -->
-  <section class="faq-section py-5">
-    <div class="container">
-      <div class="section-header text-center mb-5">
-        <h5 class="section-small-title">FAQs</h5>
-        <h2 class="section-title">All Your Doubts Answered</h2>
-      </div>
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h5 class="section-small-title">FAQs</h5>
+      <h2 class="section-title">All Your Doubts Answered</h2>
+    </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="faq-accordion" id="faqAccordion">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingOne">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  How can I register for the FINSEC Conclave 2025?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  Please follow these steps to register for FINSEC Conclave 2025:
-                  <p>Step 1: Click on the type of pass to register with.</p>
-                  <p>Step 2: Choose the number of delegate(s).</p>
-                  <p>Step 3: Fill in all details of the delegate(s).</p>
-                  <p>Step 4: Submit the payment to confirm participation.</p>
-                </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingOne">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="false" aria-controls="collapseOne">
+                How can I register for the FINSEC Conclave 2025?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                Please follow these steps to register for FINSEC Conclave 2025:
+                <p>Step 1: Click on the type of pass to register with.</p>
+                <p>Step 2: Choose the number of delegate(s).</p>
+                <p>Step 3: Fill in all details of the delegate(s).</p>
+                <p>Step 4: Submit the payment to confirm participation.</p>
               </div>
             </div>
+          </div>
 
-            <!-- FAQ Item 2 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingTwo">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  What are the payment options available for the registration?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>After filling the details, once you reach at the last step for submitting the payment, you will
-                    have
-                    the following 2 options:</p>
-                  <p><strong>Online mode</strong> - In this mode, you can submit the payment via debit/credit/net
-                    banking/UPI. Using the
-                    online option, once you make the payment, you will get a confirmation mail on your email id for the
-                    event.</p>
-                  <p><strong>Offline mode</strong> - In this mode, you will have the option to submit the payment routed
-                    via bank transfer.</p>
-                  <p>Once you choose this option and submit the details, you will be registered as not paid delegate.
-                    Once
-                    you do the bank transfer, you will need to share the UTR number with us. Once received, you will get
-                    a
-                    confirmation email of the registration.</p>
-                  <p><strong>*Note: Registration under offline mode will not be considered as confirmed until the
-                      payment is
-                      received by DSCI.</strong></p>
-                </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingTwo">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                What are the payment options available for the registration?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>After filling the details, once you reach at the last step for submitting the payment, you will
+                  have
+                  the following 2 options:</p>
+                <p><strong>Online mode</strong> - In this mode, you can submit the payment via debit/credit/net
+                  banking/UPI. Using the
+                  online option, once you make the payment, you will get a confirmation mail on your email id for the
+                  event.</p>
+                <p><strong>Offline mode</strong> - In this mode, you will have the option to submit the payment routed
+                  via bank transfer.</p>
+                <p>Once you choose this option and submit the details, you will be registered as not paid delegate.
+                  Once
+                  you do the bank transfer, you will need to share the UTR number with us. Once received, you will get
+                  a
+                  confirmation email of the registration.</p>
+                <p><strong>*Note: Registration under offline mode will not be considered as confirmed until the
+                    payment is
+                    received by DSCI.</strong></p>
               </div>
             </div>
+          </div>
 
-            <!-- FAQ Item 3 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingThree">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  How can I get the invoice for the registration?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>If you need an invoice for registration, make sure you add - (company name, address and GSTIN) on
-                    STEP 2 in the Buyer section. The billing details need to be furnished to get the invoice.</p>
-                  <p>In case you choose to skip providing the invoicing details, the same would be considered under
-                    unregistered and sharing of the tax invoice would not be possible post that.</p>
-                </div>
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingThree">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How can I get the invoice for the registration?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>If you need an invoice for registration, make sure you add - (company name, address and GSTIN) on
+                  STEP 2 in the Buyer section. The billing details need to be furnished to get the invoice.</p>
+                <p>In case you choose to skip providing the invoicing details, the same would be considered under
+                  unregistered and sharing of the tax invoice would not be possible post that.</p>
               </div>
             </div>
+          </div>
 
-            <!-- FAQ Item 4 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingFour">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  What is included in my registration pass?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>Your registration pass gives you access to all sessions and workshops for the event and meals
-                    during
-                    the event.</p>
-                  <p><strong>*Note: The access of the pass is excluded from any exclusive or special session defined as
-                      Invite Only.</strong></p>
-                </div>
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingFour">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What is included in my registration pass?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>Your registration pass gives you access to all sessions and workshops for the event and meals
+                  during
+                  the event.</p>
+                <p><strong>*Note: The access of the pass is excluded from any exclusive or special session defined as
+                    Invite Only.</strong></p>
               </div>
             </div>
+          </div>
 
-            <!-- FAQ Item 5 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingFive">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  How can I get my pass on the event day?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>To obtain your pass on the event day, you would need to visit the registration counter and mention
-                    your registration number and identity card to get your delegate badge at the venue.</p>
-                </div>
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingFive">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                How can I get my pass on the event day?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>To obtain your pass on the event day, you would need to visit the registration counter and mention
+                  your registration number and identity card to get your delegate badge at the venue.</p>
               </div>
             </div>
-            <!-- FAQ Item 6 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingSix">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseFive">
-                  Is accommodation part of my registration pass?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>Unfortunately no, the accommodation and travel will have to be taken care by the delegates on their
-                    own. DSCI will not be responsible for the same. However, if you wish to stay at the event venue, you
-                    can book your accommodation at the special DSCI-negotiated rates crafted for the delegates only. You
-                    may have a look at it by going to the venue section of the event website.</p>
-                </div>
+          </div>
+          <!-- FAQ Item 6 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingSix">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                aria-expanded="false" aria-controls="collapseFive">
+                Is accommodation part of my registration pass?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>Unfortunately no, the accommodation and travel will have to be taken care by the delegates on their
+                  own. DSCI will not be responsible for the same. However, if you wish to stay at the event venue, you
+                  can book your accommodation at the special DSCI-negotiated rates crafted for the delegates only. You
+                  may have a look at it by going to the venue section of the event website.</p>
               </div>
             </div>
-            <!-- FAQ Item 7 -->
-            <div class="faq-item">
-              <div class="faq-header" id="headingSeven">
-                <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                  Will there be any pick/drop facility available for the venue?
-                  <span class="faq-icon">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-minus"></i>
-                  </span>
-                </button>
-              </div>
-              <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
-                <div class="faq-body">
-                  <p>Unfortunately, no pick/drop facility is available for the event. It is advisable that delegates
-                    should plan their commute on their behalf only.
-                  </p>
-                </div>
+          </div>
+          <!-- FAQ Item 7 -->
+          <div class="faq-item">
+            <div class="faq-header" id="headingSeven">
+              <button class="faq-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                Will there be any pick/drop facility available for the venue?
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus"></i>
+                </span>
+              </button>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+              <div class="faq-body">
+                <p>Unfortunately, no pick/drop facility is available for the event. It is advisable that delegates
+                  should plan their commute on their behalf only.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <style>
-    /* FAQ Section Styles */
+<style>
+  /* FAQ Section Styles */
+  .faq-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+  }
+
+  .section-small-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #A56CFF;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 50px;
+  }
+
+  .faq-item {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .faq-header {
+    width: 100%;
+  }
+
+  .faq-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #A56CFF;
+    border: 2px solid #F0F0F0;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .faq-button:hover,
+  .faq-button:focus {
+    background-color: #cff300;
+    border-color: #A56CFF;
+    color: #A56CFF;
+    outline: none;
+  }
+
+  .faq-button:not(.collapsed) {
+    background-color: #cff300;
+    border-color: #A56CFF;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #A56CFF;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+
+  .faq-icon .fa-minus {
+    display: none;
+  }
+
+  .faq-button:not(.collapsed) .fa-plus {
+    display: none;
+    color: #A56CFF;
+  }
+
+  .faq-button:not(.collapsed) .fa-minus {
+    display: inline-block;
+  }
+
+  .faq-body {
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border: 2px solid #A56CFF;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
     .faq-section {
-      padding: 100px 0;
-      background-color: #ffffff;
-    }
-
-    .section-small-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: #A56CFF;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      padding: 60px 0;
     }
 
     .section-title {
-      font-size: 64px;
-      font-weight: 700;
-      color: #000000;
-      margin-bottom: 50px;
-    }
-
-    .faq-item {
-      margin-bottom: 16px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .faq-header {
-      width: 100%;
+      font-size: 32px;
+      margin-bottom: 30px;
     }
 
     .faq-button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 20px 30px;
-      background-color: #A56CFF;
-      border: 2px solid #F0F0F0;
-      border-radius: 12px;
-      text-align: left;
-      font-size: 18px;
-      font-weight: 600;
-      color: #ffffff;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .faq-button:hover,
-    .faq-button:focus {
-      background-color: #cff300;
-      border-color: #A56CFF;
-      color: #A56CFF;
-      outline: none;
-    }
-
-    .faq-button:not(.collapsed) {
-      background-color: #cff300;
-      border-color: #A56CFF;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      color: #A56CFF;
-    }
-
-    .faq-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 24px;
-      height: 24px;
-      margin-left: 15px;
-      border-radius: 50%;
-      color: #ffffff;
-    }
-
-    .faq-icon .fa-minus {
-      display: none;
-    }
-
-    .faq-button:not(.collapsed) .fa-plus {
-      display: none;
-      color: #A56CFF;
-    }
-
-    .faq-button:not(.collapsed) .fa-minus {
-      display: inline-block;
+      padding: 15px 20px;
+      font-size: 16px;
     }
 
     .faq-body {
+      padding: 15px 20px;
+    }
+  }
+
+  .focus-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #A56CFF;
+    text-align: center;
+  }
+
+  .focus-description {
+    display: none;
+  }
+
+  /* Updated responsive adjustments */
+  @media (max-width: 991px) {
+    .focus-carousel-container {
+      max-width: 650px;
+    }
+
+    .focus-card {
+      flex: 0 0 400px;
+      height: 242px;
+      padding: 35px 60px;
+    }
+
+    .focus-title {
+      font-size: 32px;
+    }
+
+    .carousel-prev {
+      left: -40px;
+    }
+
+    .carousel-next {
+      right: -40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .focus-carousel-container {
+      max-width: 480px;
+    }
+
+    .focus-card {
+      flex: 0 0 350px;
+      height: 212px;
+      padding: 30px 50px;
+    }
+
+    .focus-title {
+      font-size: 30px;
+    }
+
+    .carousel-prev {
+      left: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-next {
+      right: -30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .bf-title {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .focus-carousel-container {
+      max-width: 300px;
+      /* Show just the main card on mobile */
+    }
+
+    .focus-card {
+      flex: 0 0 280px;
+      height: 170px;
       padding: 20px 30px;
-      background-color: #ffffff;
-      border: 2px solid #A56CFF;
-      border-top: none;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      color: #555555;
-      font-size: 16px;
-      line-height: 1.6;
     }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .faq-section {
-        padding: 60px 0;
-      }
-
-      .section-title {
-        font-size: 32px;
-        margin-bottom: 30px;
-      }
-
-      .faq-button {
-        padding: 15px 20px;
-        font-size: 16px;
-      }
-
-      .faq-body {
-        padding: 15px 20px;
-      }
+    .focus-title {
+      font-size: 24px;
     }
-  </style>
 
-  <script>
-    // This script ensures the accordions are closed initially
+    .focus-icon {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    .carousel-prev {
+      left: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .carousel-next {
+      right: -25px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .bf-title {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  /* Ensure consistent font weights across the site */
+  .text-light {
+    font-weight: 300;
+  }
+
+  .text-regular {
+    font-weight: 400;
+  }
+
+  .text-medium {
+    font-weight: 500;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  /* Add font smoothing for better rendering */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .coin-container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  .coin {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 2s linear infinite;
+  }
+
+  .coin::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transform: rotate(25deg);
+    animation: glare 4s infinite;
+  }
+
+  @keyframes glare {
+    0% {
+      transform: translate(-100%, -100%) rotate(25deg);
+    }
+
+    20%,
+    100% {
+      transform: translate(100%, 100%) rotate(25deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #7040c0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 5px solid #7040c0;
+    padding: 10px;
+  }
+
+  .front {
+    transform: translateZ(10px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(10px);
+  }
+
+  .edge {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotateX(90deg);
+    border-radius: 50%;
+  }
+
+  .fill-gap {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: #7040c0;
+    top: 50%;
+    transform: translateY(-50%) rotateX(90deg);
+  }
+</style>
+
+<script>
+  // This script ensures the accordions are closed initially
     document.addEventListener("DOMContentLoaded", function() {
       const accordionButtons = document.querySelectorAll('.faq-button');
 
@@ -2649,12 +3168,12 @@
         }
       });
     });
-  </script>
+</script>
 
-  <!-- Footer -->
-  <div id="footer">
-    @include('partials.footer')
-  </div>
+<!-- Footer -->
+<div id="footer">
+  @include('partials.footer')
+</div>
 
 </div>
 
@@ -2946,16 +3465,17 @@
 
   .btn-read-more {
     background-color: #cff300;
-    color: #a56cff;
+    color: #A56CFF;
     padding: 12px 30px;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.3s ease;
+    border: 1px solid #A56CFF;
   }
 
   .btn-read-more:hover {
-    background-color: #cff300;
-    color: #a56cff;
+    background-color: #A56CFF;
+    color: white;
     transform: translateY(-2px);
   }
 
@@ -2964,7 +3484,7 @@
     color: #A56CFF;
     padding: 12px 30px;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 700;
     border: 1px solid #A56CFF;
     transition: all 0.3s ease;
   }
@@ -3143,6 +3663,7 @@
   @media (max-width: 991px) {
     .stats-content {
       margin-top: 30px;
+      text-align: center;
     }
   }
 
@@ -3157,7 +3678,7 @@
   }
 
   .stat-item {
-    text-align: left;
+    text-align: center;
   }
 
   @media (max-width: 767px) {
@@ -3726,3 +4247,66 @@
 </script>
 
 @endsection
+
+<script>
+  function toggleContent() {
+  const expandedContent = document.querySelector('.expanded-content');
+  const readMoreBtn = document.querySelector('.btn-read-more');
+
+  if (expandedContent.style.display === 'none') {
+    expandedContent.style.display = 'block';
+    expandedContent.style.opacity = '0';
+    setTimeout(() => {
+      expandedContent.style.opacity = '1';
+    }, 10);
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    expandedContent.style.opacity = '0';
+    setTimeout(() => {
+      expandedContent.style.display = 'none';
+      readMoreBtn.textContent = 'Read More';
+    }, 300);
+  }
+}
+</script>
+
+<style>
+  .expanded-content {
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-read-more {
+    background-color: #cff300;
+    color: #a56cff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .btn-read-more:hover {
+    background-color: #a56cff;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .about-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 767px) {
+    .about-buttons {
+      flex-direction: column;
+    }
+
+    .btn-read-more {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+</style>
