@@ -1156,6 +1156,25 @@
     margin-bottom: 40px;
   }
 
+  .ticket-card-membership {
+    position: relative;
+    width: 100%;
+    height: 450px;
+  }
+
+  .ticket-card-membership::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("{!! asset('images/ticket-card-mem.webp') !!}") no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    border-radius: 25px;
+  }
+
   .ticket-card::before {
     content: '';
     position: absolute;
@@ -1179,7 +1198,6 @@
     border-radius: 20px;
     padding: 30px;
     z-index: 2;
-    border: 2px solid #e0e0e0;
     transition: all 0.3s ease;
     color: #01050e;
   }
@@ -2572,7 +2590,7 @@
           <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
-
+      <div></div>
       <div class="ticket-card">
         <div class="ticket-content">
           <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">35% DISCOUNT ON REGULAR PASS</div>
@@ -2597,32 +2615,31 @@
         </div>
       </div>
 
-      <div class="ticket-card">
-        <div class="ticket-content">
-          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
-          <h3 class="ticket-type">MEMBERSHIP PASS</h3>
-          <div class="ticket-price">
-            <span class="currency">₹</span>
-            <span class="amount">4720</span>
-          </div>
-          <p class="tax-info">Incl of taxes</p>
-          <div class="validity">
-            <p>2 Passes Complimentary</p>
-            <p>Write to <a href="mailto:membership@dsci.in">membership@dsci.in</a> for more details</p>
-          </div>
-          <div class="access-details">
-            <h4>Get access to</h4>
-            <ul>
-              <li>All Workshops - Day 1 & 2</li>
-              <li>All Stage Access - Day 1 & 2</li>
-              <li>Networking Dinner</li>
-            </ul>
-          </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
+    </div>
+
+    <div class="ticket-card-membership">
+      <div class="ticket-content">
+        <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
+        <h3 class="ticket-type">MEMBERSHIP PASS</h3>
+        <div class="ticket-price">
+          <span class="currency">₹</span>
+          <span class="amount">4720</span>
         </div>
+        <p class="tax-info">Incl of taxes</p>
+        <div class="validity">
+          <p>2 Passes Complimentary</p>
+          <p>Write to <a href="mailto:membership@dsci.in">membership@dsci.in</a> for more details</p>
+        </div>
+        <div class="access-details">
+          <h4>Get access to</h4>
+          <ul>
+            <li>All Workshops - Day 1 & 2</li>
+            <li>All Stage Access - Day 1 & 2</li>
+            <li>Networking Dinner</li>
+          </ul>
+        </div>
+        <a href="#" class="btn-get-pass">Get Pass</a>
       </div>
-
-
     </div>
   </div>
 </section>
