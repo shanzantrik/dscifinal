@@ -2207,15 +2207,15 @@
           </div>
           <div class="stat-item">
             <h3 class="stat-number">2500<span class="plus">+</span></h3>
-            <p class="stat-label">COMPANIES</p>
+            <p class="stat-label" style="margin: 0 13px 0 0;">COMPANIES</p>
           </div>
           <div class="stat-item">
             <h3 class="stat-number">750<span class="plus">+</span></h3>
-            <p class="stat-label">SPEAKERS</p>
+            <p class="stat-label" style="margin: 0 20px 0 0;">SPEAKERS</p>
           </div>
           <div class="stat-item">
             <h3 class="stat-number">2700<span class="plus">+</span></h3>
-            <p class="stat-label">DELEGATES</p>
+            <p class="stat-label" style="margin: 0 13px 0 0;">DELEGATES</p>
           </div>
         </div>
       </div>
@@ -2731,8 +2731,8 @@
 <section class="tickets-section">
   <div class="container">
     <div class="section-headers mb-5">
-      <h6 class="section-subtitle">TICKETS</h6>
-      <h2 class="section-title">Secure your <span class="text-tickets">access</span> to FINSEC</h2>
+      <h6 class="section-subtitle">REGISTRATIONS OPEN!</h6>
+      <h2 class="section-title">Secure Your <span class="text-tickets">Access</span> to FINSEC</h2>
     </div>
     <div class="tickets-grid">
       <!-- Early Bird Ticket -->
