@@ -1820,6 +1820,7 @@
     position: relative;
     perspective: 1000px;
     overflow: hidden;
+    margin-left: 30px;
   }
 
   .coin {
