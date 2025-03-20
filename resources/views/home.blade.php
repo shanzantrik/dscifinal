@@ -754,14 +754,14 @@
   }
 
   .event-date-top {
-    font-size: 1.5rem;
-    color: #1F2937;
+    font-size: 2.5rem;
+    color: #8d4cf4;
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .city-name {
-    font-size: 4rem;
+    font-size: 16rem;
     font-weight: 700;
     margin: 0;
     display: inline-block;
@@ -773,14 +773,13 @@
     color: transparent;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 3;
   }
 
   .city-image-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 4;
   }
 
   .city-image {
@@ -1054,6 +1053,12 @@
     text-align: left;
   }
 
+  .old-price {
+    text-decoration: line-through;
+    color: #f61010;
+    font-size: 18px;
+  }
+
   .section-subtitle {
     color: #A56CFF;
     font-size: 20px;
@@ -1072,15 +1077,23 @@
 
   .tickets-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 0.8fr 0.8fr 1.9fr;
     gap: 30px;
     margin-top: 50px;
+  }
+
+  @media (max-width: 1200px) {
+    .tickets-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 50px auto 0;
+    }
   }
 
   .ticket-card {
     position: relative;
     width: 100%;
-    height: 530px;
+    height: 420px;
     /* Fixed height for the container */
     padding: 0;
     margin-bottom: 40px;
@@ -1135,10 +1148,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    padding: 30px;
+    padding: 10px;
     z-index: 2;
     transition: all 0.3s ease;
     color: #01050e;
@@ -1219,7 +1232,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
     position: absolute;
-    bottom: -70px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 16px;
@@ -2426,14 +2439,14 @@
   }
 
   .event-date-top {
-    font-size: 1.5rem;
-    color: #1F2937;
+    font-size: 2.5rem;
+    color: #8d4cf4;
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .city-name {
-    font-size: 4rem;
+    font-size: 16rem;
     font-weight: 700;
     margin: 0;
     display: inline-block;
@@ -2445,14 +2458,14 @@
     color: transparent;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 3;
+    margin: 0px 0 -330px 0;
   }
 
   .city-image-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 4;
   }
 
   .city-image {
@@ -2518,7 +2531,7 @@
     color: transparent;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 3;
+    margin: 0px 0 -330px 0;
   }
 
   @keyframes floatAndColor {
@@ -2726,7 +2739,7 @@
   <div class="container">
     <div class="section-headers mb-5">
       <h6 class="section-subtitle">REGISTRATIONS OPEN!</h6>
-      <h2 class="section-title">Secure Your <span class="text-tickets">Access</span> to FINSEC</h2>
+      <h2 class="section-title">Secure Your <span class="text-tickets">Access</span> To FINSEC</h2>
     </div>
     <div class="tickets-grid">
       <!-- Early Bird Ticket -->
@@ -2737,13 +2750,14 @@
           <div class="ticket-price">
             <span class="currency">₹</span>
             <span class="amount">7552</span>
+            <span class="old-price">₹9440</span>
           </div>
           <p class="tax-info">Incl of taxes</p>
           <div class="validity">
             <p>Valid till 10<sup>th</sup> April</p>
           </div>
           <div class="access-details">
-            <h4>Get access to</h4>
+            <h6>Get access to</h6>
             <ul>
               <li>All Workshops - Day 1 & 2</li>
               <li>All Stage Access - Day 1 & 2</li>
@@ -2761,13 +2775,14 @@
           <div class="ticket-price">
             <span class="currency">₹</span>
             <span class="amount">6608</span>
+            <span class="old-price">₹9440</span>
           </div>
           <p class="tax-info">Incl of taxes</p>
           <div class="validity">
             <p>For Women Delegates only</p>
           </div>
           <div class="access-details">
-            <h4>Get access to</h4>
+            <h6>Get access to</h6>
             <ul>
               <li>All Workshops - Day 1 & 2</li>
               <li>All Stage Access - Day 1 & 2</li>
@@ -2786,13 +2801,14 @@
           <div class="ticket-price">
             <span class="currency">₹</span>
             <span class="amount">6608</span>
+            <span class="old-price">₹9440</span>
           </div>
           <p class="tax-info">Incl of taxes</p>
           <div class="validity">
             <p>On registration of 3-5 delegates</p>
           </div>
           <div class="access-details">
-            <h4>Get access to</h4>
+            <h6>Get access to</h6>
             <ul>
               <li>All Workshops - Day 1 & 2</li>
               <li>All Stage Access - Day 1 & 2</li>
@@ -2809,13 +2825,14 @@
           <div class="ticket-price">
             <span class="currency">₹</span>
             <span class="amount">6136</span>
+            <span class="old-price">₹9440</span>
           </div>
           <p class="tax-info">Incl of taxes</p>
           <div class="validity">
             <p>On registration of 6+ delegates</p>
           </div>
           <div class="access-details">
-            <h4>Get access to</h4>
+            <h6>Get access to</h6>
             <ul>
               <li>All Workshops - Day 1 & 2</li>
               <li>All Stage Access - Day 1 & 2</li>
@@ -2848,7 +2865,7 @@
           </div>
           <div class="ticket-content-inner-card">
             <div class="access-details">
-              <h4>Get access to</h4>
+              <h6>Get access to</h6>
               <ul>
                 <li>All Workshops - Day 1 & 2</li>
                 <li>All Stage Access - Day 1 & 2</li>
