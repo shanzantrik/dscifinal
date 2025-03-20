@@ -1075,11 +1075,33 @@
     margin-bottom: 50px;
   }
 
+  .discount-banner {
+    font-size: 12px;
+    font-weight: 700;
+    color: #A56CFF;
+  }
+
+  .access-details li,
+  h6 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
   .tickets-grid {
     display: grid;
     grid-template-columns: 0.8fr 0.8fr 1.9fr;
     gap: 30px;
     margin-top: 50px;
+  }
+
+  .ticket-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .ticket-content-grid-item {
+    padding: 10px;
   }
 
   @media (max-width: 1200px) {
@@ -1226,7 +1248,7 @@
     display: inline-block;
     background: #A56CFF;
     color: #ffffff;
-    padding: 10px 30px;
+    padding: 10px 26px;
     border-radius: 25px;
     font-weight: 700;
     text-decoration: none;
@@ -2745,7 +2767,7 @@
       <!-- Early Bird Ticket -->
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">20% DISCOUNT ON REGULAR PASS</div>
+          <div class="discount-banner">20% DISCOUNT ON REGULAR PASS</div>
           <h3 class="ticket-type">EARLY BIRD</h3>
           <div class="ticket-price">
             <span class="currency">₹</span>
@@ -2770,7 +2792,7 @@
 
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">30% DISCOUNT ON REGULAR PASS</div>
+          <div class="discount-banner">30% DISCOUNT ON REGULAR PASS</div>
           <h3 class="ticket-type">SHEROES PASS</h3>
           <div class="ticket-price">
             <span class="currency">₹</span>
@@ -2793,63 +2815,62 @@
         </div>
       </div>
 
-      <!-- Second Row -->
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">30% DISCOUNT ON REGULAR PASS</div>
-          <h3 class="ticket-type">GROUP REGISTRATION</h3>
-          <div class="ticket-price">
-            <span class="currency">₹</span>
-            <span class="amount">6608</span>
-            <span class="old-price">₹9440</span>
-          </div>
-          <p class="tax-info">Incl of taxes</p>
-          <div class="validity">
-            <p>On registration of 3-5 delegates</p>
-          </div>
-          <div class="access-details">
-            <h6>Get access to</h6>
-            <ul>
-              <li>All Workshops - Day 1 & 2</li>
-              <li>All Stage Access - Day 1 & 2</li>
-              <li>Networking Dinner</li>
-            </ul>
+          <div class="ticket-content-grid">
+            <div class="ticket-content-grid-item">
+              <div class="discount-banner">30% DISCOUNT ON REGULAR PASS</div>
+              <h3 class="ticket-type">GROUP REGISTRATION</h3>
+              <div class="ticket-price">
+                <span class="currency">₹</span>
+                <span class="amount">6608</span>
+                <span class="old-price">₹9440</span>
+              </div>
+              <p class="tax-info">Incl of taxes</p>
+              <div class="validity">
+                <p>On registration of 3-5 delegates</p>
+              </div>
+              <div class="access-details">
+                <h6>Get access to</h6>
+                <ul>
+                  <li>All Workshops - Day 1 & 2</li>
+                  <li>All Stage Access - Day 1 & 2</li>
+                  <li>Networking Dinner</li>
+                </ul>
+              </div>
+            </div>
+            <div class="ticket-content-grid-item">
+              <div class="discount-banner">35% DISCOUNT ON REGULAR PASS</div>
+              <h3 class="ticket-type">GROUP REGISTRATION</h3>
+              <div class="ticket-price">
+                <span class="currency">₹</span>
+                <span class="amount">6136</span>
+                <span class="old-price">₹9440</span>
+              </div>
+              <p class="tax-info">Incl of taxes</p>
+              <div class="validity">
+                <p>On registration of 6+ delegates</p>
+              </div>
+              <div class="access-details">
+                <h6>Get access to</h6>
+                <ul>
+                  <li>All Workshops - Day 1 & 2</li>
+                  <li>All Stage Access - Day 1 & 2</li>
+                  <li>Networking Dinner</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
-      <div class="ticket-card">
-        <div class="ticket-content">
-          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">35% DISCOUNT ON REGULAR PASS</div>
-          <h3 class="ticket-type">GROUP REGISTRATION</h3>
-          <div class="ticket-price">
-            <span class="currency">₹</span>
-            <span class="amount">6136</span>
-            <span class="old-price">₹9440</span>
-          </div>
-          <p class="tax-info">Incl of taxes</p>
-          <div class="validity">
-            <p>On registration of 6+ delegates</p>
-          </div>
-          <div class="access-details">
-            <h6>Get access to</h6>
-            <ul>
-              <li>All Workshops - Day 1 & 2</li>
-              <li>All Stage Access - Day 1 & 2</li>
-              <li>Networking Dinner</li>
-            </ul>
-          </div>
-          <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
-        </div>
-      </div>
-
     </div>
 
     <div class="ticket-card-membership">
       <div class="ticket-content">
         <div class="ticket-content-inner">
           <div class="ticket-content-inner-card">
-            <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
+            <div class="discount-banner">50% DISCOUNT ON REGULAR PASS</div>
             <h3 class="ticket-type">MEMBERSHIP PASS</h3>
             <div class="ticket-price">
               <span class="currency">₹</span>
@@ -3526,7 +3547,7 @@
   }
 
   .mobile-menu .site-menu ul li a {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     padding: 12px 0;
     display: block;
