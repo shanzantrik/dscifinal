@@ -1154,7 +1154,7 @@
   .ticket-card {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 530px;
     /* Fixed height for the container */
     padding: 0;
     margin-bottom: 40px;
@@ -1163,7 +1163,7 @@
   .ticket-card-membership {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 500px;
   }
 
   .ticket-card-membership::before {
@@ -1277,14 +1277,14 @@
     color: #ffffff;
     padding: 10px 30px;
     border-radius: 25px;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
     position: absolute;
-    bottom: -15px;
+    bottom: -70px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14px;
+    font-size: 16px;
     z-index: 3;
   }
 
