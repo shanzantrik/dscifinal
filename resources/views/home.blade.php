@@ -1058,15 +1058,15 @@
   }
 
   .focus-icon {
-    width: 70px;
-    min-width: 70px;
-    height: 70px;
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #A56CFF;
     border-radius: 14px;
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 20px;
   }
 
@@ -2503,21 +2503,72 @@
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/broad-focus/Dsci icon_TalentNext-gen digital crimes of tomorrow.svg') }}"
-                alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Talent of tomorrow.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
-              <h3 class="focus-title">Fraud Prevention</h3>
+              <h3 class="focus-title">Talent of Tomorrow</h3>
             </div>
           </div>
         </div>
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/broad-focus/Dsci icon_Talent of tomorrow.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Ransomware Response.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
-              <h3 class="focus-title">Digital Identity</h3>
+              <h3 class="focus-title">Ransomware Response</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_LLM Ops.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">LLM Ops</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Quantum Blueprint.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Quantum Blueprints</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Resilient Financial Infrastructure.svg') }}"
+                alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Resilient Financial Infrastructure</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_privacy ops.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">PrivacyOps</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_TalentNext-gen digital crimes of tomorrow.svg') }}"
+                alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Next-gen Digital Crimes</h3>
             </div>
           </div>
         </div>
@@ -2527,7 +2578,27 @@
               <img src="{{ asset('images/broad-focus/Dsci icon_SupTech.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
-              <h3 class="focus-title">Regulatory Technology</h3>
+              <h3 class="focus-title">SupTech</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_ESG Integration.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">ESG Integration</h3>
+            </div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-card-inner">
+            <div class="focus-icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Adaptive multi cloud security.svg') }}" alt="Home Icon">
+            </div>
+            <div class="focus-content">
+              <h3 class="focus-title">Adaptive Multi Cloud Security</h3>
             </div>
           </div>
         </div>
@@ -2545,7 +2616,7 @@
   <div class="container">
     <div class="section-headers mb-5">
       <h6 class="section-subtitle">TICKETS</h6>
-      <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
+      <h2 class="section-title">Secure your <span class="text-tickets">access</span> to FINSEC</h2>
     </div>
     <div class="tickets-grid">
       <!-- Early Bird Ticket -->
@@ -2671,19 +2742,7 @@
         <a href="#" class="btn-get-pass">Get Pass</a>
       </div>
     </div>
-    <div class="navigation-container">
-      <button class="nav-arrow prev-arrow" aria-label="Previous slide">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <div class="dots-container">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-      <button class="nav-arrow next-arrow" aria-label="Next slide">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
+
   </div>
 </section>
 
@@ -3102,9 +3161,9 @@
     }
 
     .focus-icon {
-      width: 50px;
-      min-width: 50px;
-      height: 50px;
+      width: 100px;
+      min-width: 100px;
+      height: 100px;
       margin-bottom: 10px;
     }
 
