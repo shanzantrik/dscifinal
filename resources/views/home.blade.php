@@ -736,150 +736,76 @@
   /* City Skyline Section Styles */
   .city-skyline-section {
     position: relative;
-    width: 100%;
-    height: 100vh;
     overflow: hidden;
-    background: #ffffff;
+    padding: 40px 0;
+    background: #f8fafc;
   }
 
   .city-content {
     position: relative;
-    width: 100%;
-    height: 100%;
+    text-align: center;
+    z-index: 2;
   }
 
   .text-overlay {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10%;
-    z-index: 1;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 30px;
   }
 
   .event-date-top {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    background: linear-gradient(45deg, #472E56, #9B65BC);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    margin-top: 3%;
-    transform: translateY(-20px);
-    opacity: 0;
-    animation: fadeInDate 1s ease-out forwards;
+    font-size: 1.5rem;
+    color: #1F2937;
+    margin-bottom: 15px;
+    font-weight: 500;
   }
 
   .city-name {
-    font-size: clamp(8rem, 15vw, 20rem);
-    color: #ffffff;
-    -webkit-text-stroke: 2px #A56CFF;
-    text-stroke: 2px #A56CFF;
-    font-weight: 800;
-    text-transform: none;
-    letter-spacing: -2px;
-    opacity: 0;
-    transform: translateY(20%);
-    animation: sunriseText 5s ease-out forwards;
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    width: 90%;
-    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    display: inline-block;
+    animation: floatAndColor 6s ease-in-out infinite;
+    background: linear-gradient(45deg, #8B5CF6, #EC4899, #3B82F6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
   }
 
   .city-image-container {
-    position: absolute;
-    top: 135px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
   }
 
   .city-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    animation: fadeInImage 2s ease-out forwards;
+    height: auto;
+    display: block;
   }
 
-  @keyframes sunriseText {
-    0% {
-      opacity: 1;
-      transform: translateY(100%);
-    }
-
-    30% {
-      opacity: 1;
-      transform: translateY(80%);
-    }
-
-    60% {
-      opacity: 1;
-      transform: translateY(60%);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInDate {
-    0% {
-      opacity: 1;
-      transform: translateY(-10px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInImage {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* Responsive Styles */
   @media (max-width: 768px) {
-    .city-skyline-section {
-      height: 70vh;
+    .city-name {
+      font-size: 3rem;
     }
 
     .event-date-top {
-      margin-top: 20%;
-    }
-
-    .city-name {
-      font-size: clamp(4rem, 10vw, 15rem);
-      bottom: 35%;
+      font-size: 1.2rem;
     }
   }
 
   @media (max-width: 480px) {
-    .city-skyline-section {
-      height: 50vh;
+    .city-name {
+      font-size: 2.5rem;
     }
 
     .event-date-top {
-      font-size: 1.25rem;
-      margin-top: 25%;
-    }
-
-    .city-name {
-      font-size: clamp(3rem, 8vw, 10rem);
-      bottom: 20%;
+      font-size: 1rem;
     }
   }
 
@@ -993,7 +919,7 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
     display: flex;
@@ -1005,7 +931,7 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    opacity: 0.7;
+    opacity: 1;
   }
 
   .carousel-prev {
@@ -2483,10 +2409,76 @@
   .city-skyline-section {
     position: relative;
     overflow: hidden;
+    padding: 40px 0;
+    background: #f8fafc;
+  }
+
+  .city-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .text-overlay {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 30px;
+  }
+
+  .event-date-top {
+    font-size: 1.5rem;
+    color: #1F2937;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .city-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    display: inline-block;
+    animation: floatAndColor 6s ease-in-out infinite;
+    background: linear-gradient(45deg, #8B5CF6, #EC4899, #3B82F6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
   }
 
   .city-image-container {
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .city-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .city-name {
+      font-size: 3rem;
+    }
+
+    .event-date-top {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .city-name {
+      font-size: 2.5rem;
+    }
+
+    .event-date-top {
+      font-size: 1rem;
+    }
   }
 
   .city-image.color-shift {
@@ -2525,6 +2517,8 @@
     background-clip: text;
     color: transparent;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
   }
 
   @keyframes floatAndColor {
@@ -2684,7 +2678,7 @@
                 alt="Home Icon">
             </div>
             <div class="focus-content">
-              <h3 class="focus-title">Next-gen Digital Crimes</h3>
+              <h3 class="focus-title">Next-Gen Digital Crimes</h3>
             </div>
           </div>
         </div>
@@ -4345,12 +4339,12 @@
             } else if (i === currentIndex + 1) {
                 // Next smaller card (visible on the right)
                 card.classList.remove('active');
-                card.style.opacity = '0.7';
+                card.style.opacity = '1';
                 card.style.transform = 'scale(0.67)'; // Scaled down to 330px width (330/495 = ~0.67)
             } else {
                 // Other cards
                 card.classList.remove('active');
-                card.style.opacity = '0.5';
+                card.style.opacity = '1';
                 card.style.transform = 'scale(0.67)';
             }
         });
