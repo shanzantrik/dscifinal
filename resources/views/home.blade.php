@@ -805,15 +805,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    opacity: 0.15;
+    opacity: 0.5;
   }
 
   .dot-container {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle, #A56CFF 1px, transparent 1px);
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
     background-size: 30px 30px;
     animation: moveBackground 20s linear infinite;
   }

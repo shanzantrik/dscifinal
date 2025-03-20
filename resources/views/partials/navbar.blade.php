@@ -237,7 +237,7 @@
     color: #fff;
     text-decoration: none;
     display: block;
-    padding: 10px 0;
+    padding: 10px 16px;
   }
 
   .mobile-book-btn {
