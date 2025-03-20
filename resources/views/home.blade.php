@@ -1096,6 +1096,44 @@
     padding: 0;
   }
 
+  /* Responsive adjustments for membership ticket */
+  @media (max-width: 991px) {
+    .ticket-content-inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ticket-content-inner-card {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(165, 108, 255, 0.1);
+    }
+
+    .ticket-content-inner-card:last-child {
+      border-bottom: none;
+    }
+
+    .ticket-card-membership {
+      height: auto;
+      min-height: 320px;
+    }
+
+    @media (max-width: 991px) {
+      .ticket-card-membership {
+        min-height: 600px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ticket-content-inner {
+      gap: 15px;
+    }
+
+    .ticket-content-inner-card {
+      padding: 8px 0;
+    }
+  }
+
   .ticket-card-membership {
     position: relative;
     width: 100%;
@@ -1158,7 +1196,7 @@
   .ticket-type {
     font-size: 20px;
     font-weight: 700;
-    color: #05102D;
+    color: #A56CFF;
     margin-bottom: 10px;
   }
 
@@ -1198,7 +1236,7 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 10px;
-    color: #05102D;
+    color: #A56CFF;
     font-size: 14px;
   }
 
@@ -1265,7 +1303,7 @@
     }
 
     .ticket-card {
-      height: 350px;
+      height: 530px;
     }
 
     .ticket-content {
@@ -1915,7 +1953,7 @@
   @media (max-width: 767px) {
     .ticket-content-grid {
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 0px;
     }
 
     .ticket-content-grid-item {
@@ -1929,7 +1967,14 @@
 
     .ticket-card {
       height: auto;
-      min-height: 420px;
+      min-height: 530px;
+    }
+
+    @media (min-width: 390px) and (max-width: 767) {
+      .ticket-card {
+        height: auto;
+        min-height: 530px;
+      }
     }
 
     .ticket-content {
@@ -2324,7 +2369,7 @@
     }
 
     .callout-image-wrapper:hover a {
-      // transform: scale(1.02);
+      transform: scale(1.02);
       /* Subtle zoom effect on hover */
     }
 
@@ -2798,14 +2843,14 @@
                 <div class="validity">
                   <p>On registration of 6+ delegates</p>
                 </div>
-                <div class="access-details">
+                {{-- <div class="access-details">
                   <h6>Get access to</h6>
                   <ul>
                     <li>All Workshops - Day 1 & 2</li>
                     <li>All Stage Access - Day 1 & 2</li>
                     <li>Networking Dinner</li>
                   </ul>
-                </div>
+                </div> --}}
               </div>
             </div>
             <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
@@ -2822,6 +2867,7 @@
               <div class="ticket-price">
                 <span class="currency">₹</span>
                 <span class="amount">4720</span>
+                <span class="old-price">₹9440</span>
               </div>
               <p class="tax-info">Incl of taxes</p>
             </div>
