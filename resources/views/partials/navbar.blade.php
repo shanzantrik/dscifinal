@@ -50,9 +50,10 @@
   <div class="mobile-menu">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#broadFocus">Broad Focus</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#registration" class="mobile-book-btn">Book Your Seat</a></li>
+      <li><a href="#keyhighlights">Key Highlights</a></li>
+      <li><a href="#broadFocus">Broad Focus Areas</a></li>
+      <li><a href="#footer">Contact</a></li>
+      <li><a href="#tickets" class="mobile-book-btn"> Register Now</a></li>
     </ul>
   </div>
 </nav>
