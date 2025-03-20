@@ -482,7 +482,7 @@ body.page-loaded .preloader {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to bottom, rgba(5, 16, 45, 0.7), rgba(5, 16, 45, 0.9)), url('../images/hero-bg.jpg');
+  background-image: #f3f3f3, url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

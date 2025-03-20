@@ -29,7 +29,7 @@
 
     <!-- Button - Right aligned -->
     <div class="navbar-button d-none d-lg-flex">
-      <a href="#registration" class="book-seat-btn">Register Now</a>
+      <a href="#tickets" class="book-seat-btn">Register Now</a>
     </div>
 
     <!-- Mobile menu button -->
