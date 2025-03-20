@@ -888,6 +888,9 @@
     padding: 100px 0;
     position: relative;
     background: linear-gradient(135deg, #05102D 0%, #1A2151 100%);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: top;
     overflow: hidden;
   }
 
@@ -1013,14 +1016,15 @@
     right: -60px;
   }
 
-  .carousel-prev:disabled,
-  .carousel-next:disabled {
+  .carousel-prev:enabled,
+  .carousel-next:enabled {
     opacity: 0.3;
     cursor: not-allowed;
+    background: #A56CFF;
   }
 
-  .carousel-prev:not(:disabled):hover,
-  .carousel-next:not(:disabled):hover {
+  .carousel-prev:not(:enabled):hover,
+  .carousel-next:not(:enabled):hover {
     background: #A56CFF;
     transform: translateY(-50%) scale(1.1);
     opacity: 1;
@@ -1037,7 +1041,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: #A56CFF;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1045,7 +1049,7 @@
   }
 
   .carousel-dot.active {
-    background: #ffffff;
+    background: #A56CFF;
     transform: scale(1.2);
   }
 
@@ -1142,7 +1146,7 @@
 
   .tickets-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 50px;
   }
@@ -1906,6 +1910,53 @@
     top: 50%;
     transform: translateY(-50%) rotateX(90deg);
   }
+
+  .navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .nav-arrow {
+    background: transparent;
+    border: none;
+    color: #8B5CF6;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-arrow:hover {
+    transform: scale(1.2);
+  }
+
+  .nav-arrow:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .dots-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #8B5CF6;
+    width: 10px;
+    height: 10px;
+  }
 </style>
 
 <!-- Navbar -->
@@ -2421,7 +2472,7 @@
     <div class="dot-container"></div>
   </div>
   <div class="container">
-    <h1 class="bf-title">Broad Focus Areas</h1>
+    <h1 class="bf-title" style="text-align: center; font-size: 40px; font-weight: 700;">Broad Focus Areas</h1>
     <div class="focus-carousel-container">
       <button class="carousel-prev" aria-label="Previous slide">
         <i class="fa-solid fa-chevron-left"></i>
@@ -2524,26 +2575,6 @@
 
       <div class="ticket-card">
         <div class="ticket-content">
-          <h3 class="ticket-type">REGULAR PASS</h3>
-          <div class="ticket-price">
-            <span class="currency">₹</span>
-            <span class="amount">9440</span>
-          </div>
-          <p class="tax-info">Incl of taxes</p>
-          <div class="access-details">
-            <h4>Get access to</h4>
-            <ul>
-              <li>All Workshops - Day 1 & 2</li>
-              <li>All Stage Access - Day 1 & 2</li>
-              <li>Networking Dinner</li>
-            </ul>
-          </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
-        </div>
-      </div>
-
-      <div class="ticket-card">
-        <div class="ticket-content">
           <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">30% DISCOUNT ON REGULAR PASS</div>
           <h3 class="ticket-type">SHEROES PASS</h3>
           <div class="ticket-price">
@@ -2590,7 +2621,6 @@
           <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
-      <div></div>
       <div class="ticket-card">
         <div class="ticket-content">
           <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">35% DISCOUNT ON REGULAR PASS</div>
@@ -2641,9 +2671,46 @@
         <a href="#" class="btn-get-pass">Get Pass</a>
       </div>
     </div>
+    <div class="navigation-container">
+      <button class="nav-arrow prev-arrow" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="dots-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="nav-arrow next-arrow" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const dots = document.querySelectorAll('.dot');
+  const prevArrow = document.querySelector('.prev-arrow');
+  const nextArrow = document.querySelector('.next-arrow');
+  let currentIndex = 0;
+
+  function updateDots(index) {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  prevArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+    updateDots(currentIndex);
+  });
+
+  nextArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % dots.length;
+    updateDots(currentIndex);
+  });
+});
+</script>
 
 <!-- FAQ Section -->
 <section class="faq-section py-5">
