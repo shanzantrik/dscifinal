@@ -2504,23 +2504,20 @@
         </div>
       </div>
 
-      <div class="ticket-card featured">
+      <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Standard</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">15,000</span>
-              <span class="duration">/person</span>
-            </div>
+          <h3 class="ticket-type">REGULAR PASS</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">9440</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> All Early Bird features</li>
-              <li><i class="fa-solid fa-check"></i> Priority seating</li>
-              <li><i class="fa-solid fa-check"></i> Workshop access</li>
-              <li><i class="fa-solid fa-check"></i> Event recordings</li>
-              <li><i class="fa-solid fa-check"></i> Exclusive Q&A sessions</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2529,21 +2526,22 @@
 
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Premium</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">20,000</span>
-              <span class="duration">/person</span>
-            </div>
+          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">30% DISCOUNT ON REGULAR PASS</div>
+          <h3 class="ticket-type">SHEROES PASS</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">6608</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> All Standard features</li>
-              <li><i class="fa-solid fa-check"></i> VIP networking dinner</li>
-              <li><i class="fa-solid fa-check"></i> One-on-one mentoring</li>
-              <li><i class="fa-solid fa-check"></i> Premium swag bag</li>
-              <li><i class="fa-solid fa-check"></i> Lifetime community access</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="validity">
+            <p>For Women Delegates only</p>
+          </div>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2553,21 +2551,22 @@
       <!-- Second Row -->
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Group Pass</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">40,000</span>
-              <span class="duration">/group</span>
-            </div>
+          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">30% DISCOUNT ON REGULAR PASS</div>
+          <h3 class="ticket-type">GROUP REGISTRATION</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">6608</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> Access for 3 people</li>
-              <li><i class="fa-solid fa-check"></i> All Standard features</li>
-              <li><i class="fa-solid fa-check"></i> Group seating</li>
-              <li><i class="fa-solid fa-check"></i> Special group rates</li>
-              <li><i class="fa-solid fa-check"></i> Group networking session</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="validity">
+            <p>On registration of 3-5 delegates</p>
+          </div>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2576,21 +2575,22 @@
 
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Virtual Pass</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">8,000</span>
-              <span class="duration">/person</span>
-            </div>
+          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">35% DISCOUNT ON REGULAR PASS</div>
+          <h3 class="ticket-type">GROUP REGISTRATION</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">6136</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> Online access to sessions</li>
-              <li><i class="fa-solid fa-check"></i> Digital materials</li>
-              <li><i class="fa-solid fa-check"></i> Virtual networking</li>
-              <li><i class="fa-solid fa-check"></i> Session recordings</li>
-              <li><i class="fa-solid fa-check"></i> Online Q&A access</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="validity">
+            <p>On registration of 6+ delegates</p>
+          </div>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
@@ -2599,26 +2599,30 @@
 
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Student Pass</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">5,000</span>
-              <span class="duration">/person</span>
-            </div>
+          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
+          <h3 class="ticket-type">MEMBERSHIP PASS</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">4720</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> Valid student ID required</li>
-              <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
-              <li><i class="fa-solid fa-check"></i> Digital materials</li>
-              <li><i class="fa-solid fa-check"></i> Student networking</li>
-              <li><i class="fa-solid fa-check"></i> Career guidance session</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="validity">
+            <p>2 Passes Complimentary</p>
+            <p>Write to <a href="mailto:membership@dsci.in">membership@dsci.in</a> for more details</p>
+          </div>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
+
+
     </div>
   </div>
 </section>
