@@ -24,7 +24,7 @@
             <h3>For Sponsorship</h3>
             <div class="contact-person d-flex align-items-center">
               <div class="contact-img">
-                <img src="{{ asset('images/komal-sharma.png') }}" alt="Komal Sharma" class="rounded-circle" width="50">
+                <img src="{{ asset('images/komal-sharma.webp') }}" alt="Komal Sharma" class="rounded-circle" width="50">
               </div>
               <div class="contact-info ms-3">
                 <h5>Komal Sharma</h5>
