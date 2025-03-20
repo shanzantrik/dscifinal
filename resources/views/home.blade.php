@@ -1160,10 +1160,22 @@
     margin-bottom: 40px;
   }
 
+  .ticket-content-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .ticket-content-inner-card {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
   .ticket-card-membership {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 280px;
   }
 
   .ticket-card-membership::before {
@@ -2824,29 +2836,38 @@
 
     <div class="ticket-card-membership">
       <div class="ticket-content">
-        <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
-        <h3 class="ticket-type">MEMBERSHIP PASS</h3>
-        <div class="ticket-price">
-          <span class="currency">₹</span>
-          <span class="amount">4720</span>
+        <div class="ticket-content-inner">
+          <div class="ticket-content-inner-card">
+            <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">50% DISCOUNT ON REGULAR PASS</div>
+            <h3 class="ticket-type">MEMBERSHIP PASS</h3>
+            <div class="ticket-price">
+              <span class="currency">₹</span>
+              <span class="amount">4720</span>
+            </div>
+            <p class="tax-info">Incl of taxes</p>
+          </div>
+          <div class="ticket-content-inner-card">
+            <div class="validity">
+              <p>2 Passes Complimentary</p>
+              <p>Write to <a href="mailto:membership@dsci.in">membership@dsci.in</a> for more details</p>
+            </div>
+          </div>
+          <div class="ticket-content-inner-card">
+            <div class="access-details">
+              <h4>Get access to</h4>
+              <ul>
+                <li>All Workshops - Day 1 & 2</li>
+                <li>All Stage Access - Day 1 & 2</li>
+                <li>Networking Dinner</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <p class="tax-info">Incl of taxes</p>
-        <div class="validity">
-          <p>2 Passes Complimentary</p>
-          <p>Write to <a href="mailto:membership@dsci.in">membership@dsci.in</a> for more details</p>
-        </div>
-        <div class="access-details">
-          <h4>Get access to</h4>
-          <ul>
-            <li>All Workshops - Day 1 & 2</li>
-            <li>All Stage Access - Day 1 & 2</li>
-            <li>Networking Dinner</li>
-          </ul>
-        </div>
-        <a href="#" class="btn-get-pass">Get Pass</a>
       </div>
     </div>
-
+    <div class="terms-link-container">
+      <a href="#" class="terms-link" onclick="openTermsModal(event)">Click to view Terms & Conditions</a>
+    </div>
   </div>
 </section>
 
@@ -4615,3 +4636,182 @@
     }
   }
 </style>
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Terms & Conditions</h2>
+    <div class="terms-content">
+      <div class="terms-section">
+        <h3>Terms & Conditions:</h3>
+        <p><strong>Early Bird Pass:</strong> You have to make the payment within 15 days of sending your registration or
+          by 10th April 2025, whichever comes earlier, failing to which the offer will not be valid.</p>
+        <p><strong>SHEroes Pass:</strong> The pass is valid to the women delegates only. Any registrations other than
+          the specified will be rejected.</p>
+        <p><strong>Group Pass:</strong> You must make the payment within 15 days of sending your registration or by 30th
+          May 2025, whichever comes earlier, failing which the offer will not be valid.</p>
+        <p><strong>Regular Pass:</strong> You have to make the payment within 15 days of sending your registration or by
+          30th May 2025, whichever comes earlier.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>DSCI Member's Discount</h3>
+        <p>As a valuable DSCI member, get regular pass at a 50% discount. Please write to <a
+            href="mailto:membership@dsci.in">membership@dsci.in</a> for more details.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>Change in Nomination/Delegate</h3>
+        <p>Any registration is entitled to a one-time substitution for a pre-registered delegate till 30th May 2025.</p>
+      </div>
+
+      <div class="terms-section">
+        <h3>Cancellation Policy</h3>
+        <p>The last date for request for cancellation of your registration is 15th May 2025 with 75% refund. 25% of the
+          fees would be withheld as processing fees at any given point of time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal.show {
+    opacity: 1;
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+  }
+
+  .modal.show .modal-content {
+    transform: translateY(0);
+  }
+
+  .close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .close-modal:hover {
+    color: #000;
+  }
+
+  .terms-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 15px;
+  }
+
+  .terms-section {
+    margin-bottom: 25px;
+  }
+
+  .terms-section h3 {
+    color: #8B5CF6;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .terms-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #4B5563;
+  }
+
+  .terms-section strong {
+    color: #1F2937;
+  }
+
+  .terms-link-container {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .terms-link {
+    color: #8B5CF6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    font-weight: 700;
+  }
+
+  .terms-link:hover {
+    color: #7C3AED;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      margin: 10% auto;
+      padding: 20px;
+      width: 95%;
+    }
+
+    .terms-content {
+      max-height: 60vh;
+    }
+  }
+</style>
+
+<script>
+  function openTermsModal(event) {
+  event.preventDefault();
+  const modal = document.getElementById('termsModal');
+  modal.style.display = 'block';
+  setTimeout(() => modal.classList.add('show'), 10);
+
+  document.body.style.overflow = 'hidden';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('termsModal');
+  const closeBtn = document.querySelector('.close-modal');
+
+  closeBtn.onclick = function() {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 300);
+    }
+  }
+});
+</script>
