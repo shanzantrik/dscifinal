@@ -2756,7 +2756,7 @@
               <li>Networking Dinner</li>
             </ul>
           </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
+          <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
 
@@ -2780,7 +2780,7 @@
               <li>Networking Dinner</li>
             </ul>
           </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
+          <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
 
@@ -2805,7 +2805,7 @@
               <li>Networking Dinner</li>
             </ul>
           </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
+          <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
       <div class="ticket-card">
@@ -2828,7 +2828,7 @@
               <li>Networking Dinner</li>
             </ul>
           </div>
-          <a href="#" class="btn-get-pass">Get Pass</a>
+          <a href="https://www.explara.com/e/finsec2025" target="_blank" class="btn-get-pass">Get Pass</a>
         </div>
       </div>
 
