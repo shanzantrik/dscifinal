@@ -7,7 +7,10 @@
 <link rel="stylesheet" href="{{ asset('css/lib/space-grotesk.css') }}">
 <!-- Add Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="{{ asset('images/favicon.ico') }}">
+<!-- Alternative for .ico -->
+<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 <style>
   /* Global font styles - Consolidated */
   :root {
