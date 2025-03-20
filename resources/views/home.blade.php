@@ -1181,6 +1181,7 @@
     z-index: 2;
     border: 2px solid #e0e0e0;
     transition: all 0.3s ease;
+    color: #01050e;
   }
 
   .ticket-card.featured .ticket-content {
@@ -1206,7 +1207,7 @@
   .ticket-price {
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    justify-content: left;
     gap: 5px;
   }
 
@@ -2051,11 +2052,11 @@
         <div class="col-lg-8">
           <div class="about-content">
             <h6 class="about-subtitle">ABOUT US</h6>
-            <h2 class="about-title">
+            <h2 class="about-title" style="text-align: left !important;">
               Financial <span class="highlight">Security</span><br>
               Conclave 2025
             </h2>
-            <div class="about-text">
+            <div class="about-text" style="text-align: left !important;">
               <div class="initial-content">
                 <p>The seventh edition of the DSCI FINSEC Conclave is all set to be the perfect congregation
                   of policy, finance, and security spheres. This year&#39;s conclave will bring together the
@@ -2089,7 +2090,7 @@
             </div>
             <div class="about-buttons">
               <button class="btn btn-read-more" onclick="toggleContent()">Read More</button>
-              <a href="#" class="btn btn-report">FINSEC 25 Report</a>
+              <a href="#" class="btn btn-report">FINSEC'24 Report</a>
             </div>
           </div>
         </div>
@@ -2112,6 +2113,7 @@
         <div class="about-text">
           <p class="highlight-subtitle">Cumulative Data Of FINSEC Over The Last 5 Years.</p>
         </div>
+        <div class="cube-container"></div>
         <div class="stats-grid">
           <div class="stat-item">
             <h3 class="stat-number">1500<span class="plus">+</span></h3>
@@ -2411,7 +2413,7 @@
         <div class="focus-card active">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Transaction Security.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
               <h3 class="focus-title">Transaction Security</h3>
@@ -2422,7 +2424,7 @@
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Payment Innovations.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
               <h3 class="focus-title">Payment Innovations</h3>
@@ -2432,7 +2434,8 @@
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_TalentNext-gen digital crimes of tomorrow.svg') }}"
+                alt="Home Icon">
             </div>
             <div class="focus-content">
               <h3 class="focus-title">Fraud Prevention</h3>
@@ -2442,7 +2445,7 @@
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_Talent of tomorrow.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
               <h3 class="focus-title">Digital Identity</h3>
@@ -2452,7 +2455,7 @@
         <div class="focus-card">
           <div class="focus-card-inner">
             <div class="focus-icon">
-              <img src="{{ asset('images/icons/home.svg') }}" alt="Home Icon">
+              <img src="{{ asset('images/broad-focus/Dsci icon_SupTech.svg') }}" alt="Home Icon">
             </div>
             <div class="focus-content">
               <h3 class="focus-title">Regulatory Technology</h3>
@@ -2476,24 +2479,25 @@
       <h2 class="section-title">Secure your <span class="text-tickets">Access</span> to FINSEC</h2>
     </div>
     <div class="tickets-grid">
-      <!-- First Row -->
+      <!-- Early Bird Ticket -->
       <div class="ticket-card">
         <div class="ticket-content">
-          <div class="ticket-header">
-            <h3 class="ticket-type">Early Bird</h3>
-            <div class="ticket-price">
-              <span class="currency">₹</span>
-              <span class="amount">12,000</span>
-              <span class="duration">/person</span>
-            </div>
+          <div class="discount-banner" style="color: #A56CFF; font-weight: 700;">20% DISCOUNT ON REGULAR PASS</div>
+          <h3 class="ticket-type">EARLY BIRD</h3>
+          <div class="ticket-price">
+            <span class="currency">₹</span>
+            <span class="amount">7552</span>
           </div>
-          <div class="ticket-body">
-            <ul class="ticket-features">
-              <li><i class="fa-solid fa-check"></i> Access to all sessions</li>
-              <li><i class="fa-solid fa-check"></i> Conference materials</li>
-              <li><i class="fa-solid fa-check"></i> Lunch and refreshments</li>
-              <li><i class="fa-solid fa-check"></i> Networking opportunities</li>
-              <li><i class="fa-solid fa-check"></i> Certificate of participation</li>
+          <p class="tax-info">Incl of taxes</p>
+          <div class="validity">
+            <p>Valid till 10<sup>th</sup> April</p>
+          </div>
+          <div class="access-details">
+            <h4>Get access to</h4>
+            <ul>
+              <li>All Workshops - Day 1 & 2</li>
+              <li>All Stage Access - Day 1 & 2</li>
+              <li>Networking Dinner</li>
             </ul>
           </div>
           <a href="#" class="btn-get-pass">Get Pass</a>
@@ -3446,6 +3450,7 @@
     line-height: 1.2;
     margin-bottom: 30px;
     color: #05102D;
+    text-align: center;
   }
 
   .about-title .highlight {
@@ -3456,6 +3461,7 @@
     color: #666;
     line-height: 1.8;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   .about-buttons {
