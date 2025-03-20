@@ -2605,7 +2605,7 @@
   </style>
 
   <!-- Broad Focus Section -->
-  <section class="content-section focus-section" id="broadFocus">
+  <section class="content-section focus-section" id="broadfocusareas">
     <div class="dotted-bg-animation">
       <div class="dot-container"></div>
     </div>
@@ -3522,7 +3522,7 @@
   </script>
 
   <!-- Footer -->
-  <div id="footer">
+  <div id="contact">
     @include('partials.footer')
   </div>
 
