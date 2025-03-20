@@ -2181,7 +2181,7 @@
       <div class="about-content stats-content">
         <h2 class="about-title">Key Highlights</h2>
         <div class="about-text">
-          <p class="highlight-subtitle">Cumulative Data Of FINSEC Over The Last 5 Years.</p>
+          <p class="highlight-subtitle">Cumulative Data Of FINSEC Over The Last 6 Years</p>
         </div>
         <div class="cube-container"></div>
         <div class="stats-grid">
@@ -2459,13 +2459,116 @@
   <div class="city-content">
     <div class="text-overlay">
       <div class="event-date-top">4th - 5th June 2025</div>
-      <h2 class="city-name">Mumbai</h2>
+      <h2 class="city-name animate-float">Mumbai</h2>
     </div>
     <div class="city-image-container">
-      <img src="{{ asset('images/city.png') }}" alt="Mumbai Skyline" class="city-image">
+      <img src="{{ asset('images/city.png') }}" alt="Mumbai Skyline" class="city-image color-shift">
     </div>
   </div>
 </section>
+
+<style>
+  .city-skyline-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .city-image-container {
+    position: relative;
+  }
+
+  .city-image.color-shift {
+    filter: hue-rotate(0deg);
+    animation: colorChange 15s infinite alternate;
+  }
+
+  @keyframes colorChange {
+    0% {
+      filter: hue-rotate(0deg) brightness(1);
+    }
+
+    25% {
+      filter: hue-rotate(60deg) brightness(1.1);
+    }
+
+    50% {
+      filter: hue-rotate(180deg) brightness(1);
+    }
+
+    75% {
+      filter: hue-rotate(240deg) brightness(1.1);
+    }
+
+    100% {
+      filter: hue-rotate(360deg) brightness(1);
+    }
+  }
+
+  .city-name.animate-float {
+    display: inline-block;
+    animation: floatAndColor 6s ease-in-out infinite;
+    background: linear-gradient(45deg, #8B5CF6, #EC4899, #3B82F6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes floatAndColor {
+    0% {
+      transform: translateY(0px);
+      background-position: 0% 50%;
+    }
+
+    50% {
+      transform: translateY(-20px);
+      background-position: 100% 50%;
+    }
+
+    100% {
+      transform: translateY(0px);
+      background-position: 0% 50%;
+    }
+  }
+
+  .event-date-top {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .city-name.animate-float {
+      font-size: 2.5rem;
+    }
+
+    @keyframes floatAndColor {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  }
+</style>
 
 <!-- Broad Focus Section -->
 <section class="content-section focus-section" id="broadFocus">
@@ -3162,9 +3265,9 @@
     }
 
     .focus-icon {
-      width: 100px;
-      min-width: 100px;
-      height: 100px;
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
       margin-bottom: 10px;
     }
 
@@ -3215,6 +3318,7 @@
     position: relative;
     perspective: 1000px;
     overflow: hidden;
+    margin-left: 30px;
   }
 
   .coin {
@@ -3304,6 +3408,53 @@
     background: #7040c0;
     top: 50%;
     transform: translateY(-50%) rotateX(90deg);
+  }
+
+  .navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .nav-arrow {
+    background: transparent;
+    border: none;
+    color: #8B5CF6;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-arrow:hover {
+    transform: scale(1.2);
+  }
+
+  .nav-arrow:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .dots-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #8B5CF6;
+    width: 10px;
+    height: 10px;
   }
 </style>
 
