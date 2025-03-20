@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'AISS 2025 | Annual Information Security Summit 2025 | DSCI')
+@section('title', 'FINSEC 2025 | Financial Security Conclave 2025 | DSCI')
 
 @section('content')
 <!-- Add Space Grotesk font -->
