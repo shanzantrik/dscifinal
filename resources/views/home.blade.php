@@ -2015,7 +2015,7 @@
         <!-- Mobile image for smaller screens -->
         <source srcset="{{ asset('images/mobile-hero.png') }}" media="(max-width: 768px)">
         <!-- Default image for larger screens -->
-        <img src="{{ asset('images/main-hero.png') }}" alt="Hero Image" class="img-fluid">
+        <img src="{{ asset('images/main-hero.webp') }}" alt="Hero Image" class="img-fluid">
       </picture>
     </div>
   </section>
